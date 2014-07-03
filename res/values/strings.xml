@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">wjw</string>
+    
+    <string name="fragment_account">我的帐号</string>
+    <string name="fragment_home">首页</string>
+    <string name="fragment_more">更多</string>
+    <string name="fragment_adv">广告列表</string>
+
+</resources>
