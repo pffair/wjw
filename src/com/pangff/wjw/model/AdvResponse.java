@@ -10,12 +10,12 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 public class AdvResponse extends BaseBean{
 	
 	@XStreamAlias("body")
-	Body body;
+	public Body body;
 	
 	public static class Body{
 		
 		@XStreamImplicit(itemFieldName="img")
-		List<Img> img;
+		public List<Img> img;
 	}
 	
 }

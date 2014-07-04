@@ -7,6 +7,7 @@ import android.view.View;
 import com.pangff.wjw.BaseApplication;
 import com.pangff.wjw.autowire.AndroidAutowire;
 import com.pangff.wjw.event.IEvent;
+import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.http.ResponseCallBack;
 
 /**
@@ -14,7 +15,7 @@ import com.pangff.wjw.http.ResponseCallBack;
  * 
  * @author pangff
  */
-public class BaseFragment extends Fragment implements ResponseCallBack{
+public class BaseFragment extends Fragment implements ResponseCallBack {
 
 	private boolean isInit; // 是否可以开始加载数据
 
@@ -72,13 +73,13 @@ public class BaseFragment extends Fragment implements ResponseCallBack{
 	}
 
 	@Override
-	public void onFailure(String errorMsg) {
-		
+	public void onFailure(String mothod, String errorMsg) {
+
 	}
 
 	@Override
-	public void onSuccess(Object result) {
-		
+	public void onSuccess(String mothod, Object result) {
+
 	}
 
 }

@@ -11,12 +11,11 @@ import java.util.List;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
 import com.pangff.wjw.BaseApplication;
 import com.pangff.wjw.R;
-import com.pangff.wjw.model.TopGallery;
+import com.pangff.wjw.model.TopGalleryResponse;
 import com.pangff.wjw.view.MImageView;
 
 /**
@@ -27,7 +26,7 @@ import com.pangff.wjw.view.MImageView;
 public class ImagePagerAdapter extends RecyclingPagerAdapter {
 
     private Context       context;
-    private List<TopGallery> imageIdList = new ArrayList<TopGallery>();
+    private List<String> imageIdList = new ArrayList<String>();
     private boolean       isInfiniteLoop;
 
     public ImagePagerAdapter(Context context) {
@@ -35,9 +34,9 @@ public class ImagePagerAdapter extends RecyclingPagerAdapter {
         isInfiniteLoop = false;
     }
     
-    public void refresh(List<TopGallery> list){
+    public void refresh(TopGalleryResponse topGallery){
     		imageIdList.clear();
-    		imageIdList.addAll(list);
+    		imageIdList.addAll(topGallery.body.imgList);
     		notifyDataSetChanged();
     }
 
@@ -65,10 +64,10 @@ public class ImagePagerAdapter extends RecyclingPagerAdapter {
         } else {
             holder = (ViewHolder)view.getTag();
         }
-        TopGallery topGallery = imageIdList.get(getPosition(position));
+        String url = imageIdList.get(getPosition(position));
         holder.imageView.setScaleType(ScaleType.FIT_XY);
         holder.imageView.setDefaultImageId(R.drawable.ic_launcher);
-        BaseApplication.self.IMAGE_CACHE.get(topGallery.getUrl(),holder.imageView);
+        BaseApplication.self.IMAGE_CACHE.get(url,holder.imageView);
         return view;
     }
 

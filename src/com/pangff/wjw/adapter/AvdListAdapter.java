@@ -15,18 +15,19 @@ import com.pangff.wjw.R;
 import com.pangff.wjw.autowire.AndroidAutowire;
 import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.model.Adv;
+import com.pangff.wjw.model.Img;
 import com.pangff.wjw.view.MImageView;
 
 public class AvdListAdapter extends BaseAdapter {
 
-	List<Adv> advList = new ArrayList<Adv>();
+	List<Img> advList = new ArrayList<Img>();
 	LayoutInflater mInflater;
 
 	public AvdListAdapter(Context context) {
 		this.mInflater = LayoutInflater.from(context);
 	}
 	
-	public void refresh(List<Adv> list){
+	public void refresh(List<Img> list){
 		advList.clear();
 		advList.addAll(list);
 		notifyDataSetChanged();
@@ -63,10 +64,10 @@ public class AvdListAdapter extends BaseAdapter {
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-		Adv adv = advList.get(position);
-		BaseApplication.self.IMAGE_CACHE.get(adv.getPicUrl(),holder.picImage);
+		Img img = advList.get(position);
+		BaseApplication.self.IMAGE_CACHE.get(img.imgs,holder.picImage);
 		holder.picImage.setDefaultImageId(R.drawable.ic_launcher);
-		holder.display.setText(adv.getDisplay());
+		holder.display.setText(img.title);
 		return convertView;
 	}
 	

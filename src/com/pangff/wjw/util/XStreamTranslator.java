@@ -2,7 +2,7 @@ package com.pangff.wjw.util;
 
 import com.thoughtworks.xstream.XStream;
 
-public class XStreamTranslator<T> {
+public class XStreamTranslator {
 	private XStream xstream = null;
 	
 	private XStreamTranslator() {
@@ -17,6 +17,8 @@ public class XStreamTranslator<T> {
 	 * @return
 	 */
 	public String toXMLString(Object object) {
+		//xstream.alias( "root" , TopGalleryRequest.class );
+		 xstream.processAnnotations(object.getClass());
 		return xstream.toXML(object);
 	}
 
@@ -25,8 +27,11 @@ public class XStreamTranslator<T> {
 	 * @param xml
 	 * @return
 	 */
-	public Object toObject(String xml) {
-		return (Object) xstream.fromXML(xml);
+	public <T> T  toObject(String xml,Class<T> cls) {
+		//xstream.processAnnotations(cls);
+		xstream.processAnnotations(cls);
+		T obj=(T)xstream.fromXML(xml);
+		return obj;
 	}
 	
 	public XStream getXsteam(){

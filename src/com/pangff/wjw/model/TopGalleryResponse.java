@@ -9,14 +9,14 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 public class TopGalleryResponse extends BaseBean{
 	
 	@XStreamAlias("body")
-	Body body;
+	public Body body;
 	
 	public static class Body{
 		
 		@XStreamImplicit(itemFieldName="img")
-		List<String> imgList;
+		public List<String> imgList;
 		
 		@XStreamAlias("gundong")
-		String gundong;
+		public String gundong;
 	}
 }

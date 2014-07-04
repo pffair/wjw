@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,13 @@ import com.pangff.wjw.R;
 import com.pangff.wjw.adapter.AvdListAdapter;
 import com.pangff.wjw.adapter.ImagePagerAdapter;
 import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.Adv;
-import com.pangff.wjw.model.TopGallery;
+import com.pangff.wjw.model.AdvRequest;
+import com.pangff.wjw.model.AdvResponse;
+import com.pangff.wjw.model.TopGalleryRequest;
+import com.pangff.wjw.model.TopGalleryResponse;
+import com.pangff.wjw.util.XStreamTranslator;
 
 /**
  * fragment基类
@@ -30,11 +36,15 @@ public class HomeFragment extends PagerFragment {
 	AutoScrollViewPager viewPager;
 
 	View headerView;
-	private List<TopGallery> topGallerys = new ArrayList<TopGallery>();
-	private List<Adv> advList = new ArrayList<Adv>();
+	//private List<TopGallery> topGallerys = new ArrayList<TopGallery>();
+	//private List<Adv> advList = new ArrayList<Adv>();
 
 	ImagePagerAdapter topGalleryAdapter;
 	AvdListAdapter avdAdapter;
+	
+	
+	public static final String METHOD_TOPGALLERY = "sygg";
+	public static final String METHOD_ADVLIST = "guanggao";
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,66 +62,33 @@ public class HomeFragment extends PagerFragment {
 				.findViewById(R.id.view_pager);
 		topGalleryAdapter = new ImagePagerAdapter(this.getActivity());
 		avdAdapter = new AvdListAdapter(this.getActivity());
+		listView.setAdapter(avdAdapter);
+		viewPager.setAdapter(topGalleryAdapter.setInfiniteLoop(true));
 	}
 
 	protected void initData() {
-		initGalleryData();
-		initAvdList();
+		requestTopGallery();
+		requestAdvList();
+	}
+	
+	private void requestTopGallery(){
+		String xml = new TopGalleryRequest().getParams(METHOD_TOPGALLERY, "1");
+		Log.e("ddd", "xml:"+xml);
+		new HttpRequest<TopGalleryRequest>().postDataXml(METHOD_TOPGALLERY, xml, this,TopGalleryRequest.class);
+	}
+	
+	private void requestAdvList(){
+		String xml = new AdvRequest().getParams(METHOD_ADVLIST, "1");
+		Log.e("ddd", "xml:"+xml);
+		new HttpRequest<AdvRequest>().postDataXml(METHOD_ADVLIST, xml, this,AdvRequest.class);
 	}
 
-	private void initAvdList() {
-		advList.add(new Adv(
-				"http://farm8.staticflickr.com/7409/9148527822_36fa37d7ca_z.jpg",
-				"哈哈哈"));
-		advList.add(new Adv(
-				"http://farm4.staticflickr.com/3755/9148527824_6c156185ea.jpg",
-				"哈哈哈"));
-		advList.add(new Adv(
-				"http://farm8.staticflickr.com/7318/9148527808_e804baef0b.jpg",
-				"哈哈哈"));
-		advList.add(new Adv(
-				"http://farm8.staticflickr.com/7318/9146300275_5fe995d123.jpg",
-				"哈哈哈"));
-		listView.setAdapter(avdAdapter);
-		avdAdapter.refresh(advList);
+	private void showAdvList(AdvResponse advResponse) {
+		avdAdapter.refresh(advResponse.body.img);
 	}
 
-	private void initGalleryData() {
-		topGallerys
-				.add(new TopGallery(
-						"http://farm8.staticflickr.com/7409/9148527822_36fa37d7ca_z.jpg"));
-		topGallerys
-				.add(new TopGallery(
-						"http://farm4.staticflickr.com/3755/9148527824_6c156185ea.jpg"));
-		topGallerys
-				.add(new TopGallery(
-						"http://farm8.staticflickr.com/7318/9148527808_e804baef0b.jpg"));
-		topGallerys
-				.add(new TopGallery(
-						"http://farm8.staticflickr.com/7318/9146300275_5fe995d123.jpg"));
-		topGallerys
-				.add(new TopGallery(
-						"http://farm8.staticflickr.com/7288/9146300469_bd3420c75b_z.jpg"));
-		topGallerys
-				.add(new TopGallery(
-						"http://farm8.staticflickr.com/7351/9148527976_8a4e75ae87.jpg"));
-		topGallerys
-				.add(new TopGallery(
-						"http://farm3.staticflickr.com/2888/9148527996_f05118d7de_o.jpg"));
-		topGallerys
-				.add(new TopGallery(
-						"http://farm8.staticflickr.com/7310/9148528008_8e8f51997a.jpg"));
-		topGallerys
-				.add(new TopGallery(
-						"http://farm8.staticflickr.com/7409/9148527822_36fa37d7ca_z.jpg"));
-		topGallerys
-				.add(new TopGallery(
-						"http://farm3.staticflickr.com/2849/9148528108_dfcda19507.jpg"));
-		topGallerys
-				.add(new TopGallery(
-						"http://farm4.staticflickr.com/3739/9148528022_e9bf03058f.jpg"));
-		viewPager.setAdapter(topGalleryAdapter.setInfiniteLoop(true));
-		topGalleryAdapter.refresh(topGallerys);
+	private void showGalleryData(TopGalleryResponse topGallery) {
+		topGalleryAdapter.refresh(topGallery);
 		viewPager.setInterval(2000);
 		viewPager.startAutoScroll();
 	}
@@ -126,5 +103,25 @@ public class HomeFragment extends PagerFragment {
 	public void onResume() {
 		super.onResume();
 		viewPager.startAutoScroll();
+	}
+	
+	@Override
+	public void onFailure(String mothod,String errorMsg) {
+		super.onFailure(mothod,errorMsg);
+		//根据返回的method进行相应操作
+	}
+	
+	@Override
+	public void onSuccess(String mothod,Object result) {
+		super.onSuccess(mothod,result);
+		//根据返回的method进行相应操作
+		if(METHOD_TOPGALLERY.equals(mothod)){
+			TopGalleryResponse topGallery = (TopGalleryResponse) result;
+			showGalleryData(topGallery);
+		}
+		if(METHOD_ADVLIST.equals(mothod)){
+			AdvResponse advResponse = (AdvResponse) result;
+			showAdvList(advResponse);
+		}
 	}
 }

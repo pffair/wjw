@@ -5,11 +5,11 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 public class Img {
 
 	@XStreamAlias("id")
-	String id;
+	public String id;
 	
 	@XStreamAlias("imgs")
-	String imgs;
+	public String imgs;
 	
 	@XStreamAlias("title")
-	String title;
+	public String title;
 }
