@@ -21,30 +21,45 @@ public class HttpRequest<T> {
 		this.type = type;
 	}
 
-	public void delete(String url, ResponseCallBack<T> callBack, Class<T> cls) {
+	public void delete(String url, ResponseCallBack callBack, Class<T> cls) {
 		client.delete(url, new MyAsyncHttpResponseHandler<T>(cls, callBack,type));
 	}
 
 	public void put(String url, RequestParams params,
-			ResponseCallBack<T> callBack, Class<T> cls) {
+			ResponseCallBack callBack, Class<T> cls) {
 		client.put(url, params,
 				new MyAsyncHttpResponseHandler<T>(cls, callBack,type));
 	}
 
 	public void get(String url, RequestParams params,
-			ResponseCallBack<T> callBack, Class<T> cls) {
+			ResponseCallBack callBack, Class<T> cls) {
 		client.get(url, params,
 				new MyAsyncHttpResponseHandler<T>(cls, callBack,type));
 	}
 
 	public void getWithAbsoluteUrl(String url, RequestParams params,
-			ResponseCallBack<T> callBack, Class<T> cls) {
+			ResponseCallBack callBack, Class<T> cls) {
 		client.get(url, params,
 				new MyAsyncHttpResponseHandler<T>(cls, callBack,type));
 	}
 
 	public void post(String url, RequestParams params,
-			ResponseCallBack<T> callBack, Class<T> cls) {
+			ResponseCallBack callBack, Class<T> cls) {
+		client.post(url, params, new MyAsyncHttpResponseHandler<T>(cls,
+				callBack,type));
+	}
+	
+	/**
+	 * data xml
+	 * @param url
+	 * @param xml
+	 * @param callBack
+	 * @param cls
+	 */
+	public void postDataXml(String url, String xml,
+			ResponseCallBack callBack, Class<T> cls) {
+		RequestParams params = new RequestParams();
+		params.put("data", xml);
 		client.post(url, params, new MyAsyncHttpResponseHandler<T>(cls,
 				callBack,type));
 	}
@@ -57,7 +72,7 @@ public class HttpRequest<T> {
 	 * @param cls
 	 */
 	public void postJson(String url, String jsonParam,
-			ResponseCallBack<T> callBack, Class<T> cls) {
+			ResponseCallBack callBack, Class<T> cls) {
 		StringEntity entity = null;
 		try {
 			entity = new StringEntity(jsonParam, "utf-8");
@@ -79,7 +94,7 @@ public class HttpRequest<T> {
 	 * @param cls
 	 */
 	public void postXml(String url, String xml,
-			ResponseCallBack<T> callBack, Class<T> cls) {
+			ResponseCallBack callBack, Class<T> cls) {
 		StringEntity entity = null;
 		try {
 			entity = new StringEntity(xml, "utf-8");

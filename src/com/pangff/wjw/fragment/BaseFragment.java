@@ -7,13 +7,14 @@ import android.view.View;
 import com.pangff.wjw.BaseApplication;
 import com.pangff.wjw.autowire.AndroidAutowire;
 import com.pangff.wjw.event.IEvent;
+import com.pangff.wjw.http.ResponseCallBack;
 
 /**
  * fragment基类
  * 
  * @author pangff
  */
-public class BaseFragment extends Fragment {
+public class BaseFragment extends Fragment implements ResponseCallBack{
 
 	private boolean isInit; // 是否可以开始加载数据
 
@@ -68,6 +69,16 @@ public class BaseFragment extends Fragment {
 	public void onDestroyView() {
 		BaseApplication.self.controlBus.unregister(this);
 		super.onDestroyView();
+	}
+
+	@Override
+	public void onFailure(String errorMsg) {
+		
+	}
+
+	@Override
+	public void onSuccess(Object result) {
+		
 	}
 
 }

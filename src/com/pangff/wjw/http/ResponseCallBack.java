@@ -1,12 +1,11 @@
 package com.pangff.wjw.http;
 
 
-public abstract class ResponseCallBack<T> {
+public interface  ResponseCallBack {
 
+  public  void onStart();
 
-  public abstract void onStart();
+  public  void onFailure(String errorMsg);
 
-  public abstract void onFailure(String errorMsg);
-
-  public abstract void onSuccess(Object result);
+  public  void onSuccess(Object result);
 }

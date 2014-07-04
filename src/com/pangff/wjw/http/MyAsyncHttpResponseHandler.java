@@ -5,13 +5,13 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.pangff.wjw.util.LogUtil;
 
 public class MyAsyncHttpResponseHandler<T> extends AsyncHttpResponseHandler {
-	ResponseCallBack<T> callBack;
+	ResponseCallBack callBack;
 	Class<T> t;
 	int responseType = 0;
 	public static final int RESPONSE_TYPE_JSON = 1;
 	public static final int RESPONSE_TYPE_XML = 2;
 
-	public MyAsyncHttpResponseHandler(Class<T> t, ResponseCallBack<T> callBack,
+	public MyAsyncHttpResponseHandler(Class<T> t, ResponseCallBack callBack,
 			int type) {
 		this.t = t;
 		this.responseType = type;
