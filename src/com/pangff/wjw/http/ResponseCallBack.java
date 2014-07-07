@@ -4,7 +4,7 @@ package com.pangff.wjw.http;
 
 public interface ResponseCallBack {
 
-  public  void onStart();
+  public  void onStartRequest();
 
   public  void onFailure(String method,String errorMsg);
 

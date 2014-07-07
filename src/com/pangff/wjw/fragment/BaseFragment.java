@@ -82,4 +82,10 @@ public class BaseFragment extends Fragment implements ResponseCallBack {
 
 	}
 
+	@Override
+	public void onStartRequest() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

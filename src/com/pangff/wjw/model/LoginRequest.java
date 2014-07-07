@@ -1,5 +1,7 @@
 package com.pangff.wjw.model;
 
+import com.pangff.wjw.model.TopGalleryRequest.Body;
+import com.pangff.wjw.util.XStreamTranslator;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("root")
@@ -16,4 +18,11 @@ public class LoginRequest extends BaseBean{
 		String password;
 	}
 
+	public  String getParams(String method,String username,String password){
+		this.method = method;
+		this.body.username = username;
+		this.body.password = password;
+		this.body = new Body();
+		return XStreamTranslator.getInstance().toXMLString(this);
+	}
 }

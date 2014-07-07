@@ -27,7 +27,7 @@ public class MyAsyncHttpResponseHandler<T> extends AsyncHttpResponseHandler {
 
 	@Override
 	public void onStart() {
-		callBack.onStart();
+		callBack.onStartRequest();
 	}
 
 	@Override

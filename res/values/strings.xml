@@ -7,4 +7,10 @@
     <string name="fragment_more">更多</string>
     <string name="fragment_adv">广告列表</string>
 
+    <string name="username">账号：</string>
+    <string name="forgetPwd">忘记密码？</string>
+    
+    <string name="password">密码：</string>
+    <string name="login">登  录</string>
+    <string name="regist">免费注册</string>
 </resources>
