@@ -7,9 +7,9 @@
     <com.pangff.wjw.view.MImageView
         android:id="@+id/picImage"
         android:src="@drawable/ic_launcher"
-        android:layout_width="100dp"
-        android:scaleType="fitXY"
-        android:layout_height="120dp" />
+        android:layout_width="90dp"
+        android:scaleType="centerCrop"
+        android:layout_height="80dp" />
 
     <TextView
         android:id="@+id/display"

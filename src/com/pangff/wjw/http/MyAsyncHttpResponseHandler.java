@@ -33,6 +33,7 @@ public class MyAsyncHttpResponseHandler<T> extends AsyncHttpResponseHandler {
 	@Override
 	public void onSuccess(String content) {
 		try {
+			LogUtil.debug("content:"+content);
 			callBack.onSuccess(method,parseResponse(content));
 		} catch (Throwable e) {
 			LogUtil.error("解析错误:" + content);

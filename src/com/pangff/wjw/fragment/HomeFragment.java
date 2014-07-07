@@ -1,11 +1,13 @@
 package com.pangff.wjw.fragment;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
 
 import com.pangff.wjw.R;
@@ -17,6 +19,7 @@ import com.pangff.wjw.model.AdvRequest;
 import com.pangff.wjw.model.AdvResponse;
 import com.pangff.wjw.model.TopGalleryRequest;
 import com.pangff.wjw.model.TopGalleryResponse;
+import com.pangff.wjw.vindicator.CirclePageIndicator;
 
 /**
  * fragment基类
@@ -36,11 +39,11 @@ public class HomeFragment extends PagerFragment {
 
 	ImagePagerAdapter topGalleryAdapter;
 	AvdListAdapter avdAdapter;
-	
+	CirclePageIndicator indicator;
+	TextView runText;
 	
 	public static final String METHOD_TOPGALLERY = "sygg";
 	public static final String METHOD_ADVLIST = "guanggao";
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -55,10 +58,13 @@ public class HomeFragment extends PagerFragment {
 		listView.addHeaderView(headerView);
 		viewPager = (AutoScrollViewPager) headerView
 				.findViewById(R.id.view_pager);
+		indicator = (CirclePageIndicator) headerView
+				.findViewById(R.id.indicator);
+		runText = (TextView) headerView.findViewById(R.id.runText);
 		topGalleryAdapter = new ImagePagerAdapter(this.getActivity());
 		avdAdapter = new AvdListAdapter(this.getActivity());
 		listView.setAdapter(avdAdapter);
-		viewPager.setAdapter(topGalleryAdapter.setInfiniteLoop(true));
+		viewPager.setAdapter(topGalleryAdapter);
 	}
 
 	protected void initData() {
@@ -83,7 +89,10 @@ public class HomeFragment extends PagerFragment {
 	private void showGalleryData(TopGalleryResponse topGallery) {
 		topGalleryAdapter.refresh(topGallery);
 		viewPager.setInterval(2000);
+		indicator.setViewPager(viewPager);
 		viewPager.startAutoScroll();
+		runText.setText(Html.fromHtml(topGallery.body.gundong));
+		runText.setSelected(true);
 	}
 
 	@Override
@@ -91,11 +100,13 @@ public class HomeFragment extends PagerFragment {
 		super.onPause();
 		viewPager.stopAutoScroll();
 	}
-
+	
 	@Override
 	public void onResume() {
 		super.onResume();
-		viewPager.startAutoScroll();
+		if(topGalleryAdapter.getCount()>0){
+			viewPager.startAutoScroll();
+		}
 	}
 	
 	@Override

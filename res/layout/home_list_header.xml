@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="match_parent">
 
     <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="150dp" />
 
+    <com.pangff.wjw.vindicator.CirclePageIndicator
+        android:id="@+id/indicator"
+        android:layout_width="100dp"
+        android:gravity="right"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/view_pager" />
+
     <TextView
-        android:id="@+id/view_pager_index"
-        android:layout_width="wrap_content"
+        android:id="@+id/runText"
+        android:focusable="true"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/view_pager"
-        android:layout_centerHorizontal="true"
         android:textSize="14sp" />
 
-</LinearLayout>
+</RelativeLayout>
