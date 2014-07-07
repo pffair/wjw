@@ -1,8 +1,5 @@
 package com.pangff.wjw.fragment;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,12 +13,10 @@ import com.pangff.wjw.adapter.AvdListAdapter;
 import com.pangff.wjw.adapter.ImagePagerAdapter;
 import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.http.HttpRequest;
-import com.pangff.wjw.model.Adv;
 import com.pangff.wjw.model.AdvRequest;
 import com.pangff.wjw.model.AdvResponse;
 import com.pangff.wjw.model.TopGalleryRequest;
 import com.pangff.wjw.model.TopGalleryResponse;
-import com.pangff.wjw.util.XStreamTranslator;
 
 /**
  * fragment基类
@@ -73,14 +68,12 @@ public class HomeFragment extends PagerFragment {
 	
 	private void requestTopGallery(){
 		String xml = new TopGalleryRequest().getParams(METHOD_TOPGALLERY, "1");
-		Log.e("ddd", "xml:"+xml);
-		new HttpRequest<TopGalleryRequest>().postDataXml(METHOD_TOPGALLERY, xml, this,TopGalleryRequest.class);
+		new HttpRequest<TopGalleryResponse>().postDataXml(METHOD_TOPGALLERY, xml, this,TopGalleryResponse.class);
 	}
 	
 	private void requestAdvList(){
 		String xml = new AdvRequest().getParams(METHOD_ADVLIST, "1");
-		Log.e("ddd", "xml:"+xml);
-		new HttpRequest<AdvRequest>().postDataXml(METHOD_ADVLIST, xml, this,AdvRequest.class);
+		new HttpRequest<AdvResponse>().postDataXml(METHOD_ADVLIST, xml, this,AdvResponse.class);
 	}
 
 	private void showAdvList(AdvResponse advResponse) {

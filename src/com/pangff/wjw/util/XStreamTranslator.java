@@ -1,5 +1,6 @@
 package com.pangff.wjw.util;
 
+import com.pangff.wjw.model.BaseBean;
 import com.thoughtworks.xstream.XStream;
 
 public class XStreamTranslator {
@@ -28,8 +29,8 @@ public class XStreamTranslator {
 	 * @return
 	 */
 	public <T> T  toObject(String xml,Class<T> cls) {
-		//xstream.processAnnotations(cls);
 		xstream.processAnnotations(cls);
+		xstream.addDefaultImplementation(cls,BaseBean.class);
 		T obj=(T)xstream.fromXML(xml);
 		return obj;
 	}

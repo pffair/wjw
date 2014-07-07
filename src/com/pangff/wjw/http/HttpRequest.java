@@ -5,7 +5,7 @@ import com.loopj.android.http.RequestParams;
 
 public class HttpRequest<T> {
 
-	String baseUrl = "http://tel.buyunnet.net/tel.aspx?data=";
+	String baseUrl = "http://tel.buyunnet.net/tel.aspx";
 	
 	private final AsyncHttpClient client;
 

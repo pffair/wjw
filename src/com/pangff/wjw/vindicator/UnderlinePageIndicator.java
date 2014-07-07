@@ -21,6 +21,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.NinePatch;
 import android.graphics.Paint;
+import android.graphics.Paint.FontMetrics;
 import android.graphics.Rect;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -161,6 +162,10 @@ public class UnderlinePageIndicator extends View implements PageIndicator {
     drawText(canvas);
   }
   
+  public int getFontHeight(){
+     FontMetrics fm = mPaint.getFontMetrics();
+     return (int) Math.ceil(fm.descent - fm.top) + 2;
+  } 
 
   private void drawText(Canvas canvas) {
     int color = Color.BLACK;
@@ -174,7 +179,7 @@ public class UnderlinePageIndicator extends View implements PageIndicator {
         mPaint.setColor(color);
       }
       int width = (int) mPaint.measureText(text);
-      int height = (int) mPaint.measureText(text);
+      int height = getHeight();
       canvas.drawText(text, i * pageWidth + (pageWidth - width) / 2, top
           + (bottom - top - height) / 2 + height * 2 / 3, mPaint);
     }

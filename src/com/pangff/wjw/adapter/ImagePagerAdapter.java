@@ -42,7 +42,11 @@ public class ImagePagerAdapter extends RecyclingPagerAdapter {
 
     @Override
     public int getCount() {
-        return isInfiniteLoop ? Integer.MAX_VALUE : imageIdList.size();
+	    	if(imageIdList.size()>0){
+	    		return isInfiniteLoop ? Integer.MAX_VALUE : imageIdList.size();
+	    	}else{
+	    		return 0;
+	    	}
     }
 
     /**
@@ -51,7 +55,11 @@ public class ImagePagerAdapter extends RecyclingPagerAdapter {
      * @return
      */
     private int getPosition(int position) {
-        return isInfiniteLoop ? position % imageIdList.size() : position;
+	    	if(imageIdList.size()>0){
+	    		 return isInfiniteLoop ? position % imageIdList.size() : position;
+	    	}else{
+	    		return 0;
+	    	}
     }
 
     @Override
