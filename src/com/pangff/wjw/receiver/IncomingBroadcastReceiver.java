@@ -14,33 +14,44 @@ import android.view.WindowManager.LayoutParams;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.pangff.wjw.IncomingCallActivity;
-
 public class IncomingBroadcastReceiver extends BroadcastReceiver {
-	WindowManager wm;
-	LinearLayout view;
+	static WindowManager wm;
+	static LinearLayout view;
     @Override
     public void onReceive(final Context context,final Intent intent) {
 
-        Log.e("IncomingBroadcastReceiver: onReceive: ", "flag1");
 
         String state = intent.getStringExtra(TelephonyManager.EXTRA_STATE);
-        Log.d("IncomingBroadcastReceiver: onReceive: ", state);
-        if (state.equals(TelephonyManager.EXTRA_STATE_RINGING)
-                || state.equals(TelephonyManager.EXTRA_STATE_OFFHOOK)) {
-            Log.d("Ringing", "Phone is ringing");
+        if (state.equals(TelephonyManager.EXTRA_STATE_RINGING)) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
                 		popPhone(context,"123456");
                 }
-            }, 1000);
+            }, 500);
         }
+        if(state.equals(TelephonyManager.EXTRA_STATE_OFFHOOK)){
+	    		new Handler().postDelayed(new Runnable() {
+	                @Override
+	                public void run() {
+	                		popPhoneRemove();
+	                }
+	            }, 100);
+	    } 
+        if(state.equals(TelephonyManager.EXTRA_STATE_IDLE)){
+        		new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                		popPhoneRemove();
+                }
+            }, 100);
+        }
+
     }
     
     //弹窗具体实现
     private void popPhone(Context context,String phone) {
-    	 WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+    	 	wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
 
     	    WindowManager.LayoutParams params = new WindowManager.LayoutParams(
     	        LayoutParams.MATCH_PARENT,
@@ -67,8 +78,9 @@ public class IncomingBroadcastReceiver extends BroadcastReceiver {
     }
     //移除弹窗
     private void popPhoneRemove(){
-    		if(wm != null){  
+    		if(wm != null && view!=null){  
             wm.removeView(view);  
+            view = null;
         } 
     }
 }
