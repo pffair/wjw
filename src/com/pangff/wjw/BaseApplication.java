@@ -43,6 +43,7 @@ public class BaseApplication extends Application {
 			.toString();
 	/** icon cache **/
 	public ImageCache IMAGE_CACHE;
+	
 
 	@Override
 	public void onCreate() {
