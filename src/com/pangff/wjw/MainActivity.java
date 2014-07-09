@@ -1,6 +1,5 @@
 package com.pangff.wjw;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -15,7 +14,7 @@ import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.util.ToastUtil;
 import com.pangff.wjw.vindicator.UnderlinePageIndicator;
 
-public class MainActivity extends BaseFragmentActivity {
+public class MainActivity extends BaseActivity {
 	private long mExitTime;
 	private PagerFragmentAdapter pagerAdapter;
 

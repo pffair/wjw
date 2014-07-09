@@ -1,19 +1,19 @@
 package com.pangff.wjw;
 
 
+import android.support.v4.app.FragmentActivity;
+import android.view.View;
+
 import com.pangff.wjw.autowire.AndroidAutowire;
 import com.pangff.wjw.event.IEvent;
 import com.pangff.wjw.http.ResponseCallBack;
 import com.pangff.wjw.view.OnOneOffClickListener;
 
-import android.app.Activity;
-import android.view.View;
-
 /**
  * Activty 基类
  * @author pangff
  */
-public class BaseActivity extends Activity implements ResponseCallBack{
+public class BaseActivity extends FragmentActivity implements ResponseCallBack{
 	
 	protected OnOneOffClickListener onOneOffClickListener;
 	

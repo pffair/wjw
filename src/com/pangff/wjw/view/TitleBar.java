@@ -31,6 +31,7 @@ public class TitleBar extends RelativeLayout{
 		super(context, attrs);
 		activity = (BaseActivity) context;
 		LayoutInflater.from(context).inflate(R.layout.common_titlebar, this);
+		
 		AndroidAutowire.autowire(findViewById(R.id.titleBarRootView), this);
 		
 		TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.TitleBar);
