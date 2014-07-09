@@ -20,9 +20,9 @@ public class LoginRequest extends BaseBean{
 
 	public  String getParams(String method,String username,String password){
 		this.method = method;
+		this.body = new Body();
 		this.body.username = username;
 		this.body.password = password;
-		this.body = new Body();
 		return XStreamTranslator.getInstance().toXMLString(this);
 	}
 }

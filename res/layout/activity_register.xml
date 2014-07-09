@@ -1,6 +1,13 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:id="@+id/sView"
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:scrollbars="vertical"	
+    	android:background="#FF00EEFF"	>
+<LinearLayout  
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical" 
     android:background="#FFFFFF00">
 
@@ -10,17 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="30dp" 
         android:background="#FFFF00FF"/>
-    
-<!--          <LinearLayout  
-             android:orientation="vertical"
-             android:layout_width="match_parent"
-             android:layout_marginLeft="10dp"
-             android:layout_marginRight="10dp"
-             android:layout_height="wrap_content"
-             android:layout_weight="1"
- 			 android:layout_marginTop="10dp"
- 			 android:layout_marginBottom="10dp"
-              android:background="#FFFFFFFF"> -->
+   
              
              
              <EditText
@@ -55,19 +52,6 @@
                  android:gravity="center"
                  android:text="推广编号"/>
                  
-<!--          </LinearLayout> -->
-         
-<!--          <LinearLayout 
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_height="wrap_content"
-			android:layout_marginTop="10dp"
- 			android:layout_marginBottom="10dp"
-            android:layout_weight="2"
-            android:background="#FFFFFFFF">
-          -->
              <LinearLayout
                  android:orientation="horizontal"
                  android:layout_width="match_parent"
@@ -158,7 +142,8 @@
              android:layout_width="match_parent"
              android:layout_marginLeft="10dp"
              android:layout_marginRight="10dp"
-             android:layout_height="wrap_content"
+             android:layout_height="match_parent"
              android:text="注册"/>
          
 </LinearLayout>
+</ScrollView>

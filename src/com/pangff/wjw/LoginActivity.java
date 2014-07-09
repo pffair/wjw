@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.fragment.HomeFragment;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.LoginRequest;
 import com.pangff.wjw.model.LoginResponse;
@@ -60,19 +61,24 @@ public class LoginActivity extends BaseActivity {
 	}
 	
 	private void doLogin(){
-		String xml = new LoginRequest().getParams(METHOD_LOGIN,userNameE.getText().toString(),passwordE.getText().toString());
-		new HttpRequest<LoginResponse>().postDataXml(METHOD_LOGIN, xml, this,LoginResponse.class);
+		//String xml = new LoginRequest().getParams(METHOD_LOGIN,userNameE.getText().toString(),passwordE.getText().toString());
+		//new HttpRequest<LoginResponse>().postDataXml(METHOD_LOGIN, xml, this,LoginResponse.class);
+		
+		MainActivity.invoteToMain(this);
+		
+
 	}
 	
 	private void goRegist(){
-		Intent intent = new Intent();  
-        intent.setClass(LoginActivity.this, RegistActivity.class);  
-        LoginActivity.this.startActivity(intent); 
+		RegistActivity.invoteToRegist(this);
 	}
 	
 	@Override
 	public void onSuccess(String method, Object result) {
 		super.onSuccess(method, result);
+		if(method.equals(METHOD_LOGIN)){
+			MainActivity.invoteToMain(this);
+		}
 		
 	}
 

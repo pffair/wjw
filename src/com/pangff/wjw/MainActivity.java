@@ -1,6 +1,7 @@
 package com.pangff.wjw;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -70,5 +71,11 @@ public class MainActivity extends BaseFragmentActivity {
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);
+	}
+	
+	public static void  invoteToMain(BaseActivity context){
+		Intent intent = new Intent();  
+        intent.setClass(context, MainActivity.class);  
+        context.startActivity(intent); 
 	}
 }
