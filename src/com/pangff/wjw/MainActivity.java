@@ -30,9 +30,7 @@ public class MainActivity extends BaseFragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		final ActionBar actionBar = getActionBar();
-		actionBar.setHomeButtonEnabled(false);
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+
 		pagerAdapter = new PagerFragmentAdapter(getSupportFragmentManager());
 		pager.setAdapter(pagerAdapter);
 		pager.setOffscreenPageLimit(4);

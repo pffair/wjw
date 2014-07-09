@@ -15,6 +15,15 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+     	<item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    
+    <style name="AnimationActivity" mce_bogus="1" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/anim_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/anim_exit</item>
+        <item name="android:activityCloseEnterAnimation">@anim/back_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/back_exit</item>
     </style>
 
 </resources>
