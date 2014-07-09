@@ -1,5 +1,6 @@
 package com.pangff.wjw;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -64,7 +65,9 @@ public class LoginActivity extends BaseActivity {
 	}
 	
 	private void goRegist(){
-		
+		Intent intent = new Intent();  
+        intent.setClass(LoginActivity.this, RegistActivity.class);  
+        LoginActivity.this.startActivity(intent); 
 	}
 	
 	@Override

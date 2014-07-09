@@ -1,12 +1,164 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="#FFFFFF00">
 
-    <TextView
+ 	   <TextView
         android:text="注册"
         android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+        android:layout_height="30dp" 
+        android:background="#FFFF00FF"/>
+    
+<!--          <LinearLayout  
+             android:orientation="vertical"
+             android:layout_width="match_parent"
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="10dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+ 			 android:layout_marginTop="10dp"
+ 			 android:layout_marginBottom="10dp"
+              android:background="#FFFFFFFF"> -->
+             
+             
+             <EditText
+                 android:id="@+id/tureNameE"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:gravity="center"
+                 android:text="真实姓名"/>
+             
+             <EditText
+                 android:id="@+id/vipNameE"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:gravity="center"
+                 android:text="会员姓名"/>
+             
+             <EditText
+                 android:id="@+id/phoneNumberE"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:gravity="center"
+                 android:text="手机号码"/>
+             
+             <EditText
+                 android:id="@+id/spreadNumberE"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:gravity="center"
+                 android:text="推广编号"/>
+                 
+<!--          </LinearLayout> -->
+         
+<!--          <LinearLayout 
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+ 			android:layout_marginBottom="10dp"
+            android:layout_weight="2"
+            android:background="#FFFFFFFF">
+          -->
+             <LinearLayout
+                 android:orientation="horizontal"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="1dp"
+                 android:layout_weight="1">
+                 
+             <TextView
+                 android:id="@+id/textStyleT"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="2"
+                 android:gravity="center"
+                 android:text="区域:"/>
+             
+             	<Spinner
+             	    android:id="@+id/spinnerStyle"
+             	    android:layout_width="match_parent"
+             	    android:layout_height="wrap_content"
+             	    android:layout_weight="1">
+             	</Spinner>
+             </LinearLayout>
+             
+             <EditText
+                 android:id="@+id/loginPasswordE"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:gravity="center"
+                 android:text="登录密码"/>
+             
+             <EditText
+                 android:id="@+id/checkPasswordE"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:gravity="center"
+                 android:text="查看密码"/>
+             
+             <EditText
+                 android:id="@+id/payPasswordE"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:gravity="center"
+                 android:text="支付密码"/>
+             
+             <EditText
+                 android:id="@+id/aPayPasswordE"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:gravity="center"
+                 android:text="激活人支付密码"/>
+             
+             <EditText
+                 android:id="@+id/aPersonNumberE"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:gravity="center"
+                 android:text="激活人编号"/>
+             
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1">
+            
+                 <TextView
+                 android:id="@+id/textStarT"   
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="2"
+                 android:gravity="center"
+                 android:text="级别:"/>
+             
+             	<Spinner
+             	    android:id="@+id/spinnerStar"
+             	    android:layout_width="match_parent"
+             	    android:layout_height="wrap_content"
+             	    android:layout_weight="1">
+             	</Spinner>
+        	</LinearLayout>
+<!--          </LinearLayout> -->
+         
+         <Button
+             android:id="@+id/registerB" 
+             android:layout_width="match_parent"
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="10dp"
+             android:layout_height="wrap_content"
+             android:text="注册"/>
+         
 </LinearLayout>
