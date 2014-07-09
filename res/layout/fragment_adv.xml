@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fg_find"
+     xmlns:titlebar="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+
+    <com.pangff.wjw.view.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleBarHeight"
+        titlebar:canBack="false"
+        titlebar:title="@string/fragment_adv" />
 
 </LinearLayout>

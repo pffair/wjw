@@ -261,7 +261,7 @@ public class UnderlinePageIndicator extends View implements PageIndicator {
     if (mViewPager == null) {
       throw new IllegalStateException("ViewPager has not been bound.");
     }
-    if(Math.abs(item-mCurrentPage)==2){
+    if(Math.abs(item-mCurrentPage)==3){
       setCurrentItem(1);
       setCurrentItem(item);
     }
