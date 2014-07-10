@@ -21,6 +21,8 @@
         android:focusable="true"
         android:ellipsize="marquee"
         android:singleLine="true"
+        android:paddingTop="2dp"
+        android:background="@color/list_item_bg"
         android:textColor="@android:color/black"
         android:focusableInTouchMode="true"
         android:layout_width="match_parent"
