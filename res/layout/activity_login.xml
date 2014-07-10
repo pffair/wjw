@@ -1,86 +1,101 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity="center"
+    android:background="@drawable/bg"
+    android:paddingTop="50dp"
     android:orientation="vertical" >
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher" />
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/logo_bg"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/menu_top_bg"
+        android:gravity="center"
         android:orientation="horizontal" >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:gravity="right"
+            android:layout_marginLeft="10dp"
+            android:gravity="right"
             android:text="@string/username" />
 
         <EditText
             android:id="@+id/userNameE"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:layout_marginRight="50dp"
+            android:background="@null"
+            android:paddingRight="2dp"
             android:singleLine="true" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/menu_bottom_bg"
         android:orientation="horizontal" >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
             android:gravity="right"
             android:text="@string/password" />
 
         <EditText
             android:id="@+id/passwordE"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:layout_marginRight="50dp"
+            android:background="@null"
+            android:paddingRight="2dp"
             android:singleLine="true" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
         android:orientation="vertical" >
 
         <Button
             android:id="@+id/loginB"
-            android:layout_gravity="center_horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/blue_btn_bg_selector"
             android:text="@string/login" />
 
         <Button
             android:id="@+id/registB"
-            android:layout_gravity="center_horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/blue_btn_bg_selector"
             android:text="@string/regist" />
 
         <TextView
             android:id="@+id/forgetPwdT"
-            android:layout_gravity="left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:textColor="@android:color/darker_gray"
             android:text="@string/forgetPwd" />
     </LinearLayout>
- </LinearLayout>
+
+</LinearLayout>

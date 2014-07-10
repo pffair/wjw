@@ -148,13 +148,13 @@ public class UnderlinePageIndicator extends View implements PageIndicator {
 //    Rect patchL = new Rect((int) paddingLeft, (int) (top), (int) left, (int) bottom);
 //    ninePatchL.draw(canvas, patchL);
 //
-//    Bitmap tabBR = BitmapFactory.decodeResource(getResources(),  R.drawable.tab_bg);
-//    NinePatch ninePatchR = new NinePatch(tabBR, tabBR.getNinePatchChunk(), null);
-//    Rect patchR =
-//        new Rect((int) right, (int) (top), (int) (paddingLeft + getWidth()), (int) bottom);
-//    ninePatchR.draw(canvas, patchR);
+    Bitmap tabBR = BitmapFactory.decodeResource(getResources(),  R.drawable.tab_bg);
+    NinePatch ninePatchR = new NinePatch(tabBR, tabBR.getNinePatchChunk(), null);
+    Rect patchR =
+        new Rect((int) paddingLeft, (int) (top), (int) (paddingLeft + getWidth()), (int) bottom);
+    ninePatchR.draw(canvas, patchR);
 
-    Bitmap tabS = BitmapFactory.decodeResource(getResources(), R.drawable.tab_bg);
+    Bitmap tabS = BitmapFactory.decodeResource(getResources(), R.drawable.tab_bg_pressed);
     NinePatch ninePatch = new NinePatch(tabS, tabS.getNinePatchChunk(), null);
     Rect rect_patch = new Rect((int) left, (int) top, (int) right, (int) bottom);
     ninePatch.draw(canvas, rect_patch);
