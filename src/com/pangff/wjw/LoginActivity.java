@@ -1,5 +1,6 @@
 package com.pangff.wjw;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,10 +9,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.pangff.wjw.autowire.AndroidView;
-import com.pangff.wjw.fragment.HomeFragment;
-import com.pangff.wjw.http.HttpRequest;
-import com.pangff.wjw.model.LoginRequest;
-import com.pangff.wjw.model.LoginResponse;
 
 public class LoginActivity extends BaseActivity {
 
@@ -67,6 +64,12 @@ public class LoginActivity extends BaseActivity {
 		MainActivity.invoteToMain(this);
 		
 
+	}
+	
+	public static void invotoLogin(BaseActivity context){
+		Intent intent = new Intent(context,LoginActivity.class);
+		context.startActivity(intent);
+		context.finish();
 	}
 	
 	private void goRegist(){
