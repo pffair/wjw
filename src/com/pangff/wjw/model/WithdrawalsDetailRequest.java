@@ -1,9 +1,8 @@
 package com.pangff.wjw.model;
 
-import java.util.List;
-
+import com.pangff.wjw.util.UserInfoUtil;
+import com.pangff.wjw.util.XStreamTranslator;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
 @XStreamAlias("root")
 public class WithdrawalsDetailRequest extends BaseBean{
@@ -13,6 +12,13 @@ public class WithdrawalsDetailRequest extends BaseBean{
 	
 	public static class Body{
 		
+	}
+
+	public String getParams(String method) {
+		this.method = method;
+		this.body = new Body();
+		this.userid = UserInfoUtil.getInstanse().getUserId();
+		return XStreamTranslator.getInstance().toXMLString(this);
 	}
 
 }

@@ -1,6 +1,5 @@
 package com.pangff.wjw;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +8,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.http.HttpRequest;
+import com.pangff.wjw.model.LoginRequest;
+import com.pangff.wjw.model.LoginResponse;
+import com.pangff.wjw.model.ResponseState;
+import com.pangff.wjw.util.ToastUtil;
+import com.pangff.wjw.util.UserInfoUtil;
 
 public class LoginActivity extends BaseActivity {
 
@@ -29,6 +34,8 @@ public class LoginActivity extends BaseActivity {
 
 	
 	public static final String METHOD_LOGIN = "login";
+	String userName;
+	String passord;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,12 +65,10 @@ public class LoginActivity extends BaseActivity {
 	}
 	
 	private void doLogin(){
-		//String xml = new LoginRequest().getParams(METHOD_LOGIN,userNameE.getText().toString(),passwordE.getText().toString());
-		//new HttpRequest<LoginResponse>().postDataXml(METHOD_LOGIN, xml, this,LoginResponse.class);
-		
-		MainActivity.invoteToMain(this);
-		
-
+		this.userName = userNameE.getText().toString();
+		this.passord = passwordE.getText().toString();
+		String xml = new LoginRequest().getParams(METHOD_LOGIN,userName,passord);
+		new HttpRequest<LoginResponse>().postDataXml(METHOD_LOGIN, xml, this,LoginResponse.class);
 	}
 	
 	public static void invotoLogin(BaseActivity context){
@@ -80,9 +85,15 @@ public class LoginActivity extends BaseActivity {
 	public void onSuccess(String method, Object result) {
 		super.onSuccess(method, result);
 		if(method.equals(METHOD_LOGIN)){
-			MainActivity.invoteToMain(this);
+			LoginResponse loginResponse = (LoginResponse) result;
+			if(loginResponse.body.returns.equals(ResponseState.SUCCESS)){
+				MainActivity.invoteToMain(this);
+				finish();
+				UserInfoUtil.getInstanse().saveLoginInfo(loginResponse.userid, passord, userName);
+			}else{
+				ToastUtil.show(loginResponse.body.message);
+			}
 		}
-		
 	}
 
 }

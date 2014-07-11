@@ -15,26 +15,27 @@ import com.pangff.wjw.R;
 import com.pangff.wjw.autowire.AndroidAutowire;
 import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.model.Img;
+import com.pangff.wjw.model.WithdrawalsDetailResponse.Body.WithdrawalsDetail;
 import com.pangff.wjw.view.MImageView;
 
-public class AvdListAdapter extends BaseAdapter {
+public class WithDrawalsDetailAdapter extends BaseAdapter {
 
-	List<Img> advList = new ArrayList<Img>();
+	List<WithdrawalsDetail> withdrawalsDetailList = new ArrayList<WithdrawalsDetail>();
 	LayoutInflater mInflater;
 
-	public AvdListAdapter(Context context) {
+	public WithDrawalsDetailAdapter(Context context) {
 		this.mInflater = LayoutInflater.from(context);
 	}
 	
-	public void refresh(List<Img> list){
-		advList.clear();
-		advList.addAll(list);
+	public void refresh(List<WithdrawalsDetail> list){
+		withdrawalsDetailList.clear();
+		withdrawalsDetailList.addAll(list);
 		notifyDataSetChanged();
 	}
 
 	@Override
 	public int getCount() {
-		return advList.size();
+		return withdrawalsDetailList.size();
 	}
 
 	@Override
@@ -56,17 +57,18 @@ public class AvdListAdapter extends BaseAdapter {
 		// 如果缓存convertView为空，则需要创建View
 		if (convertView == null) {
 			// 根据自定义的Item布局加载布局
-			convertView = mInflater.inflate(R.layout.list_item_avd, null);
+			convertView = mInflater.inflate(R.layout.list_item_withdrawals_detail, null);
 			holder = new ViewHolder(convertView);
 			// 将设置好的布局保存到缓存中，并将其设置在Tag里，以便后面方便取出Tag
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-		Img img = advList.get(position);
-		BaseApplication.self.IMAGE_CACHE.get(img.imgs,holder.picImage);
-		holder.picImage.setDefaultImageId(R.drawable.ic_launcher);
-		holder.display.setText(img.title);
+		WithdrawalsDetail withdrawalsDetail = withdrawalsDetailList.get(position);
+		holder.amountT.setText(withdrawalsDetail.jin);
+		holder.timeT.setText(withdrawalsDetail.riqi);
+		holder.feeT.setText(withdrawalsDetail.sxf);
+		holder.bankT.setText(withdrawalsDetail.bank);
 		return convertView;
 	}
 	
@@ -75,11 +77,17 @@ public class AvdListAdapter extends BaseAdapter {
 			AndroidAutowire.autowire(root, this);
 		}
 		
-		@AndroidView(R.id.picImage)
-		MImageView picImage;
+		@AndroidView(R.id.amountT)
+		TextView amountT;
 		
-		@AndroidView(R.id.display)
-		TextView display;
+		@AndroidView(R.id.timeT)
+		TextView timeT;
+		
+		@AndroidView(R.id.feeT)
+		TextView feeT;
+		
+		@AndroidView(R.id.bankT)
+		TextView bankT;
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.pangff.wjw.model;
 
+import com.pangff.wjw.util.UserInfoUtil;
 import com.pangff.wjw.util.XStreamTranslator;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
@@ -13,9 +14,9 @@ public class TopGalleryRequest extends BaseBean{
 		
 	}
 	
-	public  String getParams(String method,String userid){
+	public  String getParams(String method){
 		this.method = method;
-		this.userid = userid;
+		this.userid = UserInfoUtil.getInstanse().getUserId();
 		this.body = new Body();
 		return XStreamTranslator.getInstance().toXMLString(this);
 	}
