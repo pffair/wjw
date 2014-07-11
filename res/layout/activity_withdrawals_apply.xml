@@ -12,6 +12,8 @@
 	    titlebar:rightText="@string/withdrawals_explain"
 	    titlebar:title="@string/withdrawals_apply" />
     
+     
+     
 	<LinearLayout
 	    android:orientation="horizontal"
 	    android:layout_width="match_parent"

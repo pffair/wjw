@@ -11,8 +11,7 @@
         titlebar:canBack="false"
         titlebar:title="@string/fragment_account" />
     
-
-    
+        
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -203,7 +202,7 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="奖励明细"/>
-     
+
      <com.pangff.wjw.vindicator.UnderlinePageIndicator
         android:id="@+id/indicator"
         android:layout_width="fill_parent"
