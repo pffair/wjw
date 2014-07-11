@@ -94,7 +94,6 @@ public class LoginActivity extends BaseActivity {
 				ToastUtil.show(loginResponse.body.message);
 			}
 		}
-		
 	}
 
 }

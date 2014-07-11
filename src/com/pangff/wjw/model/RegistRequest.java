@@ -1,40 +1,48 @@
 package com.pangff.wjw.model;
 
+import com.pangff.wjw.model.LoginRequest.Body;
+import com.pangff.wjw.util.XStreamTranslator;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("root")
 public class RegistRequest extends BaseBean{
 	
 	@XStreamAlias("body")
-	Body body;
+	public Body body;
 	
 	public static class Body{
 		@XStreamAlias("zsname")
-		String zsname;
+		public String zsname;
 		
 		@XStreamAlias("memname")
-		String memname;
+		public String memname;
 		
 		@XStreamAlias("tel")
-		String tel;
+		public String tel;
 		
 		@XStreamAlias("jibie")
-		String jibie;
+		public String jibie;
 		
 		@XStreamAlias("tuijian")
-		String tuijian;
+		public String tuijian;
 		
 		@XStreamAlias("qu")
-		String qu;
+		public String qu;
 		
 		@XStreamAlias("dlpass")
-		String dlpass;
+		public String dlpass;
 		
 		@XStreamAlias("pass2")
-		String pass2;
+		public String pass2;
 		
 		@XStreamAlias("paypass")
-		String paypass;
+		public String paypass;
+	}
+	
+	public  String getParams(String method,Body body){
+		this.method = method;
+		this.body = body;
+		return XStreamTranslator.getInstance().toXMLString(this);
 	}
 
 }

@@ -289,6 +289,7 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
+                android:onClick="myClick"
                 android:background="@drawable/blue_btn_bg_selector"
                 android:text="注册" />
         </LinearLayout>
