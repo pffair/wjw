@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/titleBarHeight"
             titlebar:canBack="true"
+            titlebar:rightText="@string/login"
             titlebar:title="@string/regist" />
 
         <EditText
