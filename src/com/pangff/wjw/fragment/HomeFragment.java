@@ -2,7 +2,6 @@ package com.pangff.wjw.fragment;
 
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,8 +33,6 @@ public class HomeFragment extends PagerFragment {
 	AutoScrollViewPager viewPager;
 
 	View headerView;
-	//private List<TopGallery> topGallerys = new ArrayList<TopGallery>();
-	//private List<Adv> advList = new ArrayList<Adv>();
 
 	ImagePagerAdapter topGalleryAdapter;
 	AvdListAdapter avdAdapter;
@@ -73,12 +70,12 @@ public class HomeFragment extends PagerFragment {
 	}
 	
 	private void requestTopGallery(){
-		String xml = new TopGalleryRequest().getParams(METHOD_TOPGALLERY, "1");
+		String xml = new TopGalleryRequest().getParams(METHOD_TOPGALLERY);
 		new HttpRequest<TopGalleryResponse>().postDataXml(METHOD_TOPGALLERY, xml, this,TopGalleryResponse.class);
 	}
 	
 	private void requestAdvList(){
-		String xml = new AdvRequest().getParams(METHOD_ADVLIST, "1");
+		String xml = new AdvRequest().getParams(METHOD_ADVLIST);
 		new HttpRequest<AdvResponse>().postDataXml(METHOD_ADVLIST, xml, this,AdvResponse.class);
 	}
 

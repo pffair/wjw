@@ -14,7 +14,6 @@ import com.pangff.wjw.BaseApplication;
 import com.pangff.wjw.R;
 import com.pangff.wjw.autowire.AndroidAutowire;
 import com.pangff.wjw.autowire.AndroidView;
-import com.pangff.wjw.model.Adv;
 import com.pangff.wjw.model.Img;
 import com.pangff.wjw.view.MImageView;
 

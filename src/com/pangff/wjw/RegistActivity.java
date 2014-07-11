@@ -18,8 +18,6 @@ public class RegistActivity extends BaseActivity{
 	     private ArrayAdapter<String> adapterStyle,adapterStar;
 	     
 	     
-	     @AndroidView(R.id.textStyleT)
-	     TextView textStyle;
 	     
 	     @AndroidView(R.id.textStarT)
 	     TextView textStarT;	
@@ -71,7 +69,6 @@ public class RegistActivity extends BaseActivity{
 	class SpinnerSelectedListener implements OnItemSelectedListener{
 		        public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
 		                long arg3) {
-		        	textStyle.setText("区域：");
 		        }
 		        public void onNothingSelected(AdapterView<?> arg0) {
 		        }
@@ -80,7 +77,6 @@ public class RegistActivity extends BaseActivity{
 	class SpinnerStarListener implements OnItemSelectedListener{
         public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
                 long arg3) {
-        	textStarT.setText("星级:");
         }
         public void onNothingSelected(AdapterView<?> arg0) {
         }

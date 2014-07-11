@@ -9,25 +9,25 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 public class WithdrawalsDetailResponse extends BaseBean {
 
 	@XStreamAlias("body")
-	Body body;
+	public Body body;
 
 	public static class Body {
 
 		@XStreamImplicit(itemFieldName = "list")
-		List<WithdrawalsDetail> list;
+		public List<WithdrawalsDetail> list;
 
 		public static class WithdrawalsDetail {
 			@XStreamAlias("jin")
-			String jin;
+			public String jin;
 
 			@XStreamAlias("sxf")
-			String sxf;
+			public String sxf;
 
 			@XStreamAlias("riqi")
-			String riqi;
+			public String riqi;
 
 			@XStreamAlias("bank")
-			String bank;
+			public String bank;
 		}
 	}
 }

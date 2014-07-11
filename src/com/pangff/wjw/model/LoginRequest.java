@@ -1,6 +1,5 @@
 package com.pangff.wjw.model;
 
-import com.pangff.wjw.model.TopGalleryRequest.Body;
 import com.pangff.wjw.util.XStreamTranslator;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
