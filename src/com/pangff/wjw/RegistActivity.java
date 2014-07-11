@@ -23,7 +23,7 @@ import com.pangff.wjw.util.UserInfoUtil;
 
 public class RegistActivity extends BaseActivity {
 	public static final String METHOD_ZHUCE = "zhuce";
-	private static final String[] style = { "A", "B", "C", "D", "其他" };
+	private static final String[] style = { "A区", "B区"};
 	private static final String[] star = { "1星", "2星", "3星" };
 	private ArrayAdapter<String> adapterStyle, adapterStar;
 
@@ -138,11 +138,11 @@ public class RegistActivity extends BaseActivity {
 		registRequest.body.zsname = tureNameE.getText().toString();
 		registRequest.body.tel = phoneNumberE.getText().toString();
 		registRequest.body.dlpass = loginPasswordE.getText().toString();
-		registRequest.body.jibie = starS;
+		registRequest.body.jibie = starS.substring(0, 1);
 		registRequest.body.memname = vipNameE.getText().toString();
 		registRequest.body.pass2 = checkPasswordE.getText().toString();
 		registRequest.body.paypass = payPasswordE.getText().toString();
-		registRequest.body.qu = quS;
+		registRequest.body.qu = quS.substring(0, 1);
 		registRequest.body.tuijian = spreadNumberE.getText().toString();
 		
 		userName = vipNameE.getText().toString();
