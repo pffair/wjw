@@ -138,7 +138,7 @@
                 android:gravity="center_vertical"
                 android:layout_marginLeft="5dp"
                 android:text="$钱包余额" 
-                android:drawableLeft="@drawable/icon_package"/>
+                android:drawableLeft="@drawable/icon_package_light"/>
 
             <TextView
                 android:id="@+id/showRemainT"

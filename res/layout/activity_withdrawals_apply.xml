@@ -43,7 +43,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:paddingLeft="30dp"
+                        android:paddingLeft="33dp"
                         android:text="账户名称" />
 
                     <EditText
@@ -63,7 +63,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:paddingLeft="30dp"
+                        android:paddingLeft="33dp"
                         android:text="$钱包余额" />
 
                     <TextView
@@ -93,7 +93,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:paddingLeft="30dp"
+                        android:paddingLeft="33dp"
                         android:text="开户银行" />
 
                     <EditText
@@ -113,7 +113,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:paddingLeft="30dp"
+                        android:drawableLeft="@drawable/icon_package_light"
                         android:text="支行名称" />
 
                     <EditText
@@ -133,7 +133,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:paddingLeft="30dp"
+                        android:drawableLeft="@drawable/icon_bankcard"
                         android:text="银行帐号" />
 
                     <EditText
@@ -161,7 +161,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:paddingLeft="30dp"
+                        android:paddingLeft="33dp"
                         android:text="$提现金额" />
 
                     <EditText
@@ -181,7 +181,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:paddingLeft="30dp"
+                        android:paddingLeft="33dp"
                         android:text="支付密码" />
 
                     <EditText
