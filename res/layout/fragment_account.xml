@@ -12,9 +12,24 @@
         titlebar:title="@string/fragment_account" />
     
         
+    <ScrollView
+        android:id="@+id/sView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/page_bg"
+        android:scrollbars="vertical" >
+        
+    <LinearLayout 
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    
+        
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/menu_top_bg"
+        android:layout_marginTop="1dp">
         
         <ImageView
             android:id="@+id/hostIamgeI"
@@ -99,109 +114,172 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
-        
-        <ImageView
-            android:id="@+id/moneyI"
-            android:layout_width="10dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#FFFFFF00"/>
-        
-        <TextView
-            android:id="@+id/remainT"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:gravity="center_vertical"
-            android:text="钱包余额"/>
-        
-         <TextView
-            android:id="@+id/showRemainT"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:text="0.00"/>
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_top_bg"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/moneyI"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FFFFFF00" />
+
+            <TextView
+                android:id="@+id/remainT"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:text="钱包余额" />
+
+            <TextView
+                android:id="@+id/showRemainT"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="0.00" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_top_bg"
+            android:layout_marginTop="1dp"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/integralT"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="50dp"
+                android:text="可用积分" />
+
+            <TextView
+                android:id="@+id/showIntegralT"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="171" />
+        </LinearLayout>
     </LinearLayout>
+
     
-     <LinearLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_weight="1">
-
-        <TextView
-            android:id="@+id/integralT"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:gravity="center_vertical"
-            android:text="可用积分"/>
-        
-         <TextView
-            android:id="@+id/showIntegralT"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:text="171"/>
-    </LinearLayout>
-    
      <TextView
-            android:id="@+id/applyMoneyT"
+            android:id="@+id/withdrawalsApplyT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
+            android:background="@drawable/menu_top_bg"
+            android:paddingLeft="50dp"
             android:text="申请提现"/>
      
      <TextView
-            android:id="@+id/moneyDetailT"
+            android:id="@+id/withdrawalsDetailT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/menu_top_bg"
+            android:paddingLeft="50dp"
             android:text="提现明细"/>
      
-     <TextView
+     </LinearLayout>
+     
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <TextView
             android:id="@+id/vipTransferT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="会员转帐"/>
-     
-     <TextView
+            android:paddingLeft="50dp"
+            android:background="@drawable/menu_top_bg"
+            android:text="会员转帐" />
+
+        <TextView
             android:id="@+id/transferDetailT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="转帐明细"/>
-     
+            android:paddingLeft="50dp"
+            android:background="@drawable/menu_top_bg"
+            android:layout_marginTop="1dp"
+            android:text="转帐明细" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
 
-     
-     <TextView
+        <TextView
             android:id="@+id/exchangeT"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/menu_top_bg"
             android:gravity="center_vertical"
-            android:text="兑换积分"/>
-     
-     <TextView
+            android:paddingLeft="50dp"
+            android:text="兑换积分" />
+
+        <TextView
             android:id="@+id/exchangeDtailT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="兑换明细"/>
-     
-     <TextView
+            android:layout_marginTop="1dp"
+            android:paddingLeft="50dp"
+            android:background="@drawable/menu_top_bg"
+            android:text="兑换明细" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <TextView
             android:id="@+id/awardDtailT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="奖励明细"/>
+            android:paddingLeft="50dp"
+            android:background="@drawable/menu_top_bg"
+            android:text="奖励明细" />
+    </LinearLayout>
+    
+   </LinearLayout> 
+    </ScrollView>
 
      <com.pangff.wjw.vindicator.UnderlinePageIndicator
         android:id="@+id/indicator"

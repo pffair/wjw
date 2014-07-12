@@ -60,12 +60,12 @@ public class AdvFragment extends PagerFragment {
 	}
 	
 	private void requestTopGallery(){
-		String xml = new TopGalleryRequest().getParams(METHOD_TOPGALLERY, "1");
+		String xml = new TopGalleryRequest().getParams(METHOD_TOPGALLERY);
 		new HttpRequest<TopGalleryResponse>().postDataXml(METHOD_TOPGALLERY, xml, this,TopGalleryResponse.class);
 	}
 	
 	private void requestAdvList(){
-		String xml = new AdvRequest().getParams(METHOD_ADVLIST, "1");
+		String xml = new AdvRequest().getParams(METHOD_ADVLIST);
 		new HttpRequest<AdvResponse>().postDataXml(METHOD_ADVLIST, xml, this,AdvResponse.class);
 	}
 

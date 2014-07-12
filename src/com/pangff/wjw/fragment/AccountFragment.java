@@ -18,11 +18,11 @@ import com.pangff.wjw.view.OnOneOffClickListener;
 public class AccountFragment extends PagerFragment {
 
 
-	@AndroidView(R.id.applyMoneyT)
-	TextView applyMoneyT;
+	@AndroidView(R.id.withdrawalsApplyT)
+	TextView withdrawalsApplyT;
 	
-	@AndroidView(R.id.moneyDetailT)
-	TextView moneyDetailT;
+	@AndroidView(R.id.withdrawalsDetailT)
+	TextView withdrawalsDetailT;
 	
 	@AndroidView(R.id.vipTransferT)
 	TextView vipTransferT;
