@@ -65,6 +65,7 @@ public class LoginActivity extends BaseActivity {
 	}
 	
 	private void doLogin(){
+	//	MainActivity.invoteToMain(this);
 		this.userName = userNameE.getText().toString();
 		this.passord = passwordE.getText().toString();
 		String xml = new LoginRequest().getParams(METHOD_LOGIN,userName,passord);

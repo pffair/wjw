@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="@drawable/menu_top_bg" >
+                    android:background="@drawable/menu_bottom_bg" >
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -107,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="@drawable/menu_top_bg" >
+                    android:background="@drawable/menu_center_bg" >
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -127,7 +127,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="@drawable/menu_top_bg" >
+                    android:background="@drawable/menu_bottom_bg" >
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -175,11 +175,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="@drawable/menu_top_bg" >
+                    android:background="@drawable/menu_bottom_bg" >
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:gravity="center"
                         android:paddingLeft="30dp"
                         android:text="支付密码" />
@@ -187,7 +187,7 @@
                     <EditText
                         android:id="@+id/payPasswordE"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="match_parent" />
                 </LinearLayout>
             </LinearLayout>
 

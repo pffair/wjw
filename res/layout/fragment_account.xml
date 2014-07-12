@@ -29,7 +29,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/menu_top_bg"
-        android:layout_marginTop="1dp">
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
         
         <ImageView
             android:id="@+id/hostIamgeI"
@@ -115,6 +117,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_weight="1"
         android:orientation="vertical" >
 
@@ -124,12 +128,7 @@
             android:background="@drawable/menu_top_bg"
             android:layout_weight="1" >
 
-            <ImageView
-                android:id="@+id/moneyI"
-                android:layout_width="10dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#FFFFFF00" />
+ 
 
             <TextView
                 android:id="@+id/remainT"
@@ -137,7 +136,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:gravity="center_vertical"
-                android:text="钱包余额" />
+                android:layout_marginLeft="5dp"
+                android:text="$钱包余额" 
+                android:drawableLeft="@drawable/icon_package"/>
 
             <TextView
                 android:id="@+id/showRemainT"
@@ -150,7 +151,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/menu_top_bg"
+            android:background="@drawable/menu_bottom_bg"
             android:layout_marginTop="1dp"
             android:layout_weight="1" >
 
@@ -160,8 +161,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:gravity="center_vertical"
-                android:layout_marginLeft="50dp"
-                android:text="可用积分" />
+                android:layout_marginLeft="30dp"
+                android:text="$可用积分" />
 
             <TextView
                 android:id="@+id/showIntegralT"
@@ -178,6 +179,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_weight="1">
      <TextView
             android:id="@+id/withdrawalsApplyT"
@@ -186,7 +189,7 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:background="@drawable/menu_top_bg"
-            android:paddingLeft="50dp"
+            android:paddingLeft="30dp"
             android:text="申请提现"/>
      
      <TextView
@@ -196,8 +199,8 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:layout_marginTop="1dp"
-            android:background="@drawable/menu_top_bg"
-            android:paddingLeft="50dp"
+            android:background="@drawable/menu_bottom_bg"
+            android:paddingLeft="30dp"
             android:text="提现明细"/>
      
      </LinearLayout>
@@ -206,6 +209,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_weight="1"
         android:orientation="vertical" >
 
@@ -215,7 +220,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:paddingLeft="50dp"
+            android:paddingLeft="30dp"
             android:background="@drawable/menu_top_bg"
             android:text="会员转帐" />
 
@@ -225,8 +230,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:paddingLeft="50dp"
-            android:background="@drawable/menu_top_bg"
+            android:paddingLeft="30dp"
+            android:background="@drawable/menu_bottom_bg"
             android:layout_marginTop="1dp"
             android:text="转帐明细" />
     </LinearLayout>
@@ -235,6 +240,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_weight="1"
         android:orientation="vertical" >
 
@@ -245,7 +252,7 @@
             android:layout_weight="1"
             android:background="@drawable/menu_top_bg"
             android:gravity="center_vertical"
-            android:paddingLeft="50dp"
+            android:paddingLeft="30dp"
             android:text="兑换积分" />
 
         <TextView
@@ -255,8 +262,8 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:layout_marginTop="1dp"
-            android:paddingLeft="50dp"
-            android:background="@drawable/menu_top_bg"
+            android:paddingLeft="30dp"
+            android:background="@drawable/menu_bottom_bg"
             android:text="兑换明细" />
     </LinearLayout>
     
@@ -264,6 +271,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_weight="1"
         android:orientation="vertical" >
 
@@ -273,7 +282,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:paddingLeft="50dp"
+            android:paddingLeft="30dp"
             android:background="@drawable/menu_top_bg"
             android:text="奖励明细" />
     </LinearLayout>
