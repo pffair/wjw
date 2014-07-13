@@ -38,7 +38,7 @@ public class UserInfoUtil {
 	}
 
 	public String getUserId() {
-		return sharedPreferences.getString(KEY_USERID, "");
+		return sharedPreferences.getString(KEY_USERID, "1");
 	}
 
 	public void setUserId(String userid) {
