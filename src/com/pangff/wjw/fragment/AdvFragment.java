@@ -4,15 +4,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
 
+import com.pangff.wjw.AdvDetailActivity;
+import com.pangff.wjw.BaseActivity;
 import com.pangff.wjw.R;
 import com.pangff.wjw.adapter.AvdListAdapter;
 import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.AdvRequest;
 import com.pangff.wjw.model.AdvResponse;
+import com.pangff.wjw.model.Img;
 import com.pangff.wjw.view.LoadingView;
 
 /**
@@ -47,6 +52,15 @@ public class AdvFragment extends PagerFragment {
 		super.onViewCreated(view, savedInstanceState);
 		avdAdapter = new AvdListAdapter(this.getActivity());
 		listViewAdv.setAdapter(avdAdapter);
+		listViewAdv.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				Img img = (Img) parent.getAdapter().getItem(position);
+				AdvDetailActivity.invotoToAdvDetail((BaseActivity)AdvFragment.this.getActivity(),img.id);
+			}
+		});
 	}
 
 	protected void initData() {
