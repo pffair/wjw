@@ -1,6 +1,5 @@
 package com.pangff.wjw.model;
 
-import com.pangff.wjw.model.AdvDetailRequest.Body;
 import com.pangff.wjw.util.UserInfoUtil;
 import com.pangff.wjw.util.XStreamTranslator;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -17,10 +16,11 @@ public class CollectRequest extends BaseBean {
 		public String id;
 	}
 
-	public String getParams(String method) {
+	public String getParams(String method,String id) {
 		this.method = method;
 		this.userid = UserInfoUtil.getInstanse().getUserId();
 		this.body = new Body();
+		this.body.id = id;
 		return XStreamTranslator.getInstance().toXMLString(this);
 	}
 }

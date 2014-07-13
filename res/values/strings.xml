@@ -7,6 +7,8 @@
     <string name="fragment_home">首页</string>
     <string name="fragment_more">更多</string>
     <string name="fragment_adv">广告列表</string>
+    <string name="adv_detail">广告详情</string>
+    <string name="adv_collection">收取</string>
 
     <string name="username">账号：</string>
     <string name="forgetPwd">忘记密码？</string>
