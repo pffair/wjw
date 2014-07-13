@@ -12,13 +12,12 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
-import android.widget.RelativeLayout.LayoutParams;
 import cn.trinea.android.common.entity.FailedReason;
 import cn.trinea.android.common.service.impl.ImageCache;
 import cn.trinea.android.common.service.impl.ImageMemoryCache.OnImageCallbackListener;
 import cn.trinea.android.common.service.impl.RemoveTypeLastUsedTimeFirst;
 
+import com.pangff.wjw.util.StringUtil;
 import com.pangff.wjw.view.MImageView;
 
 import de.greenrobot.event.EventBus;
@@ -36,14 +35,20 @@ public class BaseApplication extends Application {
 			.newFixedThreadPool(5);
 	public final String TAG_CACHE = "image_cache";
 	/** cache folder path which be used when saving images **/
-	public final String DEFAULT_CACHE_FOLDER = new StringBuilder()
+	public  String DEFAULT_CACHE_FOLDER = new StringBuilder()
 			.append(Environment.getExternalStorageDirectory().getAbsolutePath())
 			.append(File.separator).append("pangff").append(File.separator)
 			.append("wjw").append(File.separator).append("ImageCache")
 			.toString();
 	/** icon cache **/
 	public ImageCache IMAGE_CACHE;
-	
+
+	public String getImgDir() {
+		if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+			DEFAULT_CACHE_FOLDER = BaseApplication.self.getDir("ImageCache", 0).getAbsolutePath();
+		}
+		return DEFAULT_CACHE_FOLDER;
+	}
 
 	@Override
 	public void onCreate() {
@@ -57,7 +62,7 @@ public class BaseApplication extends Application {
 	private void initImageCache() {
 		IMAGE_CACHE.initData(this, TAG_CACHE);
 		IMAGE_CACHE.setContext(this);
-		IMAGE_CACHE.setCacheFolder(DEFAULT_CACHE_FOLDER);
+		IMAGE_CACHE.setCacheFolder(getImgDir());
 		OnImageCallbackListener imageCallBack = new OnImageCallbackListener() {
 			@Override
 			public void onGetSuccess(String imageUrl, Bitmap loadedImage,
@@ -69,11 +74,11 @@ public class BaseApplication extends Application {
 					if (!isInCache) {
 						imageView.startAnimation(getInAlphaAnimation(2000));
 					}
-//					LayoutParams imageParams = (LayoutParams) imageView
-//							.getLayoutParams();
-//					imageParams.height = imageParams.width
-//							* loadedImage.getHeight() / loadedImage.getWidth();
-//					imageView.setScaleType(ScaleType.FIT_XY);
+					// LayoutParams imageParams = (LayoutParams) imageView
+					// .getLayoutParams();
+					// imageParams.height = imageParams.width
+					// * loadedImage.getHeight() / loadedImage.getWidth();
+					// imageView.setScaleType(ScaleType.FIT_XY);
 				}
 			}
 
@@ -98,12 +103,14 @@ public class BaseApplication extends Application {
 			@Override
 			public void onGetNotInCache(String imageUrl, View view) {
 				if (view != null && view instanceof MImageView) {
-					((MImageView) view).setImageResource(((MImageView) view).getDefaultImageId());
+					((MImageView) view).setImageResource(((MImageView) view)
+							.getDefaultImageId());
 				}
 			}
 		};
 		IMAGE_CACHE.setOnImageCallbackListener(imageCallBack);
-		IMAGE_CACHE.setCacheFullRemoveType(new RemoveTypeLastUsedTimeFirst<Bitmap>());
+		IMAGE_CACHE
+				.setCacheFullRemoveType(new RemoveTypeLastUsedTimeFirst<Bitmap>());
 		IMAGE_CACHE.setHttpReadTimeOut(10000);
 		IMAGE_CACHE.setOpenWaitingQueue(true);
 		IMAGE_CACHE.setValidTime(-1);

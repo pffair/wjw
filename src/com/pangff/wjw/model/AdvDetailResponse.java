@@ -6,22 +6,22 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 public class AdvDetailResponse extends BaseBean{
 	
 	@XStreamAlias("body")
-	Body body;
+	public Body body;
 	
 	public static class Body{
 		
 		@XStreamAlias("img")
-		AdvDetail img;
+		public AdvDetail img;
 		
 		public static class AdvDetail{
 			@XStreamAlias("imgbig")
-			String imgbig;
+			public String imgbig;
 			
 			@XStreamAlias("title")
-			String title;
+			public String title;
 			
 			@XStreamAlias("content")
-			String content;
+			public String content;
 		}
 	}
 	

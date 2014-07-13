@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
 
+import com.pangff.wjw.BaseApplication;
 import com.pangff.wjw.R;
 import com.pangff.wjw.adapter.AvdListAdapter;
 import com.pangff.wjw.adapter.ImagePagerAdapter;
@@ -18,6 +19,7 @@ import com.pangff.wjw.model.AdvRequest;
 import com.pangff.wjw.model.AdvResponse;
 import com.pangff.wjw.model.TopGalleryRequest;
 import com.pangff.wjw.model.TopGalleryResponse;
+import com.pangff.wjw.view.LoadingView;
 import com.pangff.wjw.vindicator.CirclePageIndicator;
 
 /**
@@ -30,9 +32,14 @@ public class HomeFragment extends PagerFragment {
 	@AndroidView(R.id.listView)
 	ListView listView;
 
+	
+	@AndroidView(R.id.homeRootView)
+	ViewGroup homeRootView;
+	
+	
 	AutoScrollViewPager viewPager;
 
-	View headerView;
+	ViewGroup headerView;
 
 	ImagePagerAdapter topGalleryAdapter;
 	AvdListAdapter avdAdapter;
@@ -41,6 +48,9 @@ public class HomeFragment extends PagerFragment {
 	
 	public static final String METHOD_TOPGALLERY = "sygg";
 	public static final String METHOD_ADVLIST = "guanggao";
+	
+	LoadingView listLoadingView;
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -50,7 +60,7 @@ public class HomeFragment extends PagerFragment {
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
-		headerView = LayoutInflater.from(this.getActivity()).inflate(
+		headerView = (ViewGroup) LayoutInflater.from(this.getActivity()).inflate(
 				R.layout.home_list_header, null);
 		listView.addHeaderView(headerView);
 		viewPager = (AutoScrollViewPager) headerView
@@ -65,8 +75,11 @@ public class HomeFragment extends PagerFragment {
 	}
 
 	protected void initData() {
+		listLoadingView = new LoadingView(this.getActivity());
+		listLoadingView.addLoadingTo(homeRootView);
+		isFinishAll = 0;
+		runText.setVisibility(View.GONE);
 		requestTopGallery();
-		requestAdvList();
 	}
 	
 	private void requestTopGallery(){
@@ -90,6 +103,7 @@ public class HomeFragment extends PagerFragment {
 		viewPager.startAutoScroll();
 		runText.setText(Html.fromHtml(topGallery.body.gundong));
 		runText.setSelected(true);
+		runText.setVisibility(View.VISIBLE);
 	}
 
 	@Override
@@ -110,8 +124,12 @@ public class HomeFragment extends PagerFragment {
 	public void onFailure(String mothod,String errorMsg) {
 		super.onFailure(mothod,errorMsg);
 		//根据返回的method进行相应操作
+		
+		
+		 
 	}
 	
+	int isFinishAll = 0;
 	@Override
 	public void onSuccess(String mothod,Object result) {
 		super.onSuccess(mothod,result);
@@ -119,10 +137,20 @@ public class HomeFragment extends PagerFragment {
 		if(METHOD_TOPGALLERY.equals(mothod)){
 			TopGalleryResponse topGallery = (TopGalleryResponse) result;
 			showGalleryData(topGallery);
+			isFinishAll ++;
+			requestAdvList();
 		}
 		if(METHOD_ADVLIST.equals(mothod)){
 			AdvResponse advResponse = (AdvResponse) result;
 			showAdvList(advResponse);
+			isFinishAll++;
+		}
+		hideLoadingView();
+	}
+	
+	private void hideLoadingView(){
+		if(isFinishAll>=2){
+			listLoadingView.removeLoadingFrom(homeRootView);
 		}
 	}
 }
