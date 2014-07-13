@@ -74,7 +74,7 @@ public class ImagePagerAdapter extends RecyclingPagerAdapter {
         }
         String url = imageIdList.get(getPosition(position));
         holder.imageView.setScaleType(ScaleType.CENTER_CROP);
-        holder.imageView.setDefaultImageId(R.drawable.ic_launcher);
+        holder.imageView.setDefaultImageId(R.drawable.top_default);
         BaseApplication.self.IMAGE_CACHE.get(url,holder.imageView);
         return view;
     }

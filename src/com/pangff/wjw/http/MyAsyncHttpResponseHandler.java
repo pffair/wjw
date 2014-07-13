@@ -42,6 +42,7 @@ public class MyAsyncHttpResponseHandler<T> extends AsyncHttpResponseHandler {
 	}
 
 	protected Object parseResponse(String res) throws Throwable {
+		LogUtil.debug("contentdd:"+res);
 		return XStreamTranslator.getInstance().toObject(res, cls);
 	}
 

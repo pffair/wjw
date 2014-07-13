@@ -17,7 +17,7 @@ public class XStreamTranslator {
 	 * @param object
 	 * @return
 	 */
-	public String toXMLString(Object object) {
+	public synchronized String toXMLString(Object object) {
 		//xstream.alias( "root" , TopGalleryRequest.class );
 		 xstream.processAnnotations(object.getClass());
 		return xstream.toXML(object);
@@ -28,7 +28,7 @@ public class XStreamTranslator {
 	 * @param xml
 	 * @return
 	 */
-	public <T> T  toObject(String xml,Class<T> cls) {
+	public synchronized <T> T  toObject(String xml,Class<T> cls) {
 		xstream.processAnnotations(cls);
 		xstream.addDefaultImplementation(cls,BaseBean.class);
 		T obj=(T)xstream.fromXML(xml);

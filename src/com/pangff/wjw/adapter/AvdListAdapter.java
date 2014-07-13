@@ -64,8 +64,8 @@ public class AvdListAdapter extends BaseAdapter {
 			holder = (ViewHolder) convertView.getTag();
 		}
 		Img img = advList.get(position);
+		holder.picImage.setDefaultImageId(R.drawable.list_default);
 		BaseApplication.self.IMAGE_CACHE.get(img.imgs,holder.picImage);
-		holder.picImage.setDefaultImageId(R.drawable.ic_launcher);
 		holder.display.setText(img.title);
 		return convertView;
 	}
