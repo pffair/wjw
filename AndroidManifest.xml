@@ -100,6 +100,17 @@
                 <action android:name="android.intent.action.PHONE_STATE" />
             </intent-filter>
         </receiver>
+        <activity 
+            android:name="WithDrawalsApplySureActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            
+        </activity>
+        <activity 
+            android:name="WithDrawalsApplyCompleteActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

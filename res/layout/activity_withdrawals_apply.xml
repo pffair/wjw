@@ -43,13 +43,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:paddingLeft="33dp"
-                        android:text="账户名称" />
+                        android:paddingLeft="35dp"
+                        android:text="@string/account_name" />
 
-                    <EditText
-                        android:id="@+id/accountNameE"
+                    <TextView
+                        android:id="@+id/accountNameT"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@null" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -63,13 +64,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:paddingLeft="33dp"
-                        android:text="$钱包余额" />
+                        android:paddingLeft="35dp"
+                        android:text="@string/money_remain" />
 
                     <TextView
-                        android:id="@+id/accountRemainE"
+                        android:id="@+id/accountRemainT"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:paddingRight="10dp"
                         android:gravity="right"
                         android:text="1" />
                 </LinearLayout>
@@ -93,13 +95,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:paddingLeft="33dp"
-                        android:text="开户银行" />
+                        android:paddingLeft="35dp"
+                        android:text="@string/open_account_bank" />
 
                     <EditText
                         android:id="@+id/OaccountBankE"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@null" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -112,14 +115,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:gravity="center"
                         android:drawableLeft="@drawable/icon_package_light"
-                        android:text="支行名称" />
+                        android:gravity="center"
+                        android:text="@string/branch_name"
+                        android:paddingLeft="5dp" />
 
                     <EditText
                         android:id="@+id/branchNameE"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@null" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -132,14 +137,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:gravity="center"
                         android:drawableLeft="@drawable/icon_bankcard"
-                        android:text="银行帐号" />
+                        android:gravity="center"
+                        android:text="@string/bank_account" />
 
                     <EditText
                         android:id="@+id/bankAccountE"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@null" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -161,13 +167,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:paddingLeft="33dp"
+                        android:paddingLeft="35dp"
                         android:text="$提现金额" />
 
                     <EditText
                         android:id="@+id/withdrawalCashE"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@null" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -181,30 +188,27 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:paddingLeft="33dp"
+                        android:paddingLeft="35dp"
                         android:text="支付密码" />
 
                     <EditText
                         android:id="@+id/payPasswordE"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@null" />
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
+            <Button
+                android:id="@+id/WithdrawalB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="15dp"
-                android:layout_weight="1" >
-
-                <Button
-                    android:id="@+id/WithdrawalB"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="提现" />
-            </LinearLayout>
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="25dp"
+                android:text="@string/withdrawals"
+                android:background="@drawable/blue_btn_bg_selector" />
         </LinearLayout>
     </ScrollView>
 

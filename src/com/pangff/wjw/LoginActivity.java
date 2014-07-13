@@ -65,11 +65,14 @@ public class LoginActivity extends BaseActivity {
 	}
 	
 	private void doLogin(){
+		WithDrawalsApplyActivity.invoteToWithDrawalsApply(this);
 	//	MainActivity.invoteToMain(this);
-		this.userName = userNameE.getText().toString();
-		this.passord = passwordE.getText().toString();
-		String xml = new LoginRequest().getParams(METHOD_LOGIN,userName,passord);
-		new HttpRequest<LoginResponse>().postDataXml(METHOD_LOGIN, xml, this,LoginResponse.class);
+	//	WithDrawalsApplyActivity.invoteToWithDrawalsApply(this);
+		
+	//	this.userName = userNameE.getText().toString();
+	//	this.passord = passwordE.getText().toString();
+	//	String xml = new LoginRequest().getParams(METHOD_LOGIN,userName,passord);
+	//	new HttpRequest<LoginResponse>().postDataXml(METHOD_LOGIN, xml, this,LoginResponse.class);
 	}
 	
 	public static void invotoLogin(BaseActivity context){

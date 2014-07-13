@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/menu_top_bg"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp">
         
@@ -54,7 +54,7 @@
 	                    android:id="@+id/vipIdT"
 	                    android:layout_width="match_parent"
 	                    android:layout_height="wrap_content"
-	                    android:text="会员帐号"
+	                    android:text="@string/vip_account"
 	                    android:layout_weight="1"/>
 	                
 	                <TextView
@@ -76,7 +76,7 @@
 	                    android:id="@+id/vipNameT"
 	                    android:layout_width="match_parent"
 	                    android:layout_height="wrap_content"
-	                    android:text="会员姓名"
+	                    android:text="@string/vip_name"
 	                    android:layout_weight="1"/>
 	                
 	                <TextView
@@ -98,7 +98,7 @@
 	                    android:layout_width="match_parent"
 	                    android:layout_height="wrap_content"
 	                    android:layout_weight="1"
-	                    android:text="会员级别"/>
+	                    android:text="@string/vip_level"/>
 	                
 	                <TextView
 	                    android:id="@+id/showLevelT"
@@ -110,7 +110,14 @@
 	                
                 </LinearLayout>
                 
+             
             </LinearLayout>
+               <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/more_arrow"
+                    android:layout_gravity="center"
+                    android:paddingRight="10dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -137,7 +144,7 @@
                 android:layout_weight="3"
                 android:gravity="center_vertical"
                 android:layout_marginLeft="5dp"
-                android:text="$钱包余额" 
+                android:text="@string/money_remain" 
                 android:drawableLeft="@drawable/icon_package_light"/>
 
             <TextView
@@ -145,6 +152,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
+                android:paddingRight="10dp"
                 android:text="0.00" />
         </LinearLayout>
 
@@ -161,14 +169,15 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:gravity="center_vertical"
-                android:layout_marginLeft="30dp"
-                android:text="$可用积分" />
+                android:layout_marginLeft="35dp"
+                android:text="@string/available_integral" />
 
             <TextView
                 android:id="@+id/showIntegralT"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
+                android:paddingRight="10dp"
                 android:text="171" />
         </LinearLayout>
     </LinearLayout>
@@ -189,8 +198,10 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:background="@drawable/menu_top_bg"
-            android:paddingLeft="30dp"
-            android:text="申请提现"/>
+            android:paddingLeft="35dp"
+            android:paddingRight="10dp"
+            android:drawableRight="@drawable/more_arrow"
+            android:text="@string/withdrawals_apply"/>
      
      <TextView
             android:id="@+id/withdrawalsDetailT"
@@ -200,8 +211,10 @@
             android:gravity="center_vertical"
             android:layout_marginTop="1dp"
             android:background="@drawable/menu_bottom_bg"
-            android:paddingLeft="30dp"
-            android:text="提现明细"/>
+            android:paddingLeft="35dp"
+            android:text="@string/withdrawals_detail"
+            android:paddingRight="10dp"
+            android:drawableRight="@drawable/more_arrow"/>
      
      </LinearLayout>
      
@@ -220,9 +233,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:paddingLeft="30dp"
+            android:paddingLeft="35dp"
             android:background="@drawable/menu_top_bg"
-            android:text="会员转帐" />
+            android:text="@string/transfer_vip"
+            android:paddingRight="10dp"
+            android:drawableRight="@drawable/more_arrow" />
 
         <TextView
             android:id="@+id/transferDetailT"
@@ -230,10 +245,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:paddingLeft="30dp"
+            android:paddingLeft="35dp"
             android:background="@drawable/menu_bottom_bg"
             android:layout_marginTop="1dp"
-            android:text="转帐明细" />
+            android:text="@string/transfer_detail"
+            android:paddingRight="10dp"
+            android:drawableRight="@drawable/more_arrow" />
     </LinearLayout>
     
     <LinearLayout
@@ -252,8 +269,10 @@
             android:layout_weight="1"
             android:background="@drawable/menu_top_bg"
             android:gravity="center_vertical"
-            android:paddingLeft="30dp"
-            android:text="兑换积分" />
+            android:paddingLeft="35dp"
+            android:text="@string/exchange_integral" 
+            android:paddingRight="10dp"
+            android:drawableRight="@drawable/more_arrow"/>
 
         <TextView
             android:id="@+id/exchangeDtailT"
@@ -262,9 +281,11 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:layout_marginTop="1dp"
-            android:paddingLeft="30dp"
+            android:paddingLeft="35dp"
             android:background="@drawable/menu_bottom_bg"
-            android:text="兑换明细" />
+            android:text="@string/exchange_detail" 
+            android:paddingRight="10dp"
+            android:drawableRight="@drawable/more_arrow"/>
     </LinearLayout>
     
     <LinearLayout
@@ -282,9 +303,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:paddingLeft="30dp"
+            android:paddingLeft="35dp"
             android:background="@drawable/menu_top_bg"
-            android:text="奖励明细" />
+            android:text="@string/award_dtail"
+            android:paddingRight="10dp"
+            android:drawableRight="@drawable/more_arrow" />
     </LinearLayout>
     
    </LinearLayout> 
