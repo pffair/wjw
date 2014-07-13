@@ -13,6 +13,8 @@
     <string name="password">密码：</string>
     <string name="login">登&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;录</string>
     <string name="regist">免费注册</string>
+    <string name="withdrawals_apply">申请提现</string>
+    <string name="withdrawals_explain">提现说明</string>
     
     
     <string name="withdrawals_label_amount">金&#160;&#160;&#160;&#160;额：</string>

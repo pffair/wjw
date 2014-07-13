@@ -5,10 +5,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <com.pangff.wjw.view.TitleBar
+      <com.pangff.wjw.view.TitleBar
         android:layout_width="match_parent"
         android:layout_height="@dimen/titleBarHeight"
         titlebar:canBack="false"
         titlebar:title="@string/fragment_adv" />
+    
+      
+        <ListView
+        android:id="@+id/listViewAdv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </ListView>
+    
 
 </LinearLayout>
