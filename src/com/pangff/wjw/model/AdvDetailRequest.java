@@ -16,10 +16,11 @@ public class AdvDetailRequest extends BaseBean{
 		public String id;
 	}
 	
-	public  String getParams(String method){
+	public  String getParams(String method,String id){
 		this.method = method;
 		this.userid = UserInfoUtil.getInstanse().getUserId();
 		this.body = new Body();
+		this.body.id = id;
 		return XStreamTranslator.getInstance().toXMLString(this);
 	}
 	

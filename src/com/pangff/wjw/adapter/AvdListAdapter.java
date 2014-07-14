@@ -40,7 +40,7 @@ public class AvdListAdapter extends BaseAdapter {
 	@Override
 	public Object getItem(int position) {
 
-		return position;
+		return advList.get(position);
 	}
 
 	@Override

@@ -5,11 +5,14 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
 
-import com.pangff.wjw.BaseApplication;
+import com.pangff.wjw.AdvDetailActivity;
+import com.pangff.wjw.BaseActivity;
 import com.pangff.wjw.R;
 import com.pangff.wjw.adapter.AvdListAdapter;
 import com.pangff.wjw.adapter.ImagePagerAdapter;
@@ -17,6 +20,7 @@ import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.AdvRequest;
 import com.pangff.wjw.model.AdvResponse;
+import com.pangff.wjw.model.Img;
 import com.pangff.wjw.model.TopGalleryRequest;
 import com.pangff.wjw.model.TopGalleryResponse;
 import com.pangff.wjw.view.LoadingView;
@@ -72,6 +76,16 @@ public class HomeFragment extends PagerFragment {
 		avdAdapter = new AvdListAdapter(this.getActivity());
 		listView.setAdapter(avdAdapter);
 		viewPager.setAdapter(topGalleryAdapter);
+		
+		listView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				Img img = (Img) parent.getAdapter().getItem(position);
+				AdvDetailActivity.invotoToAdvDetail((BaseActivity) HomeFragment.this.getActivity(),img.id);
+			}
+		});
 	}
 
 	protected void initData() {

@@ -20,7 +20,7 @@ public class AdvDetailResponse extends BaseBean{
 			@XStreamAlias("title")
 			public String title;
 			
-			@XStreamAlias("content")
+			@XStreamAlias("conten")
 			public String content;
 		}
 	}

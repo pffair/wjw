@@ -16,6 +16,7 @@
         android:paddingRight="10dp"
         android:paddingTop="2dp"
         android:scaleType="centerInside"
+        android:background="@drawable/textview_bg_selector"
         android:src="@drawable/titlebar_back_arrow_selector" />
 
     <TextView
@@ -34,12 +35,13 @@
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_marginRight="5dp"
         android:background="@drawable/textview_bg_selector"
         android:gravity="center"
         android:paddingBottom="2dp"
         android:paddingTop="2dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         android:textColor="@android:color/white"
-        android:textSize="18sp" />
+        android:textSize="16sp" />
 
 </RelativeLayout>
