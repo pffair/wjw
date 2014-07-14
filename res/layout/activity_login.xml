@@ -79,15 +79,6 @@
             android:background="@drawable/blue_btn_bg_selector"
             android:text="@string/login" />
 
-        <Button
-            android:id="@+id/registB"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/blue_btn_bg_selector"
-            android:text="@string/regist" />
-
         <TextView
             android:id="@+id/forgetPwdT"
             android:layout_width="wrap_content"
