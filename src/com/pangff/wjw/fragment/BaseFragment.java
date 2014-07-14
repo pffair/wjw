@@ -9,6 +9,7 @@ import com.pangff.wjw.autowire.AndroidAutowire;
 import com.pangff.wjw.event.IEvent;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.http.ResponseCallBack;
+import com.pangff.wjw.view.OnOneOffClickListener;
 
 /**
  * fragment基类
@@ -18,13 +19,23 @@ import com.pangff.wjw.http.ResponseCallBack;
 public class BaseFragment extends Fragment implements ResponseCallBack {
 
 	private boolean isInit; // 是否可以开始加载数据
-
+	protected OnOneOffClickListener onOneOffClickListener;
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		AndroidAutowire.autowire(view, this);
 		super.onViewCreated(view, savedInstanceState);
 		BaseApplication.self.controlBus.register(this);
+		onOneOffClickListener = new OnOneOffClickListener(500) {
+			@Override
+			public void onOneClick(View v) {
+				onMyClick(v);
+			}
+		};
 		isInit = true;
+	}
+	
+	protected void onMyClick(View v) {
+		
 	}
 
 	@Override

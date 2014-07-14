@@ -28,14 +28,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/menu_center_selector"
+        android:background="@drawable/menu_all_selector"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginRight="10dp"
+        android:clickable="true">
         
         <ImageView
             android:id="@+id/hostIamgeI"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="match_parent"
             android:background="@drawable/header_default"
             android:layout_weight="1"/>
@@ -44,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight="15">
+                android:layout_weight="40">
 
                 <LinearLayout 
                     android:orientation="horizontal"
@@ -127,7 +128,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_weight="1"
+        
         android:orientation="vertical" >
 
         <LinearLayout
@@ -144,7 +145,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:gravity="center_vertical"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="13dp"
                 android:text="@string/money_remain" 
                 android:drawableLeft="@drawable/icon_package_light"/>
 
@@ -191,18 +192,19 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_weight="1">
+        >
      <TextView
             android:id="@+id/withdrawalsApplyT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:background="@drawable/menu_top_bg"
-            android:paddingLeft="35dp"
+            android:background="@drawable/menu_top_selector"
+            android:paddingLeft="38dp"
             android:paddingRight="10dp"
             android:drawableRight="@drawable/more_arrow"
-            android:text="@string/withdrawals_apply"/>
+            android:text="@string/withdrawals_apply"
+     		android:clickable="true"/>
      
      <TextView
             android:id="@+id/withdrawalsDetailT"
@@ -211,11 +213,12 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:layout_marginTop="1dp"
-            android:background="@drawable/menu_bottom_bg"
-            android:paddingLeft="35dp"
+            android:background="@drawable/menu_bottom_selector"
+            android:paddingLeft="38dp"
             android:text="@string/withdrawals_detail"
             android:paddingRight="10dp"
-            android:drawableRight="@drawable/more_arrow"/>
+            android:drawableRight="@drawable/more_arrow"
+            android:clickable="true"/>
      
      </LinearLayout>
      
@@ -225,7 +228,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_weight="1"
+        
         android:orientation="vertical" >
 
         <TextView
@@ -234,11 +237,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:paddingLeft="35dp"
-            android:background="@drawable/menu_top_bg"
+            android:paddingLeft="38dp"
+            android:background="@drawable/menu_top_selector"
             android:text="@string/transfer_vip"
             android:paddingRight="10dp"
-            android:drawableRight="@drawable/more_arrow" />
+            android:drawableRight="@drawable/more_arrow" 
+            android:clickable="true"/>
 
         <TextView
             android:id="@+id/transferDetailT"
@@ -246,12 +250,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:paddingLeft="35dp"
-            android:background="@drawable/menu_bottom_bg"
+            android:paddingLeft="38dp"
+            android:background="@drawable/menu_bottom_selector"
             android:layout_marginTop="1dp"
             android:text="@string/transfer_detail"
             android:paddingRight="10dp"
-            android:drawableRight="@drawable/more_arrow" />
+            android:drawableRight="@drawable/more_arrow"
+            android:clickable="true" />
     </LinearLayout>
     
     <LinearLayout
@@ -260,7 +265,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_weight="1"
+        
         android:orientation="vertical" >
 
         <TextView
@@ -268,12 +273,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/menu_top_bg"
+            android:background="@drawable/menu_top_selector"
             android:gravity="center_vertical"
-            android:paddingLeft="35dp"
+            android:paddingLeft="38dp"
             android:text="@string/exchange_integral" 
             android:paddingRight="10dp"
-            android:drawableRight="@drawable/more_arrow"/>
+            android:drawableRight="@drawable/more_arrow"
+            android:clickable="true"/>
 
         <TextView
             android:id="@+id/exchangeDtailT"
@@ -282,11 +288,12 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:layout_marginTop="1dp"
-            android:paddingLeft="35dp"
-            android:background="@drawable/menu_bottom_bg"
+            android:paddingLeft="38dp"
+            android:background="@drawable/menu_bottom_selector"
             android:text="@string/exchange_detail" 
             android:paddingRight="10dp"
-            android:drawableRight="@drawable/more_arrow"/>
+            android:drawableRight="@drawable/more_arrow"
+            android:clickable="true"/>
     </LinearLayout>
     
     <LinearLayout
@@ -295,7 +302,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_weight="1"
+        
         android:orientation="vertical" >
 
         <TextView
@@ -304,10 +311,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:paddingLeft="35dp"
-            android:background="@drawable/menu_center_selector"
+            android:paddingLeft="38dp"
+            android:background="@drawable/menu_all_selector"
+            android:clickable="true"
             android:text="@string/award_dtail"
             android:paddingRight="10dp"
+            android:layout_marginBottom="50dp"
             android:drawableRight="@drawable/more_arrow" />
     </LinearLayout>
     

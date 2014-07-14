@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.pangff.wjw.R;
+import com.pangff.wjw.WithDrawalsApplyActivity;
 import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.view.OnOneOffClickListener;
 
@@ -42,8 +43,19 @@ public class AccountFragment extends PagerFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+	/*	withdrawalsApplyT.setOnClickListener(onOneOffClickListener);
+		withdrawalsDetailT.setOnClickListener(onOneOffClickListener);
+		vipTransferT.setOnClickListener(onOneOffClickListener);
+		transferDetailT.setOnClickListener(onOneOffClickListener);
+		exchangeT.setOnClickListener(onOneOffClickListener);
+		exchangeDtailT.setOnClickListener(onOneOffClickListener);
+		awardDtailT.setOnClickListener(onOneOffClickListener);
+	*/	
 		return inflater.inflate(R.layout.fragment_account, container, false);
 		
 
+	}
+	protected void onMyClick(){
+	//	WithDrawalsApplyActivity.invoteToWithDrawalsApply(this);
 	}
 }

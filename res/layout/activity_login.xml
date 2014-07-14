@@ -59,6 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
+            android:password="true"
             android:paddingRight="2dp"
             android:singleLine="true" />
     </LinearLayout>
@@ -77,15 +78,6 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/blue_btn_bg_selector"
             android:text="@string/login" />
-
-        <Button
-            android:id="@+id/registB"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/blue_btn_bg_selector"
-            android:text="@string/regist" />
 
         <TextView
             android:id="@+id/forgetPwdT"

@@ -1,5 +1,7 @@
 package com.pangff.wjw.model;
 
+import com.pangff.wjw.util.ParseMD5;
+import com.pangff.wjw.util.StringUtil;
 import com.pangff.wjw.util.XStreamTranslator;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
@@ -21,7 +23,7 @@ public class LoginRequest extends BaseBean{
 		this.method = method;
 		this.body = new Body();
 		this.body.username = username;
-		this.body.password = password;
+		this.body.password = ParseMD5.parseStrToMd5L16(password);
 		return XStreamTranslator.getInstance().toXMLString(this);
 	}
 }

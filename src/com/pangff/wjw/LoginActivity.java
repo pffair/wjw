@@ -26,8 +26,6 @@ public class LoginActivity extends BaseActivity {
 	@AndroidView(R.id.loginB)
 	Button loginB;
 
-	@AndroidView(R.id.registB)
-	Button registB;
 
 	@AndroidView(R.id.forgetPwdT)
 	TextView forgetPwdT;
@@ -43,8 +41,10 @@ public class LoginActivity extends BaseActivity {
 		setContentView(R.layout.activity_login);
 
 		loginB.setOnClickListener(onOneOffClickListener);
-		registB.setOnClickListener(onOneOffClickListener);
 		forgetPwdT.setOnClickListener(onOneOffClickListener);
+		
+		userNameE.setText("ATM888888");
+		passwordE.setText("123456");
 	}
 
 	@Override
@@ -52,9 +52,6 @@ public class LoginActivity extends BaseActivity {
 		switch (v.getId()) {
 		case R.id.loginB:
 			doLogin();
-			break;
-		case R.id.registB:
-			goRegist();
 			break;
 		case R.id.forgetPwdT:
 
@@ -66,13 +63,14 @@ public class LoginActivity extends BaseActivity {
 	
 	private void doLogin(){
 	//	WithDrawalsApplyActivity.invoteToWithDrawalsApply(this);
-		MainActivity.invoteToMain(this);
+	//	MainActivity.invoteToMain(this);
+	//	AcountChangeActivity.invotoacountchange(this);
 	//	WithDrawalsApplyActivity.invoteToWithDrawalsApply(this);
 		
-	//	this.userName = userNameE.getText().toString();
-	//	this.passord = passwordE.getText().toString();
-	//	String xml = new LoginRequest().getParams(METHOD_LOGIN,userName,passord);
-	//	new HttpRequest<LoginResponse>().postDataXml(METHOD_LOGIN, xml, this,LoginResponse.class);
+		this.userName = userNameE.getText().toString();
+		this.passord = passwordE.getText().toString();
+		String xml = new LoginRequest().getParams(METHOD_LOGIN,userName,passord);
+		new HttpRequest<LoginResponse>().postDataXml(METHOD_LOGIN, xml, this,LoginResponse.class);
 	}
 	
 	public static void invotoLogin(BaseActivity context){
@@ -81,9 +79,7 @@ public class LoginActivity extends BaseActivity {
 		context.finish();
 	}
 	
-	private void goRegist(){
-		RegistActivity.invoteToRegist(this);
-	}
+	
 	
 	@Override
 	public void onSuccess(String method, Object result) {
