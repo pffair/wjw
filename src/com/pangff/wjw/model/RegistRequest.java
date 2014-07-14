@@ -37,6 +37,9 @@ public class RegistRequest extends BaseBean{
 		
 		@XStreamAlias("paypass")
 		public String paypass;
+		
+		@XStreamAlias("password")
+		public String password;
 	}
 	
 	public  String getParams(String method,Body body){

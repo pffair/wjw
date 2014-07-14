@@ -133,7 +133,7 @@ public class RegistActivity extends BaseActivity {
 	
 	private void doRegist(){
 		RegistRequest registRequest = new RegistRequest();
-		registRequest.userid = "111";
+		registRequest.userid = UserInfoUtil.getInstanse().getUserId();
 		registRequest.body = new RegistRequest.Body();
 		registRequest.body.zsname = tureNameE.getText().toString();
 		registRequest.body.tel = phoneNumberE.getText().toString();
@@ -144,6 +144,7 @@ public class RegistActivity extends BaseActivity {
 		registRequest.body.paypass = payPasswordE.getText().toString();
 		registRequest.body.qu = quS.substring(0, 1);
 		registRequest.body.tuijian = spreadNumberE.getText().toString();
+		registRequest.body.password = aPayPasswordE.getText().toString();
 		
 		userName = vipNameE.getText().toString();
 		password = loginPasswordE.getText().toString();
