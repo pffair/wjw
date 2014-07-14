@@ -26,8 +26,6 @@ public class LoginActivity extends BaseActivity {
 	@AndroidView(R.id.loginB)
 	Button loginB;
 
-	@AndroidView(R.id.registB)
-	Button registB;
 
 	@AndroidView(R.id.forgetPwdT)
 	TextView forgetPwdT;
@@ -43,7 +41,6 @@ public class LoginActivity extends BaseActivity {
 		setContentView(R.layout.activity_login);
 
 		loginB.setOnClickListener(onOneOffClickListener);
-		registB.setOnClickListener(onOneOffClickListener);
 		forgetPwdT.setOnClickListener(onOneOffClickListener);
 		
 		userNameE.setText("ATM888888");
@@ -55,9 +52,6 @@ public class LoginActivity extends BaseActivity {
 		switch (v.getId()) {
 		case R.id.loginB:
 			doLogin();
-			break;
-		case R.id.registB:
-			goRegist();
 			break;
 		case R.id.forgetPwdT:
 
@@ -84,9 +78,7 @@ public class LoginActivity extends BaseActivity {
 		context.finish();
 	}
 	
-	private void goRegist(){
-		RegistActivity.invoteToRegist(this);
-	}
+	
 	
 	@Override
 	public void onSuccess(String method, Object result) {

@@ -10,7 +10,7 @@
         android:layout_height="@dimen/titleBarHeight"
         titlebar:canBack="false"
         titlebar:title="@string/fragment_more" />
-    
+
     <ScrollView
         android:id="@+id/sView"
         android:layout_width="match_parent"
@@ -27,51 +27,59 @@
                 android:id="@+id/loginPassworChangeT"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:gravity="center"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/menu_top_bg"
+                android:gravity="center"
                 android:text="登陆密码修改" />
-            
-             <TextView
+
+            <TextView
                 android:id="@+id/catchPassworChangeT"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="1dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:gravity="center"
+                android:layout_marginTop="1dp"
                 android:background="@drawable/menu_center_bg"
+                android:gravity="center"
                 android:text="查看密码修改" />
-             
-              <TextView
+
+            <TextView
                 android:id="@+id/payPassworChangeT"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="1dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:gravity="center"
+                android:layout_marginTop="1dp"
                 android:background="@drawable/menu_bottom_bg"
+                android:gravity="center"
                 android:text="支付密码修改" />
-            
-              
-              <Button
-                  android:id="@+id/withdrawals_logoutB"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:layout_marginTop="20dp"
-                  android:layout_marginLeft="20dp"
-                  android:layout_marginRight="20dp"
-                  android:layout_gravity="center"
-                  android:text="@string/withdrawals_label_logout"/>
-              
+
+            <Button
+                android:id="@+id/registB"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/blue_btn_bg_selector"
+                android:text="@string/regist" />
+
+            <Button
+                android:id="@+id/withdrawals_logoutB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/withdrawals_label_logout" />
         </LinearLayout>
     </ScrollView>
 
-        <com.pangff.wjw.vindicator.UnderlinePageIndicator
+    <com.pangff.wjw.vindicator.UnderlinePageIndicator
         android:id="@+id/indicator"
         android:layout_width="fill_parent"
         android:layout_height="35dp" />
+
 </LinearLayout>

@@ -114,6 +114,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:background="@null"
+                    android:text="ATM888888"
                     android:gravity="center_vertical" />
             </LinearLayout>
 

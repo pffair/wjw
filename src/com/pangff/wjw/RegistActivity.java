@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.Spinner;
@@ -13,11 +14,10 @@ import android.widget.TextView;
 
 import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.http.HttpRequest;
-import com.pangff.wjw.model.LoginRequest;
-import com.pangff.wjw.model.LoginResponse;
 import com.pangff.wjw.model.RegistRequest;
 import com.pangff.wjw.model.RegistResponse;
 import com.pangff.wjw.model.ResponseState;
+import com.pangff.wjw.util.ParseMD5;
 import com.pangff.wjw.util.ToastUtil;
 import com.pangff.wjw.util.UserInfoUtil;
 
@@ -66,6 +66,8 @@ public class RegistActivity extends BaseActivity {
 	@AndroidView(R.id.aPersonNumberE)
 	EditText aPersonNumberE;
 	
+	@AndroidView(R.id.registerB)
+	Button registerB;
 	
 	String userName;
 	String password;
@@ -137,14 +139,15 @@ public class RegistActivity extends BaseActivity {
 		registRequest.body = new RegistRequest.Body();
 		registRequest.body.zsname = tureNameE.getText().toString();
 		registRequest.body.tel = phoneNumberE.getText().toString();
-		registRequest.body.dlpass = loginPasswordE.getText().toString();
 		registRequest.body.jibie = starS.substring(0, 1);
 		registRequest.body.memname = vipNameE.getText().toString();
-		registRequest.body.pass2 = checkPasswordE.getText().toString();
-		registRequest.body.paypass = payPasswordE.getText().toString();
 		registRequest.body.qu = quS.substring(0, 1);
 		registRequest.body.tuijian = spreadNumberE.getText().toString();
-		registRequest.body.password = aPayPasswordE.getText().toString();
+		
+		registRequest.body.dlpass = ParseMD5.parseStrToMd5L16(loginPasswordE.getText().toString());
+		registRequest.body.pass2 = ParseMD5.parseStrToMd5L16(checkPasswordE.getText().toString());
+		registRequest.body.paypass = ParseMD5.parseStrToMd5L16(payPasswordE.getText().toString());
+		registRequest.body.password = ParseMD5.parseStrToMd5L16(aPayPasswordE.getText().toString());
 		
 		userName = vipNameE.getText().toString();
 		password = loginPasswordE.getText().toString();
@@ -159,10 +162,6 @@ public class RegistActivity extends BaseActivity {
 		}
 	}
 	
-	private void doLogin(){
-		String xml = new LoginRequest().getParams(LoginActivity.METHOD_LOGIN,userName,password);
-		new HttpRequest<LoginResponse>().postDataXml(LoginActivity.METHOD_LOGIN, xml, this,LoginResponse.class);
-	}
 	
 	@Override
 	public void onSuccess(String method, Object result) {
@@ -170,18 +169,10 @@ public class RegistActivity extends BaseActivity {
 		if(method.equals(METHOD_ZHUCE)){
 			RegistResponse registResponse = (RegistResponse) result;
 			if(registResponse.body.returns.equals(ResponseState.SUCCESS)){
-				doLogin();
+				ToastUtil.show("注册成功,账号为:"+registResponse.body.message);
+				registerB.setText("注册成功:["+registResponse.body.message+"]");
 			}else{
 				ToastUtil.show(registResponse.body.message);
-			}
-		}else if(method.equals(LoginActivity.METHOD_LOGIN)){
-			LoginResponse loginResponse = (LoginResponse) result;
-			if(loginResponse.body.returns.equals(ResponseState.SUCCESS)){
-				MainActivity.invoteToMain(this);
-				finish();
-				UserInfoUtil.getInstanse().saveLoginInfo(loginResponse.userid, password, userName);
-			}else{
-				ToastUtil.show(loginResponse.body.message);
 			}
 		}
 	}
