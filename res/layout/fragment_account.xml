@@ -28,7 +28,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/menu_top_bg"
+        android:background="@drawable/menu_center_selector"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp">
@@ -37,14 +37,15 @@
             android:id="@+id/hostIamgeI"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="#FFFFFF00"
+            android:background="@drawable/header_default"
             android:layout_weight="1"/>
             
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2">
+                android:orientation="vertical"
+                android:layout_weight="15">
+
                 <LinearLayout 
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -304,7 +305,7 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:paddingLeft="35dp"
-            android:background="@drawable/menu_top_bg"
+            android:background="@drawable/menu_center_selector"
             android:text="@string/award_dtail"
             android:paddingRight="10dp"
             android:drawableRight="@drawable/more_arrow" />
