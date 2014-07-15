@@ -1,12 +1,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:titlebar="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/page_bg"
     android:orientation="vertical" >
 
-    <TextView
-        android:text="转帐明晰"
-        android:gravity="center"
+     <com.pangff.wjw.view.TitleBar
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="@dimen/titleBarHeight"
+        titlebar:canBack="false"
+        titlebar:title="@string/transfer_detail" />
+    
+    <ListView
+        android:id="@+id/transferListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </ListView>
 
 </LinearLayout>

@@ -25,6 +25,9 @@
   <!--转帐类  -->   
     <string name="transfer_vip">会员转帐</string>
     <string name="transfer_detail">转帐明细</string>
+    <string name="transfer_sure">确认转帐</string>
+    <string name="transferor_number">转出者编号：</string>
+    <string name="recipient_number">接收者编号：</string>
   
   <!--兑换类  -->   
     <string name="exchange_integral">积分兑换</string>
@@ -34,6 +37,7 @@
     
     <string name="money_remain">$钱包余额</string>
     <string name="available_integral">$可用积分</string>
+    <string name="rewards_style">类&#160;&#160;&#160;&#160;型：</string>
     
  <!--申请提现类  -->
     <string name="withdrawals">提&#160;&#160;&#160;&#160;现</string>
@@ -44,7 +48,10 @@
     <string name="withdrawals_label_bank">银&#160;&#160;&#160;&#160;行：</string>
     <string name="withdrawals_label_fee">手续费：</string>
     <string name="withdrawals_label_logout">退&#160;&#160;&#160;&#160;出</string>
+    <string name="withdrawals_ok">确认</string>
     <string name="withdrawals_label_results">结果详情</string>
+    <string name="withdrawals_canle">取&#160;&#160;&#160;&#160;&#160;&#160;消</string>
+    <string name="withdrawals_sure">确认提现</string>
     
     <string name="account_name">账户名称</string>
     <string name="open_account_bank">开户银行</string>
