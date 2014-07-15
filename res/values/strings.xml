@@ -26,6 +26,7 @@
     <string name="transfer_vip">会员转帐</string>
     <string name="transfer_detail">转帐明细</string>
     <string name="transfer_sure">确认转帐</string>
+    <string name="cancel">取消</string>
     <string name="transferor_number">转出者编号：</string>
     <string name="recipient_number">接收者编号：</string>
   

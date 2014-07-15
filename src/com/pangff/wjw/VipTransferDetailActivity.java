@@ -1,15 +1,10 @@
 package com.pangff.wjw;
 
-import com.pangff.wjw.adapter.WithDrawalsDetailAdapter;
-import com.pangff.wjw.autowire.AndroidView;
-import com.pangff.wjw.http.HttpRequest;
-import com.pangff.wjw.model.TransferDetailRequest;
-import com.pangff.wjw.model.TransferDetailResponse;
-import com.pangff.wjw.model.WithdrawalsDetailRequest;
-import com.pangff.wjw.model.WithdrawalsDetailResponse;
-
 import android.os.Bundle;
 import android.widget.ListView;
+
+import com.pangff.wjw.adapter.WithDrawalsDetailAdapter;
+import com.pangff.wjw.autowire.AndroidView;
 
 public class VipTransferDetailActivity extends BaseActivity{
 	

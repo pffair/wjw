@@ -79,6 +79,13 @@
             android:name=".VipTransferDetailActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
+        </activity>
+        
+          <activity
+            android:name=".VipTransferSureActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Transparent"
+            android:screenOrientation="portrait" >
             
               <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
