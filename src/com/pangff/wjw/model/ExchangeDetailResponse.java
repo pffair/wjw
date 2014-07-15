@@ -9,12 +9,12 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 public class ExchangeDetailResponse extends BaseBean{
 	
 	@XStreamAlias("body")
-	Body body;
+	public Body body;
 	
 	public static class Body{
 		
 		@XStreamImplicit(itemFieldName="list")
-		List<ExchangeDetail> list;
+		public List<ExchangeDetail> list;
 		
 		public static class ExchangeDetail{
 			

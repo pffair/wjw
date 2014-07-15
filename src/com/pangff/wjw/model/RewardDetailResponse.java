@@ -2,7 +2,6 @@ package com.pangff.wjw.model;
 
 import java.util.List;
 
-import com.pangff.wjw.model.ExchangeDetailResponse.Body.ExchangeDetail;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
@@ -11,22 +10,22 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 public class RewardDetailResponse {
 
 	@XStreamAlias("body")
-	Body body;
+	public Body body;
 	
 	public static class Body{
 		@XStreamImplicit(itemFieldName="list")
-		List<RewardDetail> list;
+		public List<RewardDetail> list;
 		
 		public static class RewardDetail{
 			
 			@XStreamAlias("jin")
-			String jin;
+			public String jin;
 			
 			@XStreamAlias("leixing")
-			String leixing;
+			public String leixing;
 			
 			@XStreamAlias("riqi")
-			String riqi;
+			public String riqi;
 		}
 	}
 }

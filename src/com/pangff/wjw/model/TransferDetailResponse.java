@@ -10,24 +10,24 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 public class TransferDetailResponse extends BaseBean{
 
 	@XStreamAlias("body")
-	Body body;
+	public Body body;
 	
 	public static class Body{
 		@XStreamImplicit(itemFieldName = "list")
-		List<TransferDetail> list;
+		public List<TransferDetail> list;
 		
 		public static class TransferDetail{
 			@XStreamAlias("mem")
-			String mem;
+			public String mem;
 			
 			@XStreamAlias("tomem")
-			String tomem;
+			public String tomem;
 			
 			@XStreamAlias("jin")
-			String jin;
+			public String jin;
 			
 			@XStreamAlias("riqi")
-			String riqi;
+			public String riqi;
 		}
 	}
 }

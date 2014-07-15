@@ -1,6 +1,6 @@
 package com.pangff.wjw.model;
 
-import com.pangff.wjw.model.LoginRequest.Body;
+import com.pangff.wjw.util.UserInfoUtil;
 import com.pangff.wjw.util.XStreamTranslator;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
@@ -44,6 +44,7 @@ public class RegistRequest extends BaseBean{
 	
 	public  String getParams(String method,Body body){
 		this.method = method;
+		this.userid = UserInfoUtil.getInstanse().getUserId();
 		this.body = body;
 		return XStreamTranslator.getInstance().toXMLString(this);
 	}

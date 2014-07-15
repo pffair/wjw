@@ -8,7 +8,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 public class WithdrawalsDetailRequest extends BaseBean{
 	
 	@XStreamAlias("body")
-	Body body;
+	public Body body;
 	
 	public static class Body{
 		
@@ -16,6 +16,7 @@ public class WithdrawalsDetailRequest extends BaseBean{
 
 	public String getParams(String method) {
 		this.method = method;
+		this.userid = UserInfoUtil.getInstanse().getUserId();
 		this.body = new Body();
 		this.userid = UserInfoUtil.getInstanse().getUserId();
 		return XStreamTranslator.getInstance().toXMLString(this);

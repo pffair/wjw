@@ -5,15 +5,15 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 public class ExchangeResponse extends BaseBean{
 	
 	@XStreamAlias("body")
-	Body body;
+	public Body body;
 	
 	public static class Body{
 		
 		@XStreamAlias("return")
-		String returns;
+		public String returns;
 		
 		@XStreamAlias("message")
-		String message;
+		public String message;
 	}
 	
 }

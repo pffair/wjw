@@ -6,15 +6,15 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 public class BalanceResponse extends BaseBean{
 	
 	@XStreamAlias("body")
-	Body body;
+	public Body body;
 	
 	public static class Body{
 		
 		@XStreamAlias("jifen")
-		String jifen;
+		public String jifen;
 		
 		@XStreamAlias("money")
-		String money;
+		public String money;
 	}
 
 }

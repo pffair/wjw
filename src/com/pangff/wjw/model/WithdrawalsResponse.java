@@ -6,18 +6,18 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 public class WithdrawalsResponse extends BaseBean{
 	
 	@XStreamAlias("body")
-	Body body;
+	public Body body;
 	
 	public static class Body{
 		
 		@XStreamAlias("zxname")
-		String zxname;
+		public String zxname;
 		
 		@XStreamAlias("money")
-		String money;
+		public String money;
 		
 		@XStreamAlias("sxf")
-		String sxf;
+		public String sxf;
 	}
 
 }
