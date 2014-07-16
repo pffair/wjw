@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/detail"
-             android:layout_centerHorizontal="true"
+            android:layout_centerHorizontal="true"
             android:orientation="vertical" >
 
             <LinearLayout
@@ -44,7 +44,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="1dp"
                 android:background="@drawable/menu_center_bg" >
 
                 <TextView
@@ -66,7 +65,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="1dp"
                 android:background="@drawable/menu_center_bg" >
 
                 <TextView
@@ -88,7 +86,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="1dp"
                 android:background="@drawable/menu_bottom_bg" >
 
                 <TextView
