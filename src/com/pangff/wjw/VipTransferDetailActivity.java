@@ -1,17 +1,22 @@
 package com.pangff.wjw;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.pangff.wjw.adapter.WithDrawalsDetailAdapter;
+import com.pangff.wjw.adapter.TransferDetailAdapter;
 import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.http.HttpRequest;
+import com.pangff.wjw.model.TransferDetailRequest;
+import com.pangff.wjw.model.TransferDetailResponse;
 
 public class VipTransferDetailActivity extends BaseActivity{
 	
 	@AndroidView(R.id.transferListView)
 	ListView transferListView;
 	
-	WithDrawalsDetailAdapter adapter;
+	TransferDetailAdapter adapter;
+	public static final String METHOD_ZHUANZHANGLIST ="zhuanzhanglist";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +27,29 @@ public class VipTransferDetailActivity extends BaseActivity{
 	}
 
 	private void initConfig(){
-		adapter = new WithDrawalsDetailAdapter(this);
+		adapter = new TransferDetailAdapter(this);
 		transferListView.setAdapter(adapter);
 	}
 	
 	private void initData(){
-	//	String xml = new TransferDetailRequest().getParams();
-	//	new HttpRequest<TransferDetailResponse>().postDataXml( xml, this,WithdrawalsDetailResponse.class);
+		String xml = new TransferDetailRequest().getParams(METHOD_ZHUANZHANGLIST);
+		new HttpRequest<TransferDetailResponse>().postDataXml(METHOD_ZHUANZHANGLIST,xml, this,TransferDetailResponse.class);
 	}
 
-
+	@Override
+	public void onSuccess(String method, Object result) {
+		super.onSuccess(method, result);
+		if(method.equals(METHOD_ZHUANZHANGLIST)){
+			TransferDetailResponse transferDetailResponse = (TransferDetailResponse) result;
+			if(transferDetailResponse!=null){
+				adapter.refresh(transferDetailResponse.body.list);
+			}
+		}
+	}
+	public static void  invoteToVipTransferDetail(BaseActivity context){
+		Intent intent = new Intent();  
+        intent.setClass(context, VipTransferDetailActivity.class);  
+        context.startActivity(intent); 
+	}
+	
 }

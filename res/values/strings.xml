@@ -12,6 +12,7 @@
 
     <string name="username">账号：</string>
     <string name="forgetPwd">忘记密码？</string>
+    <string name="resive_password">确认修改</string>
     
     <string name="password">密码：</string>
     <string name="login">登&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;录</string>
@@ -34,14 +35,16 @@
     <string name="cancel">取消</string>
     <string name="transferor_number">转出者编号：</string>
     <string name="recipient_number">接收者编号：</string>
+    <string name="transfer_label_amount">金&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;额：</string>
   
   <!--兑换类  -->   
     <string name="exchange_integral">积分兑换</string>
     <string name="exchange_detail">兑换明细</string>
+    <string name="exchange_ok">确认兑换</string>
     
     <string name="award_dtail">奖励明细</string>
     
-    <string name="money_remain">$钱包余额</string>
+    <string name="money_remain">钱包余额</string>
     <string name="available_integral">$可用积分</string>
     <string name="rewards_style">类&#160;&#160;&#160;&#160;型：</string>
     

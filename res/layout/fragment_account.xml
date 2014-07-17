@@ -26,6 +26,7 @@
     
         
     <LinearLayout
+        android:id="@+id/myAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/menu_all_selector"

@@ -56,7 +56,11 @@
             android:name=".WelcomeActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
-            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".RegistActivity"
@@ -72,26 +76,17 @@
             android:name=".VipTransferActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
-            
-
         </activity>
         <activity
             android:name=".VipTransferDetailActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
-        
-          <activity
+        <activity
             android:name=".VipTransferSureActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Transparent"
-            android:screenOrientation="portrait" >
-            
-              <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Transparent" >
         </activity>
         <activity
             android:name=".WithDrawalsApplyActivity"
@@ -102,7 +97,6 @@
             android:name=".WithDrawalsDetailActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
-           
         </activity>
         <activity
             android:name=".AdvDetailActivity"
@@ -121,7 +115,8 @@
         <activity
             android:name="WithDrawalsApplySureActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Transparent" >
         </activity>
         <activity
             android:name="WithDrawalsApplyCompleteActivity"
@@ -133,10 +128,17 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
-        <activity 
+        <activity
             android:name="VipTransferCompleteActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="ExchangeSureAvtivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Transparent" >
+        </activity>
     </application>
 
 </manifest>

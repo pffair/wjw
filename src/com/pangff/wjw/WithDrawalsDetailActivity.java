@@ -1,5 +1,6 @@
 package com.pangff.wjw;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -44,6 +45,12 @@ public class WithDrawalsDetailActivity extends BaseActivity{
 				adapter.refresh(withdrawalsDetailResponse.body.list);
 			}
 		}
+	}
+	
+	public static void  invoteToWithDrawalsDetailApply(BaseActivity context){
+		Intent intent = new Intent();  
+        intent.setClass(context, WithDrawalsDetailActivity.class);  
+        context.startActivity(intent); 
 	}
 
 }

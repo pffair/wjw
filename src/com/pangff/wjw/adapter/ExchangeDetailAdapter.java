@@ -3,6 +3,11 @@ package com.pangff.wjw.adapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.pangff.wjw.R;
+import com.pangff.wjw.autowire.AndroidAutowire;
+import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.model.ExchangeDetailResponse.Body.ExchangeDetail;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,25 +15,19 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.pangff.wjw.R;
-import com.pangff.wjw.autowire.AndroidAutowire;
-import com.pangff.wjw.autowire.AndroidView;
-import com.pangff.wjw.model.TransferDetailResponse.Body.TransferDetail;
+public class ExchangeDetailAdapter extends BaseAdapter{
 
-public class TransferDetailAdapter extends BaseAdapter{
-
-	
-	
-	List<TransferDetail>transferDetailList = new ArrayList<TransferDetail>();
+	List<ExchangeDetail>exchangeDetailList = new ArrayList<ExchangeDetail>();
 	LayoutInflater mInflater;
-
-	public TransferDetailAdapter(Context context) {
+	
+	
+	public ExchangeDetailAdapter(Context context) {
 		this.mInflater = LayoutInflater.from(context);
 	}
 	
-	public void refresh(List<TransferDetail> list){
-		transferDetailList.clear();
-		transferDetailList.addAll(list);
+	public void refresh(List<ExchangeDetail> list){
+		exchangeDetailList.clear();
+		exchangeDetailList.addAll(list);
 		notifyDataSetChanged();
 	}
 	
@@ -36,7 +35,7 @@ public class TransferDetailAdapter extends BaseAdapter{
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return transferDetailList.size();
+		return exchangeDetailList.size();
 	}
 
 	@Override
@@ -50,8 +49,8 @@ public class TransferDetailAdapter extends BaseAdapter{
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	
-	
+
+
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ViewHolder holder = null;
@@ -59,18 +58,16 @@ public class TransferDetailAdapter extends BaseAdapter{
 		// 如果缓存convertView为空，则需要创建View
 		if (convertView == null) {
 			// 根据自定义的Item布局加载布局
-			convertView = mInflater.inflate(R.layout.list_item_tranfers_detail, null);
+			convertView = mInflater.inflate(R.layout.list_item_exchange_detail, null);
 			holder = new ViewHolder(convertView);
 			// 将设置好的布局保存到缓存中，并将其设置在Tag里，以便后面方便取出Tag
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-		TransferDetail transferDetail = transferDetailList.get(position);
-		holder.transferorNumberT.setText(transferDetail.mem);
-		holder.recipientNumberT.setText(transferDetail.tomem);
-		holder.bankT.setText(transferDetail.jin);
-		holder.timeT.setText(transferDetail.riqi);
+		ExchangeDetail exchangeDetail = exchangeDetailList.get(position);
+		holder.labelExchangeAmountT.setText(exchangeDetail.jin);
+		holder.timeT.setText(exchangeDetail.riqi);
 		return convertView;
 	}
 	
@@ -78,15 +75,8 @@ public class TransferDetailAdapter extends BaseAdapter{
 		public ViewHolder(View root){
 			AndroidAutowire.autowire(root, this);
 		}
-		
-		@AndroidView(R.id.transferorNumberT)
-		TextView transferorNumberT;
-		
-		@AndroidView(R.id.recipientNumberT)
-		TextView recipientNumberT;
-		
-		@AndroidView(R.id.bankT)
-		TextView bankT;
+		@AndroidView(R.id.labelExchangeAmountT)
+		TextView labelExchangeAmountT;
 		
 		@AndroidView(R.id.timeT)
 		TextView timeT;

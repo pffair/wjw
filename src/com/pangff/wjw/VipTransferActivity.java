@@ -4,10 +4,12 @@ import com.pangff.wjw.RegistActivity.SpinnerSelectedListener;
 import com.pangff.wjw.RegistActivity.SpinnerStarListener;
 import com.pangff.wjw.autowire.AndroidView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -23,13 +25,28 @@ public class VipTransferActivity extends BaseActivity{
 	@AndroidView(R.id.transferStyleT)
 	TextView transferStyleT;
 	
+	
+	@AndroidView(R.id.transferRegisterB)
+	Button transferRegisterB;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_transfer);
 		initConfig();
+		
+		transferRegisterB.setOnClickListener(onOneOffClickListener);
 	}
 	
+	@Override
+	protected void onMyClick(View v) {
+		// TODO Auto-generated method stub
+		switch(v.getId()){
+		case R.id.transferRegisterB:
+			VipTransferSureActivity.invoteToVipTransferSure(this);break;
+		}
+	}
+
 	private void initConfig() {
 		// 将可选内容与ArrayAdapter连接起来
 		adapterTransferStyle = new ArrayAdapter<String>(this,
@@ -59,7 +76,11 @@ public class VipTransferActivity extends BaseActivity{
 		}
 	}
 
-
+	public static void  invoteToVipTransfer(BaseActivity context){
+		Intent intent = new Intent();  
+        intent.setClass(context, VipTransferActivity.class);  
+        context.startActivity(intent); 
+	}
 
 
 }

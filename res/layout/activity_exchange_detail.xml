@@ -7,7 +7,7 @@
         <com.pangff.wjw.view.TitleBar
         android:layout_width="match_parent"
         android:layout_height="@dimen/titleBarHeight"
-        titlebar:canBack="false"
+        titlebar:canBack="true"
         titlebar:title="@string/exchange_detail" />
     
   	<ListView

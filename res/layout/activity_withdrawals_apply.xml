@@ -117,8 +117,8 @@
                         android:layout_height="match_parent"
                         android:drawableLeft="@drawable/icon_package_light"
                         android:gravity="center"
-                        android:text="@string/branch_name"
-                        android:paddingLeft="5dp" />
+                        android:layout_marginLeft="11dp"
+                        android:text="@string/branch_name" />
 
                     <EditText
                         android:id="@+id/branchNameE"
@@ -138,6 +138,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:drawableLeft="@drawable/icon_bankcard"
+                        android:layout_marginLeft="12dp"
                         android:gravity="center"
                         android:text="@string/bank_account" />
 
@@ -168,7 +169,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:paddingLeft="35dp"
-                        android:text="$提现金额" />
+                        android:text="提现金额" />
 
                     <EditText
                         android:id="@+id/withdrawalCashE"
@@ -202,11 +203,11 @@
             <Button
                 android:id="@+id/WithdrawalB"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/withdrawals"
                 android:background="@drawable/blue_btn_bg_selector" />
         </LinearLayout>
