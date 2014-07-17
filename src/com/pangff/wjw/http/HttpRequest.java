@@ -2,6 +2,7 @@ package com.pangff.wjw.http;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.RequestParams;
+import com.pangff.wjw.util.LogUtil;
 
 public class HttpRequest<T> {
 
@@ -23,6 +24,7 @@ public class HttpRequest<T> {
 	public void postDataXml(String method,String xml, ResponseCallBack callBack,Class<T> t) {
 		RequestParams params = new RequestParams();
 		params.put("data", xml);
+		LogUtil.error("Request:"+xml);
 		client.post(baseUrl, params, new MyAsyncHttpResponseHandler(callBack,method,t));
 	}
 

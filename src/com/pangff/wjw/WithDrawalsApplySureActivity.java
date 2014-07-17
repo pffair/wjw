@@ -31,7 +31,7 @@ public class WithDrawalsApplySureActivity extends BaseActivity {
 		// TODO Auto-generated method stub
 		switch(v.getId()){
 		case R.id.sureWithdrawalCashB:
-			WithDrawalsApplyCompleteActivity.invoteToWithDrawalsApplyComplete(this);
+			ApplyCompleteActivity.invoteApplyComplete(this);
 		case R.id.withdrawalCancelB:
 			
 		}

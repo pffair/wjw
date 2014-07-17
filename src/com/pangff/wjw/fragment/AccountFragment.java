@@ -1,7 +1,7 @@
 package com.pangff.wjw.fragment;
 
+import android.R.menu;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,9 +18,11 @@ import com.pangff.wjw.VipTransferActivity;
 import com.pangff.wjw.VipTransferDetailActivity;
 import com.pangff.wjw.WithDrawalsApplyActivity;
 import com.pangff.wjw.WithDrawalsDetailActivity;
-import com.pangff.wjw.adapter.WithDrawalsDetailAdapter;
 import com.pangff.wjw.autowire.AndroidView;
-import com.pangff.wjw.view.OnOneOffClickListener;
+import com.pangff.wjw.http.HttpRequest;
+import com.pangff.wjw.model.MyAccountRequest;
+import com.pangff.wjw.model.MyAccountResponse;
+import com.pangff.wjw.util.UserInfoUtil;
 
 /**
  * fragment基类
@@ -53,20 +55,35 @@ public class AccountFragment extends PagerFragment {
 
 	@AndroidView(R.id.myAccount)
 	LinearLayout myAccount;
+	
+	@AndroidView(R.id.showIdT)
+	TextView showIdT;
+	
+	@AndroidView(R.id.showNameT)
+	TextView showNameT;
+	
+	@AndroidView(R.id.showLevelT)
+	TextView showLevelT;
+	
+	@AndroidView(R.id.showRemainT)
+	TextView showRemainT;
+	
+	@AndroidView(R.id.showIntegralT)
+	TextView showIntegralT;
+	
+	public static final String METHOD_ZHANGHU = "zhanghu";
+	
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-
 		return inflater.inflate(R.layout.fragment_account, container, false);
-
 	}
 
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onViewCreated(view, savedInstanceState);
-
+		
 		myAccount.setOnClickListener(onOneOffClickListener);
 		withdrawalsApplyT.setOnClickListener(onOneOffClickListener);
 		withdrawalsDetailT.setOnClickListener(onOneOffClickListener);
@@ -75,9 +92,35 @@ public class AccountFragment extends PagerFragment {
 		exchangeT.setOnClickListener(onOneOffClickListener);
 		exchangeDtailT.setOnClickListener(onOneOffClickListener);
 		awardDtailT.setOnClickListener(onOneOffClickListener);
-
+		
+		doRequestAccount();
+	}
+	
+	
+	private void doRequestAccount(){
+		
+		MyAccountRequest myAccountRequest = new MyAccountRequest();
+		String xml = myAccountRequest.getParams(METHOD_ZHANGHU);
+		new HttpRequest<MyAccountResponse>().postDataXml(METHOD_ZHANGHU, xml, this,MyAccountResponse.class);
+	}
+	
+	@Override
+	public void onSuccess(String mothod, Object result) {
+		super.onSuccess(mothod, result);
+		if(mothod.equals(METHOD_ZHANGHU)){
+			MyAccountResponse myAccountResponse = (MyAccountResponse) result;
+			if(myAccountResponse!=null){
+				showIdT.setText(myAccountResponse.userid);
+				showNameT.setText(myAccountResponse.body.jifen);
+				showLevelT.setText(myAccountResponse.body.userleve);
+				showRemainT.setText(myAccountResponse.body.money);
+				showIntegralT.setText(myAccountResponse.body.jifen);
+			}
+		}
 	}
 
+
+	
 	protected void onMyClick(View v) {
 		int id = v.getId();
 		switch (id) {

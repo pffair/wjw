@@ -150,7 +150,15 @@
              android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
-       
+
+        <receiver
+            android:name="com.pangff.wjw.receiver.IncomingBroadcastReceiver"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

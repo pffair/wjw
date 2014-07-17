@@ -34,7 +34,7 @@
  		            android:layout_width="match_parent"
  		            android:layout_height="match_parent"
  		            android:layout_weight="1"
- 		            android:text="提现申请已提交，等待银行处理"
+ 		            android:text="申请已提交，等待银行处理"
  		            android:textColor="#FF00FF00"/>
  		        
  		        <TextView
@@ -53,7 +53,6 @@
  		    android:layout_marginTop="20dp">
  		    
  		    <ImageView
- 		        android:id="@+id/checkmark_or_fork"
  		        android:layout_width="wrap_content"
  		        android:layout_height="wrap_content"
  		        android:layout_marginLeft="50dp"
