@@ -2,6 +2,7 @@ package com.pangff.wjw;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 
 public class ExplainWithdrawalsActivity extends Activity {
@@ -10,6 +11,12 @@ public class ExplainWithdrawalsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_explain_withdrawals);
+	}
+	
+	public static void  invoteToExplainWithdrawals(BaseActivity context){
+		Intent intent = new Intent();  
+        intent.setClass(context, ExplainWithdrawalsActivity.class);  
+        context.startActivity(intent); 
 	}
 
 	@Override
