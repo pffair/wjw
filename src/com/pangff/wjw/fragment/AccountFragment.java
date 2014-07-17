@@ -67,6 +67,7 @@ public class AccountFragment extends PagerFragment {
 		// TODO Auto-generated method stub
 		super.onViewCreated(view, savedInstanceState);
 
+		
 		myAccount.setOnClickListener(onOneOffClickListener);
 		withdrawalsApplyT.setOnClickListener(onOneOffClickListener);
 		withdrawalsDetailT.setOnClickListener(onOneOffClickListener);
@@ -78,6 +79,8 @@ public class AccountFragment extends PagerFragment {
 
 	}
 
+
+	
 	protected void onMyClick(View v) {
 		int id = v.getId();
 		switch (id) {
