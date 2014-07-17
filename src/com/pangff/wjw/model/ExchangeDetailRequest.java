@@ -4,6 +4,7 @@ import com.pangff.wjw.util.UserInfoUtil;
 import com.pangff.wjw.util.XStreamTranslator;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+@XStreamAlias("root")
 public class ExchangeDetailRequest extends BaseBean{
 	
 	@XStreamAlias("body")

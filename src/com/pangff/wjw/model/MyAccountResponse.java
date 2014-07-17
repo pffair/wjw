@@ -15,6 +15,12 @@ public class MyAccountResponse extends BaseBean{
 		
 		@XStreamAlias("jifen")
 		public String jifen;
+		
+		@XStreamAlias("userleve")
+		public String userleve;
+		
+		@XStreamAlias("username")
+		public String username;
 	}
 	
 }

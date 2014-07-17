@@ -28,7 +28,6 @@ public class ExchangeDetailActivity extends BaseActivity{
 	}
 
 	private void initConfig() {
-		// TODO Auto-generated method stub
 		adapter=new ExchangeDetailAdapter(this);
 		exchangeListView.setAdapter(adapter);
 	}

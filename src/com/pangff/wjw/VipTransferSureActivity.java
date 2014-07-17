@@ -2,6 +2,7 @@ package com.pangff.wjw;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,6 +12,7 @@ import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.ResponseState;
 import com.pangff.wjw.model.TransferRequest;
 import com.pangff.wjw.model.TransferResponse;
+import com.pangff.wjw.util.LogUtil;
 import com.pangff.wjw.util.ParseMD5;
 import com.pangff.wjw.util.ToastUtil;
 import com.pangff.wjw.view.OnOneOffClickListener;
@@ -111,6 +113,7 @@ public class VipTransferSureActivity extends BaseActivity {
 		body.password = ParseMD5.parseStrToMd5L16(password);
 		body.jin = transferMoney;
 		body.tomem = receiver;
+		transferRequest.body = body;
 	}
 
 	public static void  invoteToVipTransferSure(BaseActivity context,String balance,TransferRequest transferRequest){
