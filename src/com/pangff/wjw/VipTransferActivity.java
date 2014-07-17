@@ -13,14 +13,10 @@ import android.widget.TextView;
 
 import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.http.HttpRequest;
-import com.pangff.wjw.model.LoginRequest;
-import com.pangff.wjw.model.LoginResponse;
 import com.pangff.wjw.model.MyAccountRequest;
 import com.pangff.wjw.model.MyAccountResponse;
-import com.pangff.wjw.model.ResponseState;
-import com.pangff.wjw.model.TransferDetailRequest;
 import com.pangff.wjw.model.TransferRequest;
-import com.pangff.wjw.model.TransferResponse;
+import com.pangff.wjw.util.StringUtil;
 import com.pangff.wjw.util.ToastUtil;
 import com.pangff.wjw.util.UserInfoUtil;
 
@@ -93,15 +89,33 @@ public class VipTransferActivity extends BaseActivity{
 		TransferRequest transferRequest = new TransferRequest();
 		TransferRequest.Body body= new TransferRequest.Body();
 		body.leixing = String.valueOf(transfer_type);
-		body.password = "123456";//transferPasswordE.getText().toString();
+		body.password = transferPasswordE.getText().toString();
 		body.jin = transferMoneyE.getText().toString();
-		body.tomem = "ATM888888";//receiverNumE.getText().toString();
+		body.tomem = receiverNumE.getText().toString();
 		transferRequest.body = body;
-		if(transfer_type == TRANSFER_TYPE_MONEY){
-			VipTransferSureActivity.invoteToVipTransferSure(this,menoyRemainT.getText().toString(),transferRequest);
-		}else{
-			VipTransferSureActivity.invoteToVipTransferSure(this,integraticRemainT.getText().toString(),transferRequest);
+		if(verify(body)){
+			if(transfer_type == TRANSFER_TYPE_MONEY){
+				VipTransferSureActivity.invoteToVipTransferSure(this,menoyRemainT.getText().toString(),transferRequest);
+			}else{
+				VipTransferSureActivity.invoteToVipTransferSure(this,integraticRemainT.getText().toString(),transferRequest);
+			}
 		}
+	}
+	
+	private boolean verify(TransferRequest.Body body){
+		if(StringUtil.isEmpty(body.tomem)){
+			ToastUtil.show("接收人编号不能为空");
+			return false;
+		}
+		if(StringUtil.isEmpty(body.jin)){
+			ToastUtil.show("转帐金额不能为空");
+			return false;
+		}
+		if(StringUtil.isEmpty(body.password)){
+			ToastUtil.show("密码不能为空");
+			return false;
+		}
+		return true;
 	}
 
 	private void initConfig() {
