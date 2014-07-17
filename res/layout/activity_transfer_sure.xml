@@ -11,9 +11,9 @@
         android:gravity="center_horizontal" >
 
         <LinearLayout
+            android:id="@+id/detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/detail"
             android:layout_centerHorizontal="true"
             android:orientation="vertical" >
 
@@ -23,20 +23,23 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
                 android:background="@drawable/menu_top_bg" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:paddingLeft="50dp"
-                    android:text="转帐类型" />
+                    android:gravity="right|center_vertical"
+                    android:text="转帐类型："
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/transferStyleT"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingLeft="10dp" />
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:textColor="@android:color/darker_gray" />
             </LinearLayout>
 
             <LinearLayout
@@ -44,20 +47,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
+                android:gravity="center_vertical"
                 android:background="@drawable/menu_center_bg" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:paddingLeft="50dp"
-                    android:text="接收者编号" />
+                    android:gravity="right|center_vertical"
+                    android:text="接收者编号："
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/recipientAccountT"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingLeft="10dp" />
+                    android:paddingLeft="10dp"
+                    android:gravity="left|center_vertical"
+                    android:textColor="@android:color/darker_gray" />
             </LinearLayout>
 
             <LinearLayout
@@ -65,20 +71,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
+                android:gravity="center_vertical"
                 android:background="@drawable/menu_center_bg" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:paddingLeft="50dp"
-                    android:text="金额" />
+                    android:gravity="right|center_vertical"
+                    android:text="帐户余额："
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/menoyT"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingLeft="10dp" />
+                    android:paddingLeft="10dp"
+                    android:gravity="left|center_vertical"
+                    android:textColor="@android:color/darker_gray" />
             </LinearLayout>
 
             <LinearLayout
@@ -86,18 +95,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
+                android:gravity="center_vertical"
                 android:background="@drawable/menu_bottom_bg" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:paddingLeft="50dp"
-                    android:text="提现金额" />
+                    android:gravity="right|center_vertical"
+                    android:text="转帐金额："
+                    android:textColor="@android:color/black" />
 
                 <TextView
-                    android:id="@+id/transferWithdrawalsMoney"
+                    android:id="@+id/transferMoneyT"
                     android:layout_width="match_parent"
+                    android:gravity="left|center_vertical"
                     android:layout_height="match_parent"
                     android:paddingLeft="10dp" />
             </LinearLayout>
