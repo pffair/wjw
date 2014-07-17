@@ -19,10 +19,10 @@ public class ExchangeDetailResponse extends BaseBean{
 		public static class ExchangeDetail{
 			
 			@XStreamAlias("jin")
-			String jin;
+			public String jin;
 			
 			@XStreamAlias("riqi")
-			String riqi;
+			public String riqi;
 		}
 	}
 	

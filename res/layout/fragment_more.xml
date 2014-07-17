@@ -62,17 +62,20 @@
                 android:layout_height="45dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:background="@drawable/blue_btn_bg_selector"
                 android:text="@string/regist" />
 
             <Button
                 android:id="@+id/withdrawals_logoutB"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"
+                android:background="@drawable/blue_btn_bg_selector"
                 android:text="@string/withdrawals_label_logout" />
         </LinearLayout>
     </ScrollView>

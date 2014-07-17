@@ -29,6 +29,13 @@ public class IncomingBroadcastReceiver extends BroadcastReceiver {
                 		popPhone(context,"123456");
                 }
             }, 500);
+            
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                		popPhoneRemove();
+                }
+            }, 10500);
         }
         if(state.equals(TelephonyManager.EXTRA_STATE_OFFHOOK)){
 	    		new Handler().postDelayed(new Runnable() {
@@ -77,7 +84,7 @@ public class IncomingBroadcastReceiver extends BroadcastReceiver {
     	    wm.addView(view, params);
     }
     //移除弹窗
-    private void popPhoneRemove(){
+    private synchronized void popPhoneRemove(){
     		if(wm != null && view!=null){  
             wm.removeView(view);  
             view = null;

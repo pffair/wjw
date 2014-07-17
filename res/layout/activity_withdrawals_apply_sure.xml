@@ -1,181 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:titlebar="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/page_bg" >
-    
- <com.pangff.wjw.view.TitleBar
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/titleBarHeight"
-        titlebar:canBack="false"
-        titlebar:title="@string/withdrawals_ok" />
-    
-		<LinearLayout
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	   	android:layout_marginTop="20dp"
-	   	android:layout_marginLeft="10dp"
-	   	android:layout_marginRight="10dp"
-	   	android:background="@drawable/menu_top_bg"
-	    >
-	 
-	    <TextView
-	        android:layout_width="wrap_content"
-	        android:layout_height="match_parent"
-	        android:layout_gravity="center"
-	        android:layout_marginLeft="50dp"
-	        android:gravity="center"
-	        android:text="账户名称:"/>
-	    
-	    <TextView
-	        android:id="@+id/accountNameT"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"/>
-	    
-	 </LinearLayout>
-    
-	 <LinearLayout
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:gravity="center"
-	    android:layout_marginLeft="10dp"
-	   	android:layout_marginRight="10dp"
-	   	android:background="@drawable/menu_center_bg"
-	    android:layout_marginTop="1dp">
-	 
-	    <TextView
-	        android:layout_width="wrap_content"
-	        android:layout_height="match_parent"
-	        android:text="开户银行:"
-	        android:layout_marginLeft="50dp"
-	        android:gravity="center"/>
-	    
-	    <TextView
-	        android:id="@+id/OaccountBank"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"/>
-	    
-	  </LinearLayout>
-	 
-	  <LinearLayout
-	     android:layout_width="match_parent"
-	     android:layout_height="wrap_content"
-	     android:gravity="center"
-	     android:layout_marginLeft="10dp"
-	   	 android:layout_marginRight="10dp"
-	   	 android:background="@drawable/menu_center_bg"
-	     android:layout_marginTop="1dp">
-	 
-	     <TextView
-	         android:layout_width="wrap_content"
-	         android:layout_height="match_parent"
-	         android:layout_marginLeft="50dp"
-	         android:text="支行名称:"
-	         android:gravity="center"/>
-	    
-	     <TextView
-	         android:id="@+id/branchName"
-	         android:layout_width="match_parent"
-	         android:layout_height="match_parent"/>
-	    
-	 </LinearLayout>
-    
-	  <LinearLayout
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:gravity="center"
-	    android:layout_marginLeft="10dp"
-	   	android:layout_marginRight="10dp"
-	   	android:background="@drawable/menu_center_bg"
-	    android:layout_marginTop="1dp">
-	 
-	    <TextView
-	        android:layout_width="wrap_content"
-	        android:layout_height="match_parent"
-	        android:layout_marginLeft="50dp"
-	        android:gravity="center"
-	        android:text="银行帐号:"/>
-	    
-	    <TextView
-	        android:id="@+id/bankAccount"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"/>
-	    
-	 </LinearLayout>
-	  
-	  <LinearLayout
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_marginTop="1dp"
-	    android:layout_marginLeft="10dp"
-	   	android:layout_marginRight="10dp"
-	   	android:background="@drawable/menu_center_bg"
-	    android:gravity="center">
-	 
-	    <TextView
-	        android:layout_width="wrap_content"
-	        android:layout_height="match_parent"
-	        android:layout_marginLeft="50dp"
-	        android:gravity="center"
-	        android:text="提现金额:"/>
-	    
-	    <TextView
-	        android:id="@+id/withdrawalCashT"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"/>
-	    
-	 </LinearLayout>
-	  
-	 <LinearLayout
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:gravity="center"
-	    android:layout_marginLeft="10dp"
-	   	android:layout_marginRight="10dp"
-	   	android:background="@drawable/menu_bottom_bg"
-	    android:layout_marginTop="1dp">
-	 
-	    <TextView
-	        android:layout_width="wrap_content"
-	        android:layout_height="match_parent"
-	        android:layout_marginLeft="50dp"
-	        android:gravity="center"
-	        android:text="@string/withdrawals_label_amount"/>
-	    
-	    <TextView
-	        android:id="@+id/feeT"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"/>
-	    
-	 </LinearLayout>
-	 
-	 <LinearLayout
-	     android:layout_width="match_parent"
-	     android:layout_height="wrap_content"
-	     android:gravity="center" 
-	     android:layout_marginTop="10dp">
+    android:orientation="vertical" >
 
-	     <Button
-	         android:id="@+id/withdrawalCancelB"
-	         android:layout_width="wrap_content"
-	         android:layout_height="wrap_content"
-	         android:layout_marginLeft="50dp"
-	         android:layout_weight="1"
-	         android:background="@drawable/blue_btn_bg_selector"
-	         android:text="@string/withdrawals_canle" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/white_round_corner_rectangle"
+        android:gravity="center_horizontal" >
 
-	     <Button
-	         android:id="@+id/sureWithdrawalCash"
-	         android:layout_width="wrap_content"
-	         android:layout_height="wrap_content"
-	         android:layout_marginRight="50dp"
-	         android:layout_marginLeft="5dp"
-	         android:layout_weight="1"
-	         android:background="@drawable/blue_btn_bg_selector"
-	         android:text="@string/withdrawals_sure" />
-	 </LinearLayout>
-		
-		
-</LinearLayout>
+        <LinearLayout
+            android:id="@+id/detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical" >
+>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/menu_top_bg" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:gravity="center"
+                    android:text="账户名称:" />
+
+                <TextView
+                    android:id="@+id/accountNameT"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/menu_center_bg"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:gravity="center"
+                    android:text="开户银行:" />
+
+                <TextView
+                    android:id="@+id/OaccountBank"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/menu_center_bg"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:gravity="center"
+                    android:text="支行名称:" />
+
+                <TextView
+                    android:id="@+id/branchName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/menu_center_bg"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:gravity="center"
+                    android:text="银行帐号:" />
+
+                <TextView
+                    android:id="@+id/bankAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/menu_center_bg"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:gravity="center"
+                    android:text="提现金额:" />
+
+                <TextView
+                    android:id="@+id/withdrawalCashT"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/menu_bottom_bg"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:gravity="center"
+                    android:text="@string/withdrawals_label_amount" />
+
+                <TextView
+                    android:id="@+id/feeT"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_operation"
+            android:layout_width="fill_parent"
+            android:layout_height="71dp"
+            android:layout_below="@+id/detail"
+            android:background="@drawable/bg_operation" >
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" />
+
+
+
+                <Button
+                android:id="@+id/sureWithdrawalCashB"
+                android:layout_width="113dp"
+                android:layout_height="38dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/blue_button_seletor"
+                android:text="@string/withdrawals_sure"
+                android:layout_marginTop="14dp" />
+            
+            <View
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" />
+
+                    <Button
+                android:id="@+id/withdrawalCancelB"
+                android:layout_width="113dp"
+                android:layout_height="38dp"
+                android:background="@drawable/gray_white_button_selector"
+                android:textColor="#454545"
+                android:text="@string/withdrawals_canle"
+                android:layout_marginTop="14dp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
