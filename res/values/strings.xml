@@ -16,8 +16,13 @@
     <string name="password">密码：</string>
     <string name="login">登&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;录</string>
     <string name="regist">免费注册</string>
+    
+  <!--密码类 -->
+    <string name="loginPwd">登录密码修改</string>
+    <string name="checkPwd">查看密码修改</string>
+    <string name="payPwd">支付密码修改</string>
   
- <!--会员类 -->  
+  <!--会员类 -->  
     <string name="vip_account">会员帐号</string>
     <string name="vip_name">会员姓名</string>
     <string name="vip_level">会员级别</string>
