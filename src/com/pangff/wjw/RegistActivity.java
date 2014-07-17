@@ -112,6 +112,8 @@ public class RegistActivity extends BaseActivity {
 		intent.setClass(context, RegistActivity.class);
 		context.startActivity(intent);
 	}
+	
+	
 
 	class SpinnerSelectedListener implements OnItemSelectedListener {
 		public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,

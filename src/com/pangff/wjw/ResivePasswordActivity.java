@@ -15,4 +15,8 @@ public class ResivePasswordActivity extends BaseActivity{
         intent.setClass(context, ResivePasswordActivity.class);  
         context.startActivity(intent); 
 	}
+	
+	
+	
+	
 }

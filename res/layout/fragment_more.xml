@@ -24,29 +24,35 @@
             android:orientation="vertical" >
 
            <Button
-                android:id="@+id/loginB"
+                android:id="@+id/loginPasswordChangeB"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:background="@drawable/blue_btn_bg_selector"
                 android:text="@string/loginPwd" />
 
             <Button
-                android:id="@+id/checkB"
+                android:id="@+id/checkPasswordChangeB"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:background="@drawable/blue_btn_bg_selector"
                 android:text="@string/checkPwd" />
 
             <Button
-                android:id="@+id/payB"
+                android:id="@+id/payPasswordChangeB"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:background="@drawable/blue_btn_bg_selector"
                 android:text="@string/payPwd" />
 
