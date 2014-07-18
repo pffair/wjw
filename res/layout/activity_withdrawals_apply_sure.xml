@@ -59,7 +59,7 @@
                     android:text="开户银行:" />
 
                 <TextView
-                    android:id="@+id/OaccountBank"
+                    android:id="@+id/OaccountBankT"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </LinearLayout>
@@ -81,7 +81,7 @@
                     android:text="支行名称:" />
 
                 <TextView
-                    android:id="@+id/branchName"
+                    android:id="@+id/branchNameT"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </LinearLayout>
@@ -103,7 +103,7 @@
                     android:text="银行帐号:" />
 
                 <TextView
-                    android:id="@+id/bankAccount"
+                    android:id="@+id/bankAccountT"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </LinearLayout>

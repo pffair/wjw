@@ -73,15 +73,7 @@ public class ExchangeIntegrationActivity extends BaseActivity{
 
 	public void onSuccess(String method, Object result) {
 		super.onSuccess(method, result);
-		if(method.equals(METHOD_DUIHUAN)){
-			ExchangeResponse exchangeResponse = (ExchangeResponse) result;
-			if(exchangeResponse.body.returns.equals(ResponseState.SUCCESS)){
-				//ToastUtil.show("注册成功,账号为:"+exchangeResponse.body.message);
-				exchangeNameT.setText("注册成功:["+exchangeResponse.body.message+"]");
-			}else{
-				ToastUtil.show(exchangeResponse.body.message);
-			}
-		}
+
 	}
 
 	public static void  invoteToExchangeIntegration(BaseActivity context){
