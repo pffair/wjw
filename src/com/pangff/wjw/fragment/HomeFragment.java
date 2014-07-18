@@ -77,7 +77,6 @@ public class HomeFragment extends PagerFragment {
 		avdAdapter = new AvdListAdapter(this.getActivity());
 		listView.setAdapter(avdAdapter);
 		viewPager.setAdapter(topGalleryAdapter);
-		
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override

@@ -56,11 +56,12 @@ public class BaseApplication extends Application {
 			@Override
 			public void onGetSuccess(String imageUrl, Bitmap loadedImage,
 					View view, boolean isInCache) {
+				Log.e("ddd", "imageUrl:"+imageUrl);
 				if (view != null && loadedImage != null) {
 					ImageView imageView = (ImageView) view;
 					imageView.setImageBitmap(loadedImage);
 					// first time show with animation
-					if (!isInCache) {
+					if (!isInCache && imageView.getVisibility()==View.VISIBLE) {
 						imageView.startAnimation(getInAlphaAnimation(2000));
 					}
 				}

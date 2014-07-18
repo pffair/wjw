@@ -7,14 +7,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.text.TextUtils;
-import android.util.Log;
 
 import com.alibaba.fastjson.util.IOUtils;
 import com.pangff.wjw.BaseApplication;
 import com.pangff.wjw.model.Img;
 import com.pangff.wjw.util.LogUtil;
-import com.pangff.wjw.util.UserInfoUtil;
 
 public class AdvImgDBManager {
 	private AdvImgDBHelper msgCenterDBHelper;
@@ -50,7 +47,7 @@ public class AdvImgDBManager {
 		db.beginTransaction();
 		String sql = "insert into adv_img(id,photoUrl) values(?,?)";
 		for (int i = 0; i < imgList.size(); i++) {
-			LogUtil.error("添加图片:"+imgList.get(i).imgs);
+			LogUtil.error("添加图片:"+imgList.get(i).imgbig);
 			AdvImgDBManager.db.execSQL(sql, new Object[] { imgList.get(i).id,
 					imgList.get(i).imgs });
 		}
@@ -73,12 +70,12 @@ public class AdvImgDBManager {
 					String id = cursor.getString(cursor.getColumnIndex("id"));
 					String photoUrl = cursor.getString(cursor.getColumnIndex("photoUrl"));
 					Img img = new Img();
-					img.imgs = photoUrl;
+					img.imgbig = photoUrl;
 					img.id = id;
-					LogUtil.error("获取图片:"+img.imgs);
+					LogUtil.error("获取图片:"+img.imgbig);
 					if(BaseApplication.self.IMAGE_CACHE.containsKey(photoUrl)){
 						imgList.add(img);
-						LogUtil.error("获取缓存图片:"+img.imgs);
+						LogUtil.error("获取缓存图片:"+img.imgbig);
 					}
 				} while (cursor.moveToNext());
 			}

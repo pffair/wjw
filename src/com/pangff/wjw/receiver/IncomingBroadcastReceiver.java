@@ -94,7 +94,7 @@ public class IncomingBroadcastReceiver extends BroadcastReceiver implements Resp
 					LinearLayout.LayoutParams.MATCH_PARENT,
 					LinearLayout.LayoutParams.MATCH_PARENT);
 			view.addView(imageView,lp);
-			BaseApplication.self.IMAGE_CACHE.get(img.imgs, imageView);
+			BaseApplication.self.IMAGE_CACHE.get(img.imgbig, imageView);
 			view.setBackgroundColor(Color.RED);
 			view.setOrientation(LinearLayout.VERTICAL);
 
