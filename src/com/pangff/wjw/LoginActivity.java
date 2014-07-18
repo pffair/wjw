@@ -62,10 +62,7 @@ public class LoginActivity extends BaseActivity {
 	}
 	
 	private void doLogin(){
-	//	WithDrawalsApplyActivity.invoteToWithDrawalsApply(this);
-	//	MainActivity.invoteToMain(this);
-	//	AcountChangeActivity.invotoacountchange(this);
-	//	WithDrawalsApplyActivity.invoteToWithDrawalsApply(this);
+
 		
 		this.userName = userNameE.getText().toString();
 		this.passord = passwordE.getText().toString();

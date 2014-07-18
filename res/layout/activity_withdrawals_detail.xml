@@ -11,10 +11,15 @@
         titlebar:canBack="true"
         titlebar:title="@string/withdrawals_detail" />
     
+      <FrameLayout
+        android:id="@+id/withdrawalsDetailLoadingFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+     
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
     </ListView>
-
+</FrameLayout>
 </LinearLayout>

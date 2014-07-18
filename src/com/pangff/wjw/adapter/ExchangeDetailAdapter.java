@@ -66,7 +66,7 @@ public class ExchangeDetailAdapter extends BaseAdapter{
 			holder = (ViewHolder) convertView.getTag();
 		}
 		ExchangeDetail exchangeDetail = exchangeDetailList.get(position);
-		holder.labelExchangeAmountT.setText(exchangeDetail.jin);
+		holder.exchangeAmountT.setText(exchangeDetail.jin);
 		holder.timeT.setText(exchangeDetail.riqi);
 		return convertView;
 	}
@@ -75,8 +75,8 @@ public class ExchangeDetailAdapter extends BaseAdapter{
 		public ViewHolder(View root){
 			AndroidAutowire.autowire(root, this);
 		}
-		@AndroidView(R.id.labelExchangeAmountT)
-		TextView labelExchangeAmountT;
+		@AndroidView(R.id.exchangeAmountT)
+		TextView exchangeAmountT;
 		
 		@AndroidView(R.id.timeT)
 		TextView timeT;

@@ -8,6 +8,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -19,6 +20,7 @@ import com.pangff.wjw.model.TransferRequest;
 import com.pangff.wjw.util.StringUtil;
 import com.pangff.wjw.util.ToastUtil;
 import com.pangff.wjw.util.UserInfoUtil;
+import com.pangff.wjw.view.LoadingView;
 
 public class VipTransferActivity extends BaseActivity{
 	
@@ -62,6 +64,11 @@ public class VipTransferActivity extends BaseActivity{
 	@AndroidView(R.id.integraticRemainT)
 	TextView integraticRemainT;
 	
+	@AndroidView(R.id.transferLoadingFrame)
+	FrameLayout transferLoadingFrame;
+	
+	LoadingView transferLoading;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -80,6 +87,8 @@ public class VipTransferActivity extends BaseActivity{
 	}
 	
 	private void doRequestAccount(){
+		transferLoading=new LoadingView(this);
+		transferLoading.addLoadingTo(transferLoadingFrame);
 		MyAccountRequest myAccountRequest = new MyAccountRequest();
 		String xml = myAccountRequest.getParams(METHOD_ZHUANZHANG);
 		new HttpRequest<MyAccountResponse>().postDataXml(METHOD_ZHUANZHANG, xml, this,MyAccountResponse.class);
@@ -163,6 +172,7 @@ public class VipTransferActivity extends BaseActivity{
 	public void onSuccess(String method, Object result) {
 		super.onSuccess(method, result);
 		if(method.equals(METHOD_ZHUANZHANG)){
+			transferLoading.removeLoadingFrom(transferLoadingFrame);
 			MyAccountResponse myAccountResponse =  (MyAccountResponse) result ;
 			if(myAccountResponse!=null){
 				menoyRemainT.setText(myAccountResponse.body.money);

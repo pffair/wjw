@@ -66,7 +66,7 @@ public class RewardDetailAdapter extends BaseAdapter {
 		}
 		RewardDetail rewardDetail = rewardDetailList.get(position);
 		holder.rewardamountT.setText(rewardDetail.jin);
-		holder.labelRewardStyleT.setText(rewardDetail.leixing);
+		holder.rewardStyleT.setText(rewardDetail.leixing);
 		holder.timeT.setText(rewardDetail.riqi);
 		return convertView;
 	}
@@ -79,8 +79,8 @@ public class RewardDetailAdapter extends BaseAdapter {
 		@AndroidView(R.id.rewardamountT)
 		TextView rewardamountT;
 		
-		@AndroidView(R.id.labelRewardStyleT)
-		TextView labelRewardStyleT;
+		@AndroidView(R.id.rewardStyleT)
+		TextView rewardStyleT;
 				
 		@AndroidView(R.id.timeT)
 		TextView timeT;

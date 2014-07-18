@@ -2,6 +2,7 @@ package com.pangff.wjw;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 
 import com.pangff.wjw.adapter.TransferDetailAdapter;
@@ -9,11 +10,17 @@ import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.TransferDetailRequest;
 import com.pangff.wjw.model.TransferDetailResponse;
+import com.pangff.wjw.view.LoadingView;
 
 public class VipTransferDetailActivity extends BaseActivity{
 	
 	@AndroidView(R.id.transferListView)
 	ListView transferListView;
+	
+	@AndroidView(R.id.TransferDetailLoadingFrame)
+	FrameLayout TransferDetailLoadingFrame;
+	
+	LoadingView listLoadingView;
 	
 	TransferDetailAdapter adapter;
 	public static final String METHOD_ZHUANZHANGLIST ="zhuanzhanglist";
@@ -32,6 +39,8 @@ public class VipTransferDetailActivity extends BaseActivity{
 	}
 	
 	private void initData(){
+		listLoadingView = new LoadingView(this);
+		listLoadingView.addLoadingTo(TransferDetailLoadingFrame);
 		String xml = new TransferDetailRequest().getParams(METHOD_ZHUANZHANGLIST);
 		new HttpRequest<TransferDetailResponse>().postDataXml(METHOD_ZHUANZHANGLIST,xml, this,TransferDetailResponse.class);
 	}
@@ -40,6 +49,7 @@ public class VipTransferDetailActivity extends BaseActivity{
 	public void onSuccess(String method, Object result) {
 		super.onSuccess(method, result);
 		if(method.equals(METHOD_ZHUANZHANGLIST)){
+			listLoadingView.removeLoadingFrom(TransferDetailLoadingFrame);
 			TransferDetailResponse transferDetailResponse = (TransferDetailResponse) result;
 			if(transferDetailResponse!=null){
 				adapter.refresh(transferDetailResponse.body.list);

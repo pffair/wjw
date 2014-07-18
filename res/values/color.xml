@@ -3,6 +3,6 @@
     <color name="titlebarBg">#2dabec</color>
     <color name="list_item_bg">#E3EEF6</color>
     <color name="page_bg">#DCDCDC</color>
- 	<color name="loading_bg">#80000000</color>
+ 	<color name="loading_bg">#20000000</color>
  	
 </resources>

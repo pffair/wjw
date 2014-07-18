@@ -5,16 +5,22 @@
     android:background="@color/page_bg"
     android:orientation="vertical" >
 
-     <com.pangff.wjw.view.TitleBar
+    <com.pangff.wjw.view.TitleBar
         android:layout_width="match_parent"
         android:layout_height="@dimen/titleBarHeight"
         titlebar:canBack="true"
         titlebar:title="@string/transfer_detail" />
-    
-    <ListView
-        android:id="@+id/transferListView"
+
+    <FrameLayout
+        android:id="@+id/TransferDetailLoadingFrame"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
-    </ListView>
+
+        <ListView
+            android:id="@+id/transferListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </ListView>
+    </FrameLayout>
 
 </LinearLayout>

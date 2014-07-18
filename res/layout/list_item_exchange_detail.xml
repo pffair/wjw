@@ -26,14 +26,13 @@
             android:id="@+id/labelExchangeAmountT"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="center"
             android:text="@string/withdrawals_label_amount" />
 
         <TextView
             android:id="@+id/exchangeAmountT"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="1233.0元" />
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 
