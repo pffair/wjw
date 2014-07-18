@@ -92,7 +92,6 @@ public class HomeFragment extends PagerFragment {
 	protected void initData() {
 		listLoadingView = new LoadingView(this.getActivity());
 		listLoadingView.addLoadingTo(homeRootView);
-		isFinishAll = 0;
 		runText.setVisibility(View.GONE);
 		requestTopGallery();
 	}
@@ -110,6 +109,7 @@ public class HomeFragment extends PagerFragment {
 	private void showAdvList(AdvResponse advResponse) {
 		avdAdapter.refresh(advResponse.body.img);
 		AdvImgDBManager.getInstance().addImgs(advResponse.body.img);
+		hideLoadingView();
 	}
 
 	private void showGalleryData(TopGalleryResponse topGallery) {
@@ -140,11 +140,9 @@ public class HomeFragment extends PagerFragment {
 	public void onFailure(String mothod,String errorMsg) {
 		super.onFailure(mothod,errorMsg);
 		//根据返回的method进行相应操作
-		isFinishAll = 2;
 		hideLoadingView();
 	}
 	
-	int isFinishAll = 0;
 	@Override
 	public void onSuccess(String mothod,Object result) {
 		super.onSuccess(mothod,result);
@@ -152,20 +150,15 @@ public class HomeFragment extends PagerFragment {
 		if(METHOD_TOPGALLERY.equals(mothod)){
 			TopGalleryResponse topGallery = (TopGalleryResponse) result;
 			showGalleryData(topGallery);
-			isFinishAll ++;
 			requestAdvList();
 		}
 		if(METHOD_ADVLIST.equals(mothod)){
 			AdvResponse advResponse = (AdvResponse) result;
 			showAdvList(advResponse);
-			isFinishAll++;
 		}
-		hideLoadingView();
 	}
 	
 	private void hideLoadingView(){
-		if(isFinishAll>=2){
 			listLoadingView.removeLoadingFrom(homeRootView);
-		}
 	}
 }
