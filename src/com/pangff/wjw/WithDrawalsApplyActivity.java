@@ -1,30 +1,25 @@
 package com.pangff.wjw;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
 import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.http.HttpRequest;
-import com.pangff.wjw.model.AdvDetailResponse;
-import com.pangff.wjw.model.RegistResponse;
 import com.pangff.wjw.model.ResponseState;
 import com.pangff.wjw.model.WithdrawalsCommitRequest;
 import com.pangff.wjw.model.WithdrawalsCommitResponse;
-import com.pangff.wjw.model.WithdrawalsDetailRequest;
 import com.pangff.wjw.model.WithdrawalsRequest;
 import com.pangff.wjw.model.WithdrawalsResponse;
 import com.pangff.wjw.util.ParseMD5;
 import com.pangff.wjw.util.ToastUtil;
 import com.pangff.wjw.util.UserInfoUtil;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-
 public class WithDrawalsApplyActivity extends BaseActivity {
 
-	public static final String METHOD_TIXIANOK = "tixianok";
 	public static final String METHOD_TIXIAN ="tixian";
 	
 	@AndroidView(R.id.withdrawalB)
