@@ -10,8 +10,13 @@ import android.widget.TextView;
 
 import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.http.HttpRequest;
+import com.pangff.wjw.model.ResponseState;
+import com.pangff.wjw.model.TransferResponse;
 import com.pangff.wjw.model.WithdrawalsCommitRequest;
+import com.pangff.wjw.model.WithdrawalsCommitResponse;
 import com.pangff.wjw.model.WithdrawalsDetailResponse;
+import com.pangff.wjw.util.ParseMD5;
+import com.pangff.wjw.util.ToastUtil;
 
 public class WithDrawalsApplySureActivity extends BaseActivity {
 
@@ -23,8 +28,8 @@ public class WithDrawalsApplySureActivity extends BaseActivity {
 	@AndroidView(R.id.withdrawalCancelB)
 	Button withdrawalCancelB;
 	
-	@AndroidView(R.id.balanceT)
-	TextView balanceT;
+	@AndroidView(R.id.feeT)
+	TextView feeT;
 	
 	@AndroidView(R.id.withdrawalCashT)
 	TextView withdrawalCashT;
@@ -57,18 +62,32 @@ public class WithDrawalsApplySureActivity extends BaseActivity {
 	private void initData(){
 		
 		Intent intent = this.getIntent();
-		String type = intent.getStringExtra("type");
-		String receiver = intent.getStringExtra("receiver");
 		String balance = intent.getStringExtra("balance");
-		String transferMoney = intent.getStringExtra("transferMoney");
+		String money = intent.getStringExtra("money");
 		String password = intent.getStringExtra("password");
+		String bankAccount = intent.getStringExtra("bankAccountT");
+		String branchName = intent.getStringExtra("branchNameT");
+		String oAccountBank = intent.getStringExtra("oAccountBankT");
+		String accountName = intent.getStringExtra("accountNameT");
+		String sxf = intent.getStringExtra("sxf");
 		
-		balanceT
-		withdrawalCashT
-		bankAccountT
-		branchNameT
-		OAccountBankT
-		accountNameT
+		feeT.setText(String.valueOf(Double.parseDouble(sxf)*100)+"%");
+		withdrawalCashT.setText(money);
+		bankAccountT.setText(bankAccount);
+		branchNameT.setText(branchName);
+		oAccountBankT.setText(oAccountBank);
+		accountNameT.setText(accountName);
+		
+		
+		withdrawalsCommitRequest = new WithdrawalsCommitRequest();
+		withdrawalsCommitRequest.body = new WithdrawalsCommitRequest.Body();
+		withdrawalsCommitRequest.body.bank = oAccountBank;
+		withdrawalsCommitRequest.body.zhihang = branchName;
+		withdrawalsCommitRequest.body.jin = money;
+		withdrawalsCommitRequest.body.password = ParseMD5.parseStrToMd5L16(password);
+		withdrawalsCommitRequest.body.zxname = accountName;
+		withdrawalsCommitRequest.body.sxf = sxf;
+		withdrawalsCommitRequest.body.zhanghao = bankAccount;
 	}
 	
 	@Override
@@ -76,29 +95,47 @@ public class WithDrawalsApplySureActivity extends BaseActivity {
 		switch(v.getId()){
 		case R.id.sureWithdrawalCashB:
 			doRequestCommitWithDrawals();
+			break;
 		case R.id.withdrawalCancelB:
 			finish();
+			break;
 		}
 	}
 
 	private void doRequestCommitWithDrawals(){
 		String xml = withdrawalsCommitRequest.getParams(METHOD_TIXIANOK,withdrawalsCommitRequest.body);
-		new HttpRequest<WithdrawalsDetailResponse>().postDataXml(METHOD_TIXIANOK, xml, this,WithdrawalsDetailResponse.class);
+		new HttpRequest<WithdrawalsCommitResponse>().postDataXml(METHOD_TIXIANOK, xml, this,WithdrawalsCommitResponse.class);
 	}
 
+	
+	@Override
+	public void onSuccess(String method, Object result) {
+		super.onSuccess(method, result);
+		if(method.equals(METHOD_TIXIANOK)){
+			WithdrawalsCommitResponse withdrawalsCommitResponse =  (WithdrawalsCommitResponse) result ;
+			if(withdrawalsCommitResponse.body.returns.equals(ResponseState.SUCCESS)){
+				ApplyCompleteActivity.invoteApplyComplete(WithDrawalsApplySureActivity.this);
+				finish();
+			}else{
+				ToastUtil.show(withdrawalsCommitResponse.body.message);
+				finish();
+			}
+		}
+	}
 
 	public static void  invoteToWithDrawalsApplySure(BaseActivity context,String userid,String balance,WithdrawalsCommitRequest withdrawalsCommitRequest){
 		Intent intent = new Intent();  
-        intent.setClass(context, VipTransferSureActivity.class);  
+        intent.setClass(context, WithDrawalsApplySureActivity.class);  
         intent.putExtra("receiver", withdrawalsCommitRequest.userid);
         intent.putExtra("balance", balance);
         intent.putExtra("password", withdrawalsCommitRequest.body.password);
         intent.putExtra("money", withdrawalsCommitRequest.body.jin);
-        
-        intent.putExtra("bankAccountT", withdrawalsCommitRequest.body.);
-        intent.putExtra("money", withdrawalsCommitRequest.body.jin);
-        intent.putExtra("money", withdrawalsCommitRequest.body.jin);
-        
+        intent.putExtra("sxf", withdrawalsCommitRequest.body.sxf);
+        intent.putExtra("bankAccountT", withdrawalsCommitRequest.body.zhanghao);
+        intent.putExtra("branchNameT", withdrawalsCommitRequest.body.zhihang);
+        intent.putExtra("oAccountBankT", withdrawalsCommitRequest.body.bank);
+        intent.putExtra("accountNameT", withdrawalsCommitRequest.body.zxname);
+        intent.putExtra("sxf", withdrawalsCommitRequest.body.sxf);
         context.startActivity(intent); 
 	}
 }

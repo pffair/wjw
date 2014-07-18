@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res/com.pangff.wjw"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" xmlns:app="http://schemas.android.com/apk/res/com.pangff.wjw">
+    android:orientation="vertical" >
 
     <com.pangff.wjw.view.TitleBar
+        android:id="@+id/titleBar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/titleBarHeight"
         titlebar:canBack="true"
-        android:id="@+id/titleBar"
         titlebar:rightText="@string/withdrawals_explain"
         titlebar:title="@string/withdrawals_apply" />
 
@@ -22,7 +23,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical" >
 
             <LinearLayout
@@ -41,9 +42,9 @@
                     android:orientation="horizontal" >
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="115dp"
                         android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:gravity="center|center_vertical"
                         android:paddingLeft="35dp"
                         android:text="@string/account_name" />
 
@@ -51,7 +52,9 @@
                         android:id="@+id/accountNameT"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@null" />
+                        android:background="@null"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="15dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -62,9 +65,9 @@
                     android:background="@drawable/menu_bottom_bg" >
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="115dp"
                         android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:gravity="center|center_vertical"
                         android:paddingLeft="35dp"
                         android:text="@string/money_remain" />
 
@@ -72,9 +75,10 @@
                         android:id="@+id/accountRemainT"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:paddingRight="10dp"
-                        android:gravity="right"
-                        android:text="1" />
+                        android:background="@null"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="15dp"
+                        android:text="dd" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -93,17 +97,21 @@
                     android:background="@drawable/menu_top_bg" >
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="115dp"
                         android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:gravity="center|center_vertical"
                         android:paddingLeft="35dp"
                         android:text="@string/open_account_bank" />
 
-                    <EditText
-                        android:id="@+id/OaccountBankE"
+                    <Spinner
+                        android:id="@+id/bankSpinner"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@null" />
+                        android:background="@null"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="5dp"
+                        android:singleLine="true" >
+                    </Spinner>
                 </LinearLayout>
 
                 <LinearLayout
@@ -114,18 +122,21 @@
                     android:background="@drawable/menu_center_bg" >
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="115dp"
                         android:layout_height="match_parent"
                         android:drawableLeft="@drawable/icon_package_light"
-                        android:gravity="center"
-                        android:layout_marginLeft="11dp"
+                        android:gravity="center|center_vertical"
+                        android:paddingLeft="15dp"
                         android:text="@string/branch_name" />
 
                     <EditText
                         android:id="@+id/branchNameE"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@null" />
+                        android:background="@null"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="15dp"
+                        android:text="dd" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -136,18 +147,22 @@
                     android:background="@drawable/menu_bottom_bg" >
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="115dp"
                         android:layout_height="match_parent"
                         android:drawableLeft="@drawable/icon_bankcard"
-                        android:layout_marginLeft="12dp"
-                        android:gravity="center"
+                        android:gravity="center|center_vertical"
+                        android:paddingLeft="15dp"
                         android:text="@string/bank_account" />
 
                     <EditText
                         android:id="@+id/bankAccountE"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@null" />
+                        android:background="@null"
+                        android:gravity="left|center_vertical"
+                        android:inputType="number"
+                        android:paddingLeft="15dp"
+                        android:text="dd" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -166,9 +181,9 @@
                     android:background="@drawable/menu_top_bg" >
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="115dp"
                         android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:gravity="center|center_vertical"
                         android:paddingLeft="35dp"
                         android:text="提现金额" />
 
@@ -176,7 +191,11 @@
                         android:id="@+id/withdrawalCashE"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@null" />
+                        android:background="@null"
+                        android:gravity="left|center_vertical"
+                        android:inputType="number"
+                        android:paddingLeft="15dp"
+                        android:text="dd" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -187,9 +206,9 @@
                     android:background="@drawable/menu_bottom_bg" >
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="115dp"
                         android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:gravity="center|center_vertical"
                         android:paddingLeft="35dp"
                         android:text="支付密码" />
 
@@ -197,7 +216,11 @@
                         android:id="@+id/payPasswordE"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@null" />
+                        android:background="@null"
+                        android:gravity="left|center_vertical"
+                        android:inputType="textPassword"
+                        android:paddingLeft="15dp"
+                        android:text="dd" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -209,11 +232,9 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/withdrawals"
-                android:background="@drawable/blue_btn_bg_selector" />
+                android:background="@drawable/blue_btn_bg_selector"
+                android:text="@string/withdrawals" />
         </LinearLayout>
     </ScrollView>
-
-
 
 </LinearLayout>

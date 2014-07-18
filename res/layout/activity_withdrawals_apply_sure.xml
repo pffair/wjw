@@ -28,17 +28,19 @@
                 android:background="@drawable/menu_top_bg" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="110dp"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="50dp"
-                    android:gravity="center"
-                    android:text="账户名称:" />
+                    android:gravity="right|center_vertical"
+                    android:text="账户名称:"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/accountNameT"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:textColor="@android:color/darker_gray" />
             </LinearLayout>
 
             <LinearLayout
@@ -51,16 +53,19 @@
                 android:gravity="center" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="110dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="50dp"
-                    android:gravity="center"
-                    android:text="开户银行:" />
+                    android:gravity="right|center_vertical"
+                    android:text="开户银行:"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/oAccountBankT"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:textColor="@android:color/darker_gray" />
             </LinearLayout>
 
             <LinearLayout
@@ -73,16 +78,19 @@
                 android:gravity="center" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="110dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="50dp"
-                    android:gravity="center"
-                    android:text="支行名称:" />
+                    android:gravity="right|center_vertical"
+                    android:text="支行名称:"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/branchNameT"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:textColor="@android:color/darker_gray" />
             </LinearLayout>
 
             <LinearLayout
@@ -95,16 +103,19 @@
                 android:gravity="center" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="110dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="50dp"
-                    android:gravity="center"
-                    android:text="银行帐号:" />
+                    android:gravity="right|center_vertical"
+                    android:text="银行帐号:"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/bankAccountT"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:textColor="@android:color/darker_gray" />
             </LinearLayout>
 
             <LinearLayout
@@ -117,16 +128,19 @@
                 android:gravity="center" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="110dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="50dp"
-                    android:gravity="center"
-                    android:text="提现金额:" />
+                    android:gravity="right|center_vertical"
+                    android:text="提现金额:"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/withdrawalCashT"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:textColor="@android:color/darker_gray" />
             </LinearLayout>
 
             <LinearLayout
@@ -139,16 +153,19 @@
                 android:gravity="center" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="110dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="50dp"
-                    android:gravity="center"
-                    android:text="余额:" />
+                    android:gravity="right|center_vertical"
+                    android:text="手续费:"
+                    android:textColor="@android:color/black" />
 
                 <TextView
-                    android:id="@+id/balanceT"
+                    android:id="@+id/feeT"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:textColor="@android:color/darker_gray" />
             </LinearLayout>
         </LinearLayout>
 

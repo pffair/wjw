@@ -1,6 +1,5 @@
 package com.pangff.wjw.fragment;
 
-import android.R.menu;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +21,7 @@ import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.MyAccountRequest;
 import com.pangff.wjw.model.MyAccountResponse;
-import com.pangff.wjw.util.UserInfoUtil;
+import com.pangff.wjw.util.StringUtil;
 
 /**
  * fragment基类
@@ -92,13 +91,10 @@ public class AccountFragment extends PagerFragment {
 		exchangeT.setOnClickListener(onOneOffClickListener);
 		exchangeDtailT.setOnClickListener(onOneOffClickListener);
 		awardDtailT.setOnClickListener(onOneOffClickListener);
-		
-		doRequestAccount();
 	}
 	
 	
 	private void doRequestAccount(){
-		
 		MyAccountRequest myAccountRequest = new MyAccountRequest();
 		String xml = myAccountRequest.getParams(METHOD_ZHANGHU);
 		new HttpRequest<MyAccountResponse>().postDataXml(METHOD_ZHANGHU, xml, this,MyAccountResponse.class);
@@ -119,6 +115,13 @@ public class AccountFragment extends PagerFragment {
 		}
 	}
 
+	@Override
+	protected void initData() {
+		super.initData();
+		if(StringUtil.isEmpty(showIdT.getText().toString())){
+			doRequestAccount();
+		}
+	}
 
 	
 	protected void onMyClick(View v) {
