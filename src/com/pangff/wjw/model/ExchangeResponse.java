@@ -2,6 +2,7 @@ package com.pangff.wjw.model;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+@XStreamAlias("root")
 public class ExchangeResponse extends BaseBean{
 	
 	@XStreamAlias("body")

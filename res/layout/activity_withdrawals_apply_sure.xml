@@ -18,7 +18,6 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:orientation="vertical" >
->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -59,7 +58,7 @@
                     android:text="开户银行:" />
 
                 <TextView
-                    android:id="@+id/OaccountBankT"
+                    android:id="@+id/oAccountBankT"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </LinearLayout>
@@ -144,10 +143,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="50dp"
                     android:gravity="center"
-                    android:text="@string/withdrawals_label_amount" />
+                    android:text="余额:" />
 
                 <TextView
-                    android:id="@+id/feeT"
+                    android:id="@+id/balanceT"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </LinearLayout>
@@ -165,30 +164,28 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1" />
 
-
-
-                <Button
+            <Button
                 android:id="@+id/sureWithdrawalCashB"
                 android:layout_width="113dp"
                 android:layout_height="38dp"
-                android:textColor="@android:color/white"
+                android:layout_marginTop="14dp"
                 android:background="@drawable/blue_button_seletor"
                 android:text="@string/withdrawals_sure"
-                android:layout_marginTop="14dp" />
-            
+                android:textColor="@android:color/white" />
+
             <View
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1" />
 
-                    <Button
+            <Button
                 android:id="@+id/withdrawalCancelB"
                 android:layout_width="113dp"
                 android:layout_height="38dp"
+                android:layout_marginTop="14dp"
                 android:background="@drawable/gray_white_button_selector"
-                android:textColor="#454545"
                 android:text="@string/withdrawals_canle"
-                android:layout_marginTop="14dp" />
+                android:textColor="#454545" />
 
             <View
                 android:layout_width="0dp"

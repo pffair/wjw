@@ -111,7 +111,7 @@ public class AccountFragment extends PagerFragment {
 			MyAccountResponse myAccountResponse = (MyAccountResponse) result;
 			if(myAccountResponse!=null){
 				showIdT.setText(myAccountResponse.userid);
-				showNameT.setText(myAccountResponse.body.jifen);
+				showNameT.setText(myAccountResponse.body.username);
 				showLevelT.setText(myAccountResponse.body.userleve);
 				showRemainT.setText(myAccountResponse.body.money);
 				showIntegralT.setText(myAccountResponse.body.jifen);

@@ -103,6 +103,11 @@ public class VipTransferActivity extends BaseActivity{
 	}
 	
 	private boolean verify(TransferRequest.Body body){
+		if(StringUtil.isEmpty(menoyRemainT.getText().toString())){
+			ToastUtil.show("请等待帐户信息初始化");
+			return false;
+		}
+		
 		if(StringUtil.isEmpty(body.tomem)){
 			ToastUtil.show("接收人编号不能为空");
 			return false;

@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/titleBarHeight"
         titlebar:canBack="true"
-        titlebar:rightText="@string/adv_collection"
         titlebar:title="@string/exchange_integral" />
 
     <LinearLayout

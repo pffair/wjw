@@ -4,6 +4,7 @@ import com.pangff.wjw.util.UserInfoUtil;
 import com.pangff.wjw.util.XStreamTranslator;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+@XStreamAlias("root")
 public class ExchangeRequest extends BaseBean{
 	
 	@XStreamAlias("body")
@@ -17,10 +18,10 @@ public class ExchangeRequest extends BaseBean{
 		@XStreamAlias("password")
 		public String password;
 	}
-	public String getParams(String method) {
+	public String getParams(String method,Body body) {
 		this.method = method;
 		this.userid = UserInfoUtil.getInstanse().getUserId();
-		this.body = new Body();
+		this.body = body;
 		return XStreamTranslator.getInstance().toXMLString(this);
 	}
 }
