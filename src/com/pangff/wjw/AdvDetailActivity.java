@@ -102,6 +102,14 @@ public class AdvDetailActivity extends BaseActivity{
 		}
 	}
 	
+	@Override
+	public void onFailure(String method, String errorMsg) {
+		super.onFailure(method, errorMsg);
+		if(method.equals(METHOD_CHAKAN)){
+			listLoadingView.removeLoadingFrom(contentFrame);
+		}
+	}
+	
 	public void myClick(View view){
 		if(view.getId() == R.id.collectionB){
 			doCollectionRequest();

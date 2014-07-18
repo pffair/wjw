@@ -5,24 +5,20 @@ import com.pangff.wjw.util.XStreamTranslator;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("root")
-public class LoginRequest extends BaseBean{
+public class CallRequest extends BaseBean{
 	
 	@XStreamAlias("body")
 	public Body body;
 	
 	public static class Body{
-		@XStreamAlias("username")
-		public String username;
-		
-		@XStreamAlias("password")
-		public String password;
+		@XStreamAlias("id")
+		public String id;
 	}
 
-	public  String getParams(String method,String username,String password){
+	public  String getParams(String method,String id){
 		this.method = method;
 		this.body = new Body();
-		this.body.username = username;
-		this.body.password = ParseMD5.parseStrToMd5L16(password);
+		this.body.id = id;
 		return XStreamTranslator.getInstance().toXMLString(this);
 	}
 }

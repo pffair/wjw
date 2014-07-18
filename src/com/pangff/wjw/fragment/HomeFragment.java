@@ -17,6 +17,8 @@ import com.pangff.wjw.R;
 import com.pangff.wjw.adapter.AvdListAdapter;
 import com.pangff.wjw.adapter.ImagePagerAdapter;
 import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.db.AdvImgDBHelper;
+import com.pangff.wjw.db.AdvImgDBManager;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.AdvRequest;
 import com.pangff.wjw.model.AdvResponse;
@@ -49,7 +51,6 @@ public class HomeFragment extends PagerFragment {
 	AvdListAdapter avdAdapter;
 	CirclePageIndicator indicator;
 	TextView runText;
-	
 	public static final String METHOD_TOPGALLERY = "sygg";
 	public static final String METHOD_ADVLIST = "guanggao";
 	
@@ -108,6 +109,7 @@ public class HomeFragment extends PagerFragment {
 
 	private void showAdvList(AdvResponse advResponse) {
 		avdAdapter.refresh(advResponse.body.img);
+		AdvImgDBManager.getInstance().addImgs(advResponse.body.img);
 	}
 
 	private void showGalleryData(TopGalleryResponse topGallery) {
@@ -138,9 +140,8 @@ public class HomeFragment extends PagerFragment {
 	public void onFailure(String mothod,String errorMsg) {
 		super.onFailure(mothod,errorMsg);
 		//根据返回的method进行相应操作
-		
-		
-		 
+		isFinishAll = 2;
+		hideLoadingView();
 	}
 	
 	int isFinishAll = 0;

@@ -92,6 +92,8 @@ public class AdvFragment extends PagerFragment {
 	@Override
 	public void onFailure(String mothod,String errorMsg) {
 		super.onFailure(mothod,errorMsg);
+		//根据返回的method进行相应操作
+		listLoadingView.removeLoadingFrom(container);
 	}
 	
 	@Override

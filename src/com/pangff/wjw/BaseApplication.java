@@ -1,12 +1,12 @@
 package com.pangff.wjw;
 
-import java.io.File;
 import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 import android.app.Application;
 import android.graphics.Bitmap;
-import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +17,7 @@ import cn.trinea.android.common.service.impl.ImageCache;
 import cn.trinea.android.common.service.impl.ImageMemoryCache.OnImageCallbackListener;
 import cn.trinea.android.common.service.impl.RemoveTypeLastUsedTimeFirst;
 
-import com.pangff.wjw.util.StringUtil;
+import com.pangff.wjw.cache.CacheFile;
 import com.pangff.wjw.view.MImageView;
 
 import de.greenrobot.event.EventBus;
@@ -31,24 +31,13 @@ public class BaseApplication extends Application {
 	public static BaseApplication self = null;
 	public EventBus controlBus;
 	public Handler handlerCommon = new Handler();
-	public static ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors
-			.newFixedThreadPool(5);
+	public static ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(5);
 	public final String TAG_CACHE = "image_cache";
 	/** cache folder path which be used when saving images **/
-	public  String DEFAULT_CACHE_FOLDER = new StringBuilder()
-			.append(Environment.getExternalStorageDirectory().getAbsolutePath())
-			.append(File.separator).append("pangff").append(File.separator)
-			.append("wjw").append(File.separator).append("ImageCache")
-			.toString();
+	public  String DEFAULT_CACHE_FOLDER = CacheFile.PIC_FILE_PATH;
 	/** icon cache **/
 	public ImageCache IMAGE_CACHE;
 
-	public String getImgDir() {
-		if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-			DEFAULT_CACHE_FOLDER = BaseApplication.self.getDir("ImageCache", 0).getAbsolutePath();
-		}
-		return DEFAULT_CACHE_FOLDER;
-	}
 
 	@Override
 	public void onCreate() {
@@ -62,7 +51,7 @@ public class BaseApplication extends Application {
 	private void initImageCache() {
 		IMAGE_CACHE.initData(this, TAG_CACHE);
 		IMAGE_CACHE.setContext(this);
-		IMAGE_CACHE.setCacheFolder(getImgDir());
+		IMAGE_CACHE.setCacheFolder(DEFAULT_CACHE_FOLDER);
 		OnImageCallbackListener imageCallBack = new OnImageCallbackListener() {
 			@Override
 			public void onGetSuccess(String imageUrl, Bitmap loadedImage,
@@ -74,11 +63,6 @@ public class BaseApplication extends Application {
 					if (!isInCache) {
 						imageView.startAnimation(getInAlphaAnimation(2000));
 					}
-					// LayoutParams imageParams = (LayoutParams) imageView
-					// .getLayoutParams();
-					// imageParams.height = imageParams.width
-					// * loadedImage.getHeight() / loadedImage.getWidth();
-					// imageView.setScaleType(ScaleType.FIT_XY);
 				}
 			}
 

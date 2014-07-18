@@ -53,4 +53,11 @@ public class WelcomeActivity extends BaseActivity {
 			}
 		}
 	}
+	
+	@Override
+	public void onFailure(String method, String errorMsg) {
+		super.onFailure(method, errorMsg);
+		ToastUtil.show("自动登录失败");
+		LoginActivity.invotoLogin(WelcomeActivity.this);
+	}
 }

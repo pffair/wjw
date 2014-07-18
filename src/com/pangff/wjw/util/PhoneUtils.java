@@ -1,5 +1,6 @@
 package com.pangff.wjw.util;
 
+import java.io.File;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -9,6 +10,7 @@ import android.app.ActivityManager.RunningAppProcessInfo;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Environment;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -80,4 +82,25 @@ public class PhoneUtils {
 		return BaseApplication.self.getResources().getDisplayMetrics().density;
 	}
 
+	/**
+	 * 得到sd卡的路径
+	 * 
+	 * @return
+	 */
+	public static String getSDPath() {
+		File sdDir = null;
+		boolean sdCardExist = Environment.getExternalStorageState().equals(
+				android.os.Environment.MEDIA_MOUNTED); // 判断sd卡是否存在
+		if (sdCardExist) {
+			sdDir = Environment.getExternalStorageDirectory();
+		} else {
+			StringBuilder sbPhone = new StringBuilder();
+			sbPhone.append(Environment.getDataDirectory());
+			sbPhone.append("/data/com.pangff.wjw");
+			// sbPhone.append(product_name).append("/");
+			return sbPhone.toString();
+		}
+		return sdDir.toString();
+
+	}
 }
