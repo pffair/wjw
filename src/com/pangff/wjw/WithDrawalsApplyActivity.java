@@ -1,22 +1,8 @@
 package com.pangff.wjw;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-
 import com.pangff.wjw.autowire.AndroidView;
-import com.pangff.wjw.http.HttpRequest;
-import com.pangff.wjw.model.ResponseState;
-import com.pangff.wjw.model.WithdrawalsCommitRequest;
-import com.pangff.wjw.model.WithdrawalsCommitResponse;
-import com.pangff.wjw.model.WithdrawalsRequest;
 import com.pangff.wjw.model.WithdrawalsResponse;
-import com.pangff.wjw.util.ParseMD5;
-import com.pangff.wjw.util.ToastUtil;
-import com.pangff.wjw.util.UserInfoUtil;
+import com.pangff.wjw.view.TitleBar;
 
 public class WithDrawalsApplyActivity extends BaseActivity {
 
@@ -46,12 +32,16 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 	@AndroidView(R.id.payPasswordE)
 	EditText payPasswordE;
 	
+	@AndroidView(R.id.titleBar)
+	TitleBar titleBar;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_withdrawals_apply);
 		
 		withdrawalB.setOnClickListener(onOneOffClickListener);
+		titleBar.rightT.setOnClickListener(onOneOffClickListener);
 		doRequestAccount();
 	}
 
@@ -62,6 +52,10 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 			case R.id.withdrawalB:
 				doRequestCommittWithDrawals();
 				//WithDrawalsApplySureActivity.invoteToWithDrawalsApplySure(this);
+				break;
+			case R.id.titleBar:
+				ExplainWithdrawalsActivity.invoteToExplainWithdrawals(this);
+				break;
 			}
 			
 	}

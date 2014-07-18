@@ -9,6 +9,7 @@ import android.widget.Button;
 import com.pangff.wjw.BaseActivity;
 import com.pangff.wjw.R;
 import com.pangff.wjw.RegistActivity;
+import com.pangff.wjw.ResivePasswordActivity;
 import com.pangff.wjw.autowire.AndroidView;
 
 /**
@@ -21,6 +22,15 @@ public class MoreFragment extends PagerFragment {
 	@AndroidView(R.id.registB)
 	Button registB;
 	
+	@AndroidView(R.id.loginPasswordChangeB)
+	Button loginB;
+	
+	@AndroidView(R.id.checkPasswordChangeB)
+	Button checkB;
+	
+	@AndroidView(R.id.payPasswordChangeB)
+	Button payB;
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -31,14 +41,26 @@ public class MoreFragment extends PagerFragment {
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 		registB.setOnClickListener(onOneOffClickListener);
+		loginB.setOnClickListener(onOneOffClickListener);
+		checkB.setOnClickListener(onOneOffClickListener);
+		payB.setOnClickListener(onOneOffClickListener);
 	}
 	
 	@Override
 	protected void onMyClick(View v) {
-		super.onMyClick(v);
+		//super.onMyClick(v);
 		switch (v.getId()) {
 		case R.id.registB:
 			goRegist();
+			break;
+		case R.id.loginPasswordChangeB:
+			ResivePasswordActivity.invoteToResivePassword((BaseActivity) this.getActivity());
+			break;
+		case R.id.checkPasswordChangeB:
+			ResivePasswordActivity.invoteToResivePassword((BaseActivity) this.getActivity());
+			break;
+		case R.id.payPasswordChangeB:
+			ResivePasswordActivity.invoteToResivePassword((BaseActivity) this.getActivity());
 			break;
 
 		default:
@@ -49,9 +71,8 @@ public class MoreFragment extends PagerFragment {
 	private void goRegist(){
 		RegistActivity.invoteToRegist((BaseActivity) this.getActivity());
 	}
+	
+	
 
-	protected void initData() {
-
-	}
-
+	
 }
