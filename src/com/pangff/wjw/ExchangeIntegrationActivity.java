@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.pangff.wjw.autowire.AndroidView;
@@ -21,6 +22,7 @@ import com.pangff.wjw.util.ParseMD5;
 import com.pangff.wjw.util.StringUtil;
 import com.pangff.wjw.util.ToastUtil;
 import com.pangff.wjw.util.UserInfoUtil;
+import com.pangff.wjw.view.LoadingView;
 
 public class ExchangeIntegrationActivity extends BaseActivity{
 	
@@ -43,6 +45,11 @@ public class ExchangeIntegrationActivity extends BaseActivity{
 	
 	@AndroidView(R.id.payPasswordE)
 	EditText payPasswordE;
+	
+	@AndroidView(R.id.exchangeLoadingFrame)
+	FrameLayout exchangeLoadingFrame;
+	
+	LoadingView exchangeLoading;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +97,8 @@ public class ExchangeIntegrationActivity extends BaseActivity{
 	}
 	
 	private void doRequestAccount(){
+		exchangeLoading=new LoadingView(this);
+		exchangeLoading.addLoadingTo(exchangeLoadingFrame);
 		MyAccountRequest myAccountRequest = new MyAccountRequest();
 		String xml = myAccountRequest.getParams(METHOD_DUIHUAN);
 		new HttpRequest<MyAccountResponse>().postDataXml(METHOD_DUIHUAN, xml, this,MyAccountResponse.class);
@@ -97,7 +106,9 @@ public class ExchangeIntegrationActivity extends BaseActivity{
 
 	public void onSuccess(String method, Object result) {
 		super.onSuccess(method, result);
+
 		if(method.equals(METHOD_DUIHUAN)){
+			exchangeLoading.removeLoadingFrom(exchangeLoadingFrame);
 			MyAccountResponse myAccountResponse =  (MyAccountResponse) result ;
 			if(myAccountResponse!=null){
 				menoyRemainT.setText(myAccountResponse.body.money);

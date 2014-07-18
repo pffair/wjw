@@ -5,16 +5,23 @@ import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.ExchangeDetailRequest;
 import com.pangff.wjw.model.ExchangeDetailResponse;
+import com.pangff.wjw.view.LoadingView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 
 public class ExchangeDetailActivity extends BaseActivity{
 	
 	@AndroidView(R.id.exchangeListView)
 	ListView exchangeListView;
+	
+	@AndroidView(R.id.exchangeDetailLoadingFrame)
+	FrameLayout exchangeDetailLoadingFrame;
+	
+	LoadingView listLoadingView; 
 	
 	ExchangeDetailAdapter adapter;
 	public static final String METHOD_DUIHUANLIST = "duihuanlist";
@@ -33,6 +40,8 @@ public class ExchangeDetailActivity extends BaseActivity{
 	}
 	
 	private void initData(){
+		listLoadingView = new LoadingView(this);
+		listLoadingView.addLoadingTo(exchangeDetailLoadingFrame);
 		String xml = new ExchangeDetailRequest().getParams(METHOD_DUIHUANLIST);
 		new HttpRequest<ExchangeDetailResponse>().postDataXml(METHOD_DUIHUANLIST,xml, this,ExchangeDetailResponse.class);
 
@@ -42,6 +51,7 @@ public class ExchangeDetailActivity extends BaseActivity{
 	public void onSuccess(String method, Object result) {
 		super.onSuccess(method, result);
 		if(method.equals(METHOD_DUIHUANLIST)){
+			listLoadingView.removeLoadingFrom(exchangeDetailLoadingFrame);
 			ExchangeDetailResponse exchangeDetailResponse = (ExchangeDetailResponse) result;
 			if(exchangeDetailResponse!=null){
 				adapter.refresh(exchangeDetailResponse.body.list);

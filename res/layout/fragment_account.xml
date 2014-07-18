@@ -11,6 +11,11 @@
         titlebar:canBack="false"
         titlebar:title="@string/fragment_account" />
 
+    <FrameLayout 
+        android:id="@+id/accountLoadingFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    
     <ScrollView
         android:id="@+id/sView"
         android:layout_width="match_parent"
@@ -38,20 +43,19 @@
 
                 <ImageView
                     android:id="@+id/hostIamgeI"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1"
                     android:background="@drawable/header_default"
                     android:scaleType="centerInside" />
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
-                    android:layout_weight="40"
-                    android:orientation="vertical" >
+                    android:orientation="vertical"
+                    android:layout_weight="1" >
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -60,17 +64,15 @@
 
                         <TextView
                             android:id="@+id/vipIdT"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/vip_account" />
 
                         <TextView
                             android:id="@+id/showIdT"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="left" />
+                            android:paddingLeft="15dp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -80,17 +82,15 @@
 
                         <TextView
                             android:id="@+id/vipNameT"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/vip_name" />
 
                         <TextView
                             android:id="@+id/showNameT"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="left" />
+                            android:paddingLeft="15dp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -100,17 +100,15 @@
 
                         <TextView
                             android:id="@+id/vipLevelT"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/vip_level" />
 
                         <TextView
                             android:id="@+id/showLevelT"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="left" />
+                            android:paddingLeft="15dp"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -304,6 +302,7 @@
                 android:text="@string/award_dtail" />
         </LinearLayout>
     </ScrollView>
+    </FrameLayout>
 
     <com.pangff.wjw.vindicator.UnderlinePageIndicator
         android:id="@+id/indicator"

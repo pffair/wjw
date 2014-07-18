@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:titlebar="http://schemas.android.com/apk/res-auto"
-    xmlns:app="http://schemas.android.com/apk/res/com.pangff.wjw"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -14,227 +13,233 @@
         titlebar:rightText="@string/withdrawals_explain"
         titlebar:title="@string/withdrawals_apply" />
 
-    <ScrollView
-        android:id="@+id/sView"
+    <FrameLayout
+        android:id="@+id/withidrawalsApplyLoadingFrame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/page_bg"
-        android:scrollbars="vertical" >
+        android:layout_height="match_parent" >
 
-        <LinearLayout
+        <ScrollView
+            android:id="@+id/sView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="match_parent"
+            android:background="@color/page_bg"
+            android:scrollbars="vertical" >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
                 android:orientation="vertical" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/menu_top_bg"
-                    android:orientation="horizontal" >
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical" >
 
-                    <TextView
-                        android:layout_width="115dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center|center_vertical"
-                        android:paddingLeft="35dp"
-                        android:text="@string/account_name" />
-
-                    <TextView
-                        android:id="@+id/accountNameT"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@null"
-                        android:gravity="left|center_vertical"
-                        android:paddingLeft="15dp" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_top_bg"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="115dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center|center_vertical"
+                            android:paddingLeft="35dp"
+                            android:text="@string/account_name" />
+
+                        <TextView
+                            android:id="@+id/accountNameT"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="15dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_bottom_bg" >
+
+                        <TextView
+                            android:layout_width="115dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center|center_vertical"
+                            android:paddingLeft="35dp"
+                            android:text="@string/money_remain" />
+
+                        <TextView
+                            android:id="@+id/accountRemainT"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="15dp"
+                            android:text="dd" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/menu_bottom_bg" >
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical" >
 
-                    <TextView
-                        android:layout_width="115dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center|center_vertical"
-                        android:paddingLeft="35dp"
-                        android:text="@string/money_remain" />
-
-                    <TextView
-                        android:id="@+id/accountRemainT"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@null"
-                        android:gravity="left|center_vertical"
-                        android:paddingLeft="15dp"
-                        android:text="dd" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_top_bg" >
+
+                        <TextView
+                            android:layout_width="115dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center|center_vertical"
+                            android:paddingLeft="35dp"
+                            android:text="@string/open_account_bank" />
+
+                        <Spinner
+                            android:id="@+id/bankSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="5dp"
+                            android:singleLine="true" >
+                        </Spinner>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_center_bg" >
+
+                        <TextView
+                            android:layout_width="115dp"
+                            android:layout_height="match_parent"
+                            android:drawableLeft="@drawable/icon_package_light"
+                            android:gravity="center|center_vertical"
+                            android:paddingLeft="15dp"
+                            android:text="@string/branch_name" />
+
+                        <EditText
+                            android:id="@+id/branchNameE"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="15dp"
+                            android:text="dd" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_bottom_bg" >
+
+                        <TextView
+                            android:layout_width="115dp"
+                            android:layout_height="match_parent"
+                            android:drawableLeft="@drawable/icon_bankcard"
+                            android:gravity="center|center_vertical"
+                            android:paddingLeft="15dp"
+                            android:text="@string/bank_account" />
+
+                        <EditText
+                            android:id="@+id/bankAccountE"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="left|center_vertical"
+                            android:inputType="number"
+                            android:paddingLeft="15dp"
+                            android:text="dd" />
+                    </LinearLayout>
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_top_bg" >
+
+                        <TextView
+                            android:layout_width="115dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center|center_vertical"
+                            android:paddingLeft="35dp"
+                            android:text="提现金额" />
+
+                        <EditText
+                            android:id="@+id/withdrawalCashE"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="left|center_vertical"
+                            android:inputType="number"
+                            android:paddingLeft="15dp"
+                            android:text="dd" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_bottom_bg" >
+
+                        <TextView
+                            android:layout_width="115dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center|center_vertical"
+                            android:paddingLeft="35dp"
+                            android:text="支付密码" />
+
+                        <EditText
+                            android:id="@+id/payPasswordE"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="left|center_vertical"
+                            android:inputType="textPassword"
+                            android:paddingLeft="15dp"
+                            android:text="dd" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/withdrawalB"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/blue_btn_bg_selector"
+                    android:text="@string/withdrawals" />
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical" >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/menu_top_bg" >
-
-                    <TextView
-                        android:layout_width="115dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center|center_vertical"
-                        android:paddingLeft="35dp"
-                        android:text="@string/open_account_bank" />
-
-                    <Spinner
-                        android:id="@+id/bankSpinner"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@null"
-                        android:gravity="left|center_vertical"
-                        android:paddingLeft="5dp"
-                        android:singleLine="true" >
-                    </Spinner>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/menu_center_bg" >
-
-                    <TextView
-                        android:layout_width="115dp"
-                        android:layout_height="match_parent"
-                        android:drawableLeft="@drawable/icon_package_light"
-                        android:gravity="center|center_vertical"
-                        android:paddingLeft="15dp"
-                        android:text="@string/branch_name" />
-
-                    <EditText
-                        android:id="@+id/branchNameE"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@null"
-                        android:gravity="left|center_vertical"
-                        android:paddingLeft="15dp"
-                        android:text="dd" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/menu_bottom_bg" >
-
-                    <TextView
-                        android:layout_width="115dp"
-                        android:layout_height="match_parent"
-                        android:drawableLeft="@drawable/icon_bankcard"
-                        android:gravity="center|center_vertical"
-                        android:paddingLeft="15dp"
-                        android:text="@string/bank_account" />
-
-                    <EditText
-                        android:id="@+id/bankAccountE"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@null"
-                        android:gravity="left|center_vertical"
-                        android:inputType="number"
-                        android:paddingLeft="15dp"
-                        android:text="dd" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical" >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/menu_top_bg" >
-
-                    <TextView
-                        android:layout_width="115dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center|center_vertical"
-                        android:paddingLeft="35dp"
-                        android:text="提现金额" />
-
-                    <EditText
-                        android:id="@+id/withdrawalCashE"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@null"
-                        android:gravity="left|center_vertical"
-                        android:inputType="number"
-                        android:paddingLeft="15dp"
-                        android:text="dd" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/menu_bottom_bg" >
-
-                    <TextView
-                        android:layout_width="115dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center|center_vertical"
-                        android:paddingLeft="35dp"
-                        android:text="支付密码" />
-
-                    <EditText
-                        android:id="@+id/payPasswordE"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@null"
-                        android:gravity="left|center_vertical"
-                        android:inputType="textPassword"
-                        android:paddingLeft="15dp"
-                        android:text="dd" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/withdrawalB"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/blue_btn_bg_selector"
-                android:text="@string/withdrawals" />
-        </LinearLayout>
-    </ScrollView>
+        </ScrollView>
+    </FrameLayout>
 
 </LinearLayout>

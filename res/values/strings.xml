@@ -21,6 +21,7 @@
     <string name="loginPwd">登录密码修改</string>
     <string name="checkPwd">查看密码修改</string>
     <string name="payPwd">支付密码修改</string>
+    <string name="changePwd">修改密码</string>
 
     <!-- 会员类 -->
     <string name="vip_account">会员帐号</string>
@@ -42,7 +43,7 @@
     <string name="exchange_ok">确认兑换</string>
     <string name="award_dtail">奖励明细</string>
     <string name="money_remain">钱包余额</string>
-    <string name="available_integral">$可用积分</string>
+    <string name="available_integral">可用积分</string>
     <string name="rewards_style">类&#160;&#160;&#160;&#160;型：</string>
 
     <!-- 申请提现类 -->
@@ -58,6 +59,7 @@
     <string name="withdrawals_label_results">结果详情</string>
     <string name="withdrawals_canle">取&#160;&#160;&#160;&#160;&#160;&#160;消</string>
     <string name="withdrawals_sure">确认提现</string>
+    
     <string name="account_name">账户名称</string>
     <string name="open_account_bank">开户银行</string>
     <string name="branch_name">支行名称</string>

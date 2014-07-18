@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -25,6 +26,7 @@ import com.pangff.wjw.util.ParseMD5;
 import com.pangff.wjw.util.StringUtil;
 import com.pangff.wjw.util.ToastUtil;
 import com.pangff.wjw.util.UserInfoUtil;
+import com.pangff.wjw.view.LoadingView;
 import com.pangff.wjw.view.TitleBar;
 
 public class WithDrawalsApplyActivity extends BaseActivity {
@@ -55,9 +57,14 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 	@AndroidView(R.id.titleBar)
 	TitleBar titleBar;
 	
+	@AndroidView(R.id.withidrawalsApplyLoadingFrame)
+	FrameLayout withidrawalsApplyLoadingFrame;
+	
+	LoadingView withidrawalsLoadingFrame;
+	
 	String sxf = "";
 	String bank = "";
-	
+
 	private static final String[] banks = {"农业银行","建设银行","工商银行"};
 	@AndroidView(R.id.bankSpinner)
 	Spinner bankSpinner;
@@ -70,7 +77,7 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 		initConfig();
 		doRequestAccount();
 	}
-	
+
 	private void initConfig() {
 		// 将可选内容与ArrayAdapter连接起来
 		banksAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, banks);
@@ -88,14 +95,14 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 		withdrawalB.setOnClickListener(onOneOffClickListener);
 		titleBar.rightT.setOnClickListener(onOneOffClickListener);
 	}
-	
+
 	class SpinnerSelectedListener implements OnItemSelectedListener {
 		public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
 			bank = bankSpinner.getSelectedItem().toString();
 		}
 		public void onNothingSelected(AdapterView<?> arg0) {
-			
+
 		}
 	}
 
@@ -133,7 +140,7 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 		}
 
 	}
-	
+
 	private boolean verify(WithdrawalsCommitRequest.Body body){
 		if(StringUtil.isEmpty(accountNameT.getText().toString())){
 			ToastUtil.show("请等待帐户信息初始化");
@@ -163,6 +170,8 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 	}
 
 	private void doRequestAccount() {
+		withidrawalsLoadingFrame=new LoadingView(this);
+		withidrawalsLoadingFrame.addLoadingTo(withidrawalsApplyLoadingFrame);
 		WithdrawalsRequest withdrawalsRequest = new WithdrawalsRequest();
 		String xml = withdrawalsRequest.getParams(METHOD_TIXIAN);
 		new HttpRequest<WithdrawalsResponse>().postDataXml(METHOD_TIXIAN, xml,
@@ -173,7 +182,7 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 	public void onSuccess(String method, Object result) {
 		super.onSuccess(method, result);
 		if (method.equals(METHOD_TIXIAN)) {
-
+			withidrawalsLoadingFrame.removeLoadingFrom(withidrawalsApplyLoadingFrame);
 			WithdrawalsResponse withdrawalsResponse = (WithdrawalsResponse) result;
 			if (withdrawalsResponse != null) {
 				setData(withdrawalsResponse);

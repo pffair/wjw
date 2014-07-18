@@ -9,12 +9,17 @@
         android:layout_height="@dimen/titleBarHeight"
         titlebar:canBack="true"
         titlebar:title="@string/award_dtail" />
-    
-    <ListView 
-        android:id="@+id/rewardListView"
+
+    <FrameLayout
+        android:id="@+id/rewardLoadingFrame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        
-    </ListView>
+        android:layout_height="match_parent" >
+
+        <ListView
+            android:id="@+id/rewardListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </ListView>
+    </FrameLayout>
 
 </LinearLayout>

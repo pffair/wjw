@@ -21,46 +21,46 @@ import com.pangff.wjw.util.ToastUtil;
 public class WithDrawalsApplySureActivity extends BaseActivity {
 
 	public static final String METHOD_TIXIANOK = "tixianok";
-	
+
 	@AndroidView(R.id.sureWithdrawalCashB)
 	Button sureWithdrawalCashB;
-	
+
 	@AndroidView(R.id.withdrawalCancelB)
 	Button withdrawalCancelB;
-	
+
 	@AndroidView(R.id.feeT)
 	TextView feeT;
-	
+
 	@AndroidView(R.id.withdrawalCashT)
 	TextView withdrawalCashT;
-	
+
 	@AndroidView(R.id.bankAccountT)
 	TextView bankAccountT;
-	
+
 	@AndroidView(R.id.branchNameT)
 	TextView branchNameT;
-	
+
 	@AndroidView(R.id.oAccountBankT)
 	TextView oAccountBankT;
-	
+
 	@AndroidView(R.id.accountNameT)
 	TextView accountNameT;
-	
+
 	WithdrawalsCommitRequest withdrawalsCommitRequest;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_withdrawals_apply_sure);
-		
+
 		sureWithdrawalCashB.setOnClickListener(onOneOffClickListener);
 		withdrawalCancelB.setOnClickListener(onOneOffClickListener);
-		
+
 		initData();
 	}
-	
+
 	private void initData(){
-		
+
 		Intent intent = this.getIntent();
 		String balance = intent.getStringExtra("balance");
 		String money = intent.getStringExtra("money");
@@ -70,15 +70,15 @@ public class WithDrawalsApplySureActivity extends BaseActivity {
 		String oAccountBank = intent.getStringExtra("oAccountBankT");
 		String accountName = intent.getStringExtra("accountNameT");
 		String sxf = intent.getStringExtra("sxf");
-		
+
 		feeT.setText(String.valueOf(Double.parseDouble(sxf)*100)+"%");
 		withdrawalCashT.setText(money);
 		bankAccountT.setText(bankAccount);
 		branchNameT.setText(branchName);
 		oAccountBankT.setText(oAccountBank);
 		accountNameT.setText(accountName);
-		
-		
+
+
 		withdrawalsCommitRequest = new WithdrawalsCommitRequest();
 		withdrawalsCommitRequest.body = new WithdrawalsCommitRequest.Body();
 		withdrawalsCommitRequest.body.bank = oAccountBank;
@@ -89,7 +89,7 @@ public class WithDrawalsApplySureActivity extends BaseActivity {
 		withdrawalsCommitRequest.body.sxf = sxf;
 		withdrawalsCommitRequest.body.zhanghao = bankAccount;
 	}
-	
+
 	@Override
 	protected void onMyClick(View v) {
 		switch(v.getId()){
@@ -107,7 +107,7 @@ public class WithDrawalsApplySureActivity extends BaseActivity {
 		new HttpRequest<WithdrawalsCommitResponse>().postDataXml(METHOD_TIXIANOK, xml, this,WithdrawalsCommitResponse.class);
 	}
 
-	
+
 	@Override
 	public void onSuccess(String method, Object result) {
 		super.onSuccess(method, result);
