@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.pangff.wjw.BaseApplication;
@@ -66,6 +67,7 @@ public class AvdListAdapter extends BaseAdapter {
 		Img img = advList.get(position);
 		holder.picImage.setDefaultImageId(R.drawable.list_default);
 		BaseApplication.self.IMAGE_CACHE.get(img.imgs,holder.picImage);
+		BaseApplication.self.IMAGE_CACHE.get(img.imgbig,new ImageView(convertView.getContext()));
 		holder.display.setText(img.title);
 		return convertView;
 	}

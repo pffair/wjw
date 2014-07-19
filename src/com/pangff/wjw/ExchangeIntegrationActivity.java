@@ -11,6 +11,8 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.event.ApplySuccessEvent;
+import com.pangff.wjw.event.IEvent;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.ExchangeRequest;
 import com.pangff.wjw.model.ExchangeResponse;
@@ -123,5 +125,13 @@ public class ExchangeIntegrationActivity extends BaseActivity{
 		Intent intent = new Intent();  
         intent.setClass(context, ExchangeIntegrationActivity.class);  
         context.startActivity(intent); 
+	}
+	
+	@Override
+	protected void onEvent(IEvent event) {
+		super.onEvent(event);
+		if(event instanceof ApplySuccessEvent){
+			finish();
+		}
 	}
 }

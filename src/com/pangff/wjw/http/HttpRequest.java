@@ -1,17 +1,24 @@
 package com.pangff.wjw.http;
 
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.RequestParams;
 import com.pangff.wjw.util.LogUtil;
 
 public class HttpRequest<T> {
-
+	
 	String baseUrl = "http://tel.buyunnet.net/tel.aspx";
 	
 	private final AsyncHttpClient client;
+	
+	public static final int TIMEOUT = 5000;
 
 	public HttpRequest() {
 		client = new AsyncHttpClient();
+		client.setTimeout(TIMEOUT);
 	}
 
 	/**

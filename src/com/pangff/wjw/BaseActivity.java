@@ -22,7 +22,7 @@ public class BaseActivity extends FragmentActivity implements ResponseCallBack{
 		super.setContentView(layoutResID);
 		AndroidAutowire.autowire(getWindow().getDecorView(), this);
 		BaseApplication.self.controlBus.register(this);
-		onOneOffClickListener = new OnOneOffClickListener(500) {
+		onOneOffClickListener = new OnOneOffClickListener(1000) {
 			@Override
 			public void onOneClick(View v) {
 				onMyClick(v);

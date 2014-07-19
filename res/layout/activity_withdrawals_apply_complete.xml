@@ -4,92 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
- <com.pangff.wjw.view.TitleBar
+
+    <com.pangff.wjw.view.TitleBar
         android:layout_width="match_parent"
         android:layout_height="@dimen/titleBarHeight"
         titlebar:canBack="false"
         titlebar:title="@string/withdrawals_label_results" />
-    
- 
- 		<LinearLayout
- 		    android:layout_width="match_parent"
- 		    android:layout_height="wrap_content"
- 		    android:layout_marginTop="50dp">
- 		    
- 		    <ImageView
- 		        android:id="@+id/checkmark_or_fork"
- 		        android:layout_width="wrap_content"
- 		        android:layout_height="wrap_content"
- 		        android:layout_marginLeft="50dp"
- 		        android:background="@drawable/ic_launcher"/>
- 		    
- 		    <LinearLayout
- 		        android:orientation="vertical"
- 		        android:layout_width="match_parent"
- 		        android:layout_height="wrap_content"
- 		        android:layout_marginLeft="20dp">
- 		        
- 		        <TextView
- 		            android:layout_width="match_parent"
- 		            android:layout_height="match_parent"
- 		            android:layout_weight="1"
- 		            android:text="申请已提交，等待银行处理"
- 		            android:textColor="#FF00FF00"/>
- 		        
- 		        <TextView
- 		            android:id="@+id/applyTime"
- 		            android:layout_width="match_parent"
- 		            android:layout_height="match_parent"
- 		            android:layout_weight="1"
- 		            android:textColor="#FF00FF00"/>
- 		    </LinearLayout>
- 		    
- 		</LinearLayout>
- 		
- 		   <LinearLayout
- 		    android:layout_width="match_parent"
- 		    android:layout_height="wrap_content"
- 		    android:layout_marginTop="20dp">
- 		    
- 		    <ImageView
- 		        android:layout_width="wrap_content"
- 		        android:layout_height="wrap_content"
- 		        android:layout_marginLeft="50dp"
- 		        android:background="@drawable/ic_launcher"/>
- 		    
- 		    <LinearLayout
- 		        android:orientation="vertical"
- 		        android:layout_width="match_parent"
- 		        android:layout_height="wrap_content"
- 		        android:layout_marginLeft="20dp">
- 		        
- 		        <TextView
- 		            android:layout_width="match_parent"
- 		            android:layout_height="match_parent"
- 		            android:text="到帐时间"
- 		            android:layout_weight="1"
- 		            android:textColor="#FF00FF00"/>
- 		        
- 		        <TextView
- 		            android:id="@+id/arriveTime"
- 		            android:layout_width="match_parent"
- 		            android:layout_height="match_parent"
- 		            android:layout_weight="1"/>
- 		    </LinearLayout>
- 		    
- 		    
- 		    
- 		</LinearLayout>
- 		
- 		   <Button
- 		       android:id="@+id/applyComplete"
- 		       android:layout_width="match_parent"
- 		       android:layout_height="45dp"
- 		       android:layout_marginTop="20dp"
- 		       android:layout_marginLeft="10dp"
- 		       android:layout_marginRight="10dp"
- 		       android:background="@drawable/blue_btn_bg_selector"
- 		       android:text="完成"/>
- 		   
+
+    <TextView
+        android:text="@string/apply_ok"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/applyComplete"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/blue_btn_bg_selector"
+        android:text="完成" />
+
 </LinearLayout>

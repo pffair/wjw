@@ -13,6 +13,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.event.ApplySuccessEvent;
+import com.pangff.wjw.event.IEvent;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.MyAccountRequest;
 import com.pangff.wjw.model.MyAccountResponse;
@@ -189,5 +191,11 @@ public class VipTransferActivity extends BaseActivity{
         context.startActivity(intent); 
 	}
 
-
+	@Override
+	protected void onEvent(IEvent event) {
+		super.onEvent(event);
+		if(event instanceof ApplySuccessEvent){
+			finish();
+		}
+	}
 }

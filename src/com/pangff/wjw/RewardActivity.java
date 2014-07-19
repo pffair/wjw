@@ -1,19 +1,16 @@
 package com.pangff.wjw;
 
-import com.pangff.wjw.adapter.RewardDetailAdapter;
-import com.pangff.wjw.adapter.WithDrawalsDetailAdapter;
-import com.pangff.wjw.autowire.AndroidView;
-import com.pangff.wjw.http.HttpRequest;
-import com.pangff.wjw.model.RewardDetailRequest;
-import com.pangff.wjw.model.RewardDetailResponse;
-import com.pangff.wjw.model.WithdrawalsDetailRequest;
-import com.pangff.wjw.model.WithdrawalsDetailResponse;
-import com.pangff.wjw.view.LoadingView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.ListView;
+
+import com.pangff.wjw.adapter.RewardDetailAdapter;
+import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.http.HttpRequest;
+import com.pangff.wjw.model.RewardDetailRequest;
+import com.pangff.wjw.model.RewardDetailResponse;
+import com.pangff.wjw.view.LoadingView;
 
 public class RewardActivity extends BaseActivity{
 	
@@ -58,6 +55,12 @@ public class RewardActivity extends BaseActivity{
 				adapter.refresh(rewardDetailResponse.body.list);
 			}
 		}
+	}
+	
+	@Override
+	public void onFailure(String method, String errorMsg) {
+		super.onFailure(method, errorMsg);
+		listLoadingView.removeLoadingFrom(rewardLoadingFrame);
 	}
 	
 	public static void  invoteToReward(BaseActivity context){

@@ -20,7 +20,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical" >
 
             <TextView
@@ -30,7 +30,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/menu_top_bg"
+                android:background="@drawable/menu_top_selector"
                 android:drawableRight="@drawable/more_arrow"
                 android:gravity="center"
                 android:paddingLeft="30dp"
@@ -43,8 +43,8 @@
                 android:layout_height="45dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/menu_center_bg"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/menu_center_selector"
                 android:drawableRight="@drawable/more_arrow"
                 android:gravity="center"
                 android:paddingLeft="30dp"
@@ -57,8 +57,8 @@
                 android:layout_height="45dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/menu_center_bg"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/menu_center_selector"
                 android:drawableRight="@drawable/more_arrow"
                 android:gravity="center"
                 android:paddingLeft="30dp"
@@ -71,8 +71,8 @@
                 android:layout_height="45dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/menu_bottom_bg"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/menu_bottom_selector"
                 android:drawableRight="@drawable/more_arrow"
                 android:gravity="center"
                 android:paddingLeft="30dp"
@@ -80,7 +80,7 @@
                 android:text="@string/regist" />
 
             <Button
-                android:id="@+id/withdrawals_logoutB"
+                android:id="@+id/logoutB"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_gravity="center"

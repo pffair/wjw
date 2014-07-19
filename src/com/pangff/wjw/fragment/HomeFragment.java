@@ -17,6 +17,7 @@ import com.pangff.wjw.R;
 import com.pangff.wjw.adapter.AvdListAdapter;
 import com.pangff.wjw.adapter.ImagePagerAdapter;
 import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.db.AdvImgDBManager;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.AdvRequest;
 import com.pangff.wjw.model.AdvResponse;
@@ -49,7 +50,6 @@ public class HomeFragment extends PagerFragment {
 	AvdListAdapter avdAdapter;
 	CirclePageIndicator indicator;
 	TextView runText;
-	
 	public static final String METHOD_TOPGALLERY = "sygg";
 	public static final String METHOD_ADVLIST = "guanggao";
 	
@@ -76,7 +76,6 @@ public class HomeFragment extends PagerFragment {
 		avdAdapter = new AvdListAdapter(this.getActivity());
 		listView.setAdapter(avdAdapter);
 		viewPager.setAdapter(topGalleryAdapter);
-		
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -91,7 +90,6 @@ public class HomeFragment extends PagerFragment {
 	protected void initData() {
 		listLoadingView = new LoadingView(this.getActivity());
 		listLoadingView.addLoadingTo(homeRootView);
-		isFinishAll = 0;
 		runText.setVisibility(View.GONE);
 		requestTopGallery();
 	}
@@ -108,6 +106,7 @@ public class HomeFragment extends PagerFragment {
 
 	private void showAdvList(AdvResponse advResponse) {
 		avdAdapter.refresh(advResponse.body.img);
+		AdvImgDBManager.getInstance().addImgs(advResponse.body.img);
 	}
 
 	private void showGalleryData(TopGalleryResponse topGallery) {
@@ -138,12 +137,9 @@ public class HomeFragment extends PagerFragment {
 	public void onFailure(String mothod,String errorMsg) {
 		super.onFailure(mothod,errorMsg);
 		//根据返回的method进行相应操作
-		
-		
-		 
+		hideLoadingView();
 	}
 	
-	int isFinishAll = 0;
 	@Override
 	public void onSuccess(String mothod,Object result) {
 		super.onSuccess(mothod,result);
@@ -151,20 +147,16 @@ public class HomeFragment extends PagerFragment {
 		if(METHOD_TOPGALLERY.equals(mothod)){
 			TopGalleryResponse topGallery = (TopGalleryResponse) result;
 			showGalleryData(topGallery);
-			isFinishAll ++;
 			requestAdvList();
 		}
 		if(METHOD_ADVLIST.equals(mothod)){
+			hideLoadingView();
 			AdvResponse advResponse = (AdvResponse) result;
 			showAdvList(advResponse);
-			isFinishAll++;
 		}
-		hideLoadingView();
 	}
 	
 	private void hideLoadingView(){
-		if(isFinishAll>=2){
 			listLoadingView.removeLoadingFrom(homeRootView);
-		}
 	}
 }

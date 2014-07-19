@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.pangff.wjw.AcountChangeActivity;
+import com.pangff.wjw.AccountChangeActivity;
 import com.pangff.wjw.BaseActivity;
 import com.pangff.wjw.ExchangeDetailActivity;
 import com.pangff.wjw.ExchangeIntegrationActivity;
@@ -124,6 +124,12 @@ public class AccountFragment extends PagerFragment {
 			}
 		}
 	}
+	
+	@Override
+	public void onFailure(String mothod, String errorMsg) {
+		super.onFailure(mothod, errorMsg);
+		accountLoading.removeLoadingFrom(accountLoadingFrame);
+	}
 
 	@Override
 	protected void initData() {
@@ -138,7 +144,7 @@ public class AccountFragment extends PagerFragment {
 		int id = v.getId();
 		switch (id) {
 		case R.id.myAccount:
-			AcountChangeActivity.invotoacountchange((BaseActivity) this
+			AccountChangeActivity.invotoacountchange((BaseActivity) this
 					.getActivity());break;
 		case R.id.withdrawalsApplyT:
 			WithDrawalsApplyActivity

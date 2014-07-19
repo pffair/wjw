@@ -17,8 +17,8 @@ public class VipTransferDetailActivity extends BaseActivity{
 	@AndroidView(R.id.transferListView)
 	ListView transferListView;
 	
-	@AndroidView(R.id.TransferDetailLoadingFrame)
-	FrameLayout TransferDetailLoadingFrame;
+	@AndroidView(R.id.transferDetailLoadingFrame)
+	FrameLayout transferDetailLoadingFrame;
 	
 	LoadingView listLoadingView;
 	
@@ -40,7 +40,7 @@ public class VipTransferDetailActivity extends BaseActivity{
 	
 	private void initData(){
 		listLoadingView = new LoadingView(this);
-		listLoadingView.addLoadingTo(TransferDetailLoadingFrame);
+		listLoadingView.addLoadingTo(transferDetailLoadingFrame);
 		String xml = new TransferDetailRequest().getParams(METHOD_ZHUANZHANGLIST);
 		new HttpRequest<TransferDetailResponse>().postDataXml(METHOD_ZHUANZHANGLIST,xml, this,TransferDetailResponse.class);
 	}
@@ -49,7 +49,7 @@ public class VipTransferDetailActivity extends BaseActivity{
 	public void onSuccess(String method, Object result) {
 		super.onSuccess(method, result);
 		if(method.equals(METHOD_ZHUANZHANGLIST)){
-			listLoadingView.removeLoadingFrom(TransferDetailLoadingFrame);
+			listLoadingView.removeLoadingFrom(transferDetailLoadingFrame);
 			TransferDetailResponse transferDetailResponse = (TransferDetailResponse) result;
 			if(transferDetailResponse!=null){
 				adapter.refresh(transferDetailResponse.body.list);
@@ -62,4 +62,9 @@ public class VipTransferDetailActivity extends BaseActivity{
         context.startActivity(intent); 
 	}
 	
+	@Override
+	public void onFailure(String method, String errorMsg) {
+		super.onFailure(method, errorMsg);
+		listLoadingView.removeLoadingFrom(transferDetailLoadingFrame);
+	}
 }

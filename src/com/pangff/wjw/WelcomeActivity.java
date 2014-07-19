@@ -1,8 +1,7 @@
 package com.pangff.wjw;
 
-import java.net.ResponseCache;
-
 import android.os.Bundle;
+import android.util.Log;
 
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.LoginRequest;
@@ -19,7 +18,6 @@ public class WelcomeActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_welcome);
-		
 		if(StringUtil.isEmpty(UserInfoUtil.getInstanse().getUserId())){
 			BaseApplication.self.handlerCommon.postDelayed(new Runnable() {
 				@Override
@@ -52,5 +50,12 @@ public class WelcomeActivity extends BaseActivity {
 				LoginActivity.invotoLogin(WelcomeActivity.this);
 			}
 		}
+	}
+	
+	@Override
+	public void onFailure(String method, String errorMsg) {
+		super.onFailure(method, errorMsg);
+		ToastUtil.show("自动登录失败");
+		LoginActivity.invotoLogin(WelcomeActivity.this);
 	}
 }

@@ -18,6 +18,7 @@
      
     <ListView
         android:id="@+id/listView"
+        android:dividerHeight="2dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
     </ListView>

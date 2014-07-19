@@ -12,4 +12,7 @@ public class Img {
 	
 	@XStreamAlias("title")
 	public String title;
+	
+	@XStreamAlias("imgbig")
+	public String imgbig;
 }

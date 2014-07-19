@@ -2,27 +2,23 @@ package com.pangff.wjw;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemSelectedListener;
 
-import com.pangff.wjw.VipTransferActivity.SpinnerSelectedListener;
 import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.event.ApplySuccessEvent;
+import com.pangff.wjw.event.IEvent;
 import com.pangff.wjw.http.HttpRequest;
-import com.pangff.wjw.model.ResponseState;
-import com.pangff.wjw.model.TransferRequest;
 import com.pangff.wjw.model.WithdrawalsCommitRequest;
-import com.pangff.wjw.model.WithdrawalsCommitResponse;
 import com.pangff.wjw.model.WithdrawalsRequest;
 import com.pangff.wjw.model.WithdrawalsResponse;
-import com.pangff.wjw.util.ParseMD5;
 import com.pangff.wjw.util.StringUtil;
 import com.pangff.wjw.util.ToastUtil;
 import com.pangff.wjw.util.UserInfoUtil;
@@ -113,7 +109,7 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 			doRequestCommittWithDrawals();
 			// WithDrawalsApplySureActivity.invoteToWithDrawalsApplySure(this);
 			break;
-		case R.id.titleBar:
+		case R.id.rightT:
 			ExplainWithdrawalsActivity.invoteToExplainWithdrawals(this);
 			break;
 		}
@@ -200,5 +196,13 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 		Intent intent = new Intent();
 		intent.setClass(context, WithDrawalsApplyActivity.class);
 		context.startActivity(intent);
+	}
+	
+	@Override
+	protected void onEvent(IEvent event) {
+		super.onEvent(event);
+		if(event instanceof ApplySuccessEvent){
+			finish();
+		}
 	}
 }

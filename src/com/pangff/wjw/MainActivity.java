@@ -63,7 +63,7 @@ public class MainActivity extends BaseActivity {
 				mExitTime = System.currentTimeMillis();
 
 			} else {
-				System.exit(0);
+				finish();
 			}
 			return true;
 		}

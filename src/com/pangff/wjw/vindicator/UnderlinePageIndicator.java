@@ -169,7 +169,7 @@ public class UnderlinePageIndicator extends View implements PageIndicator {
 
   private void drawText(Canvas canvas) {
     int color = Color.BLACK;
-    int sColor = Color.RED;
+    int sColor = Color.BLACK;
     mPaint.setTextSize(PhoneUtils.dipToPixels(17));
     for (int i = 0; i < mViewPager.getAdapter().getCount(); i++) {
       String text = (String) ((FragmentPagerAdapter) mViewPager.getAdapter()).getPageTitle(i);
