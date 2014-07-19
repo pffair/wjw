@@ -8,9 +8,9 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.alibaba.fastjson.util.IOUtils;
 import com.pangff.wjw.BaseApplication;
 import com.pangff.wjw.model.Img;
+import com.pangff.wjw.util.IOUtils;
 import com.pangff.wjw.util.LogUtil;
 
 public class AdvImgDBManager {
