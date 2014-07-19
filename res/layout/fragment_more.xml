@@ -35,7 +35,8 @@
                 android:gravity="center"
                 android:paddingLeft="30dp"
                 android:paddingRight="10dp"
-                android:text="@string/loginPwd" />
+                android:text="@string/loginPwd" 
+                android:textSize="@dimen/labelTextSize"/>
 
             <TextView
                 android:id="@+id/checkPasswordChangeT"
@@ -49,7 +50,8 @@
                 android:gravity="center"
                 android:paddingLeft="30dp"
                 android:paddingRight="10dp"
-                android:text="@string/checkPwd" />
+                android:text="@string/checkPwd" 
+                android:textSize="@dimen/labelTextSize"/>
 
             <TextView
                 android:id="@+id/payPasswordChangeT"
@@ -63,7 +65,8 @@
                 android:gravity="center"
                 android:paddingLeft="30dp"
                 android:paddingRight="10dp"
-                android:text="@string/payPwd" />
+                android:text="@string/payPwd" 
+                android:textSize="@dimen/labelTextSize"/>
 
             <TextView
                 android:id="@+id/registT"
@@ -77,7 +80,8 @@
                 android:gravity="center"
                 android:paddingLeft="30dp"
                 android:paddingRight="10dp"
-                android:text="@string/regist" />
+                android:text="@string/regist" 
+                android:textSize="@dimen/labelTextSize"/>
 
             <Button
                 android:id="@+id/logoutB"

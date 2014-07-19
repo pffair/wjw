@@ -114,7 +114,7 @@ public class HomeFragment extends PagerFragment {
 		viewPager.setInterval(2000);
 		indicator.setViewPager(viewPager);
 		viewPager.startAutoScroll();
-		runText.setText(Html.fromHtml(topGallery.body.gundong));
+		runText.setText(Html.fromHtml(topGallery.body.gundong.p));
 		runText.setSelected(true);
 		runText.setVisibility(View.VISIBLE);
 	}

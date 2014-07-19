@@ -150,7 +150,8 @@
         <activity
             android:name="com.pangff.wjw.ResivePasswordActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Transparent" >
         </activity>
         <activity
             android:name="com.pangff.wjw.ExplainWithdrawalsActivity"

@@ -2,6 +2,7 @@ package com.pangff.wjw;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,6 +18,8 @@ import com.pangff.wjw.view.OnOneOffClickListener;
 
 public class VipTransferSureActivity extends BaseActivity {
 
+
+	
 	@AndroidView(R.id.transferStyleT)
 	TextView transferStyleT;
 	
@@ -95,8 +98,7 @@ public class VipTransferSureActivity extends BaseActivity {
 		String balance = intent.getStringExtra("balance");
 		String transferMoney = intent.getStringExtra("transferMoney");
 		String password = intent.getStringExtra("password");
-		
-		if(type.equals(VipTransferActivity.TRANSFER_TYPE_MONEY)){
+		if(type.equals(VipTransferActivity.TRANSFER_TYPE_MONEY+"")){
 			transferStyleT.setText("钱包");
 		}else{
 			transferStyleT.setText("积分");

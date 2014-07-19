@@ -57,6 +57,8 @@ public class VipTransferDetailActivity extends BaseActivity{
 			}
 		}
 	}
+	
+	
 	public static void  invoteToVipTransferDetail(BaseActivity context){
 		Intent intent = new Intent();  
         intent.setClass(context, VipTransferDetailActivity.class);  

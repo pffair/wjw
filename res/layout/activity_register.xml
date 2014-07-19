@@ -114,7 +114,6 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:background="@null"
-                    android:text="ATM888888"
                     android:gravity="center_vertical" />
             </LinearLayout>
 
@@ -162,7 +161,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:background="@null"
-                    android:gravity="center_vertical" />
+                    android:gravity="center_vertical"
+                    android:inputType="textPassword" />
             </LinearLayout>
 
             <LinearLayout
@@ -185,7 +185,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:background="@null"
-                    android:gravity="center_vertical" />
+                    android:gravity="center_vertical"
+                    android:inputType="textPassword" />
             </LinearLayout>
 
             <LinearLayout
@@ -208,7 +209,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:background="@null"
-                    android:gravity="center_vertical" />
+                    android:gravity="center_vertical"
+                    android:inputType="textPassword" />
             </LinearLayout>
 
             <LinearLayout
@@ -231,7 +233,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:background="@null"
-                    android:gravity="center_vertical" />
+                    android:gravity="center_vertical"
+                    android:inputType="textPassword" />
             </LinearLayout>
 
             <LinearLayout

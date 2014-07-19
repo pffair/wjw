@@ -8,22 +8,30 @@ import android.util.Log;
  */
 public class LogUtil {
 
-	private static final String TAG = "leyi";
-
+	private static final String TAG = "wjw";
+	public static boolean isShow = false;
 	public static void error(String msg) {
-		Log.e(TAG, msg);
+		if(isShow){
+			Log.e(TAG, msg);
+		}
 	}
 
 	public static void warn(String msg) {
-		Log.w(TAG, msg);
+		if(isShow){
+			Log.w(TAG, msg);
+		}
 	}
 
 	public static void debug(String msg) {
-		Log.d(TAG, msg);
+		if(isShow){
+			Log.d(TAG, msg);
+		}
 	}
 
 	public static void info(String msg) {
-		Log.i(TAG, msg);
+		if(isShow){
+			Log.i(TAG, msg);
+		}
 	}
 
 }

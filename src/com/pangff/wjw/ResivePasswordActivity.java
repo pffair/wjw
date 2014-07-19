@@ -7,6 +7,7 @@ import com.pangff.wjw.model.ChangePasswordResponse;
 import com.pangff.wjw.model.LoginRequest;
 import com.pangff.wjw.model.LoginResponse;
 import com.pangff.wjw.model.ResponseState;
+import com.pangff.wjw.util.LogUtil;
 import com.pangff.wjw.util.ParseMD5;
 import com.pangff.wjw.util.StringUtil;
 import com.pangff.wjw.util.ToastUtil;
@@ -79,13 +80,16 @@ public class ResivePasswordActivity extends BaseActivity {
 			break;
 		}
 	}
+	
+	String newPassword;
 
 	private void doRequestCommitPassword() {
 		ChangePasswordRequest.Body body = new ChangePasswordRequest.Body();
 		body.LX = type;
 		body.oldpass = ParseMD5.parseStrToMd5L16(oldPasswordE.getText()
 				.toString());// originalPasswordE.getText().toString();
-		body.newpass = ParseMD5.parseStrToMd5L16(newPasswordE.getText().toString());
+		newPassword = newPasswordE.getText().toString();
+		body.newpass = ParseMD5.parseStrToMd5L16(newPassword);
 		surenewpassword = newPasswordSureE.getText().toString();
 		if(StringUtil.isEmpty(newPasswordE.getText().toString())){
 			ToastUtil.show("密码不能为空");
@@ -109,6 +113,9 @@ public class ResivePasswordActivity extends BaseActivity {
 			if (changePasswordResponse.body.returns
 					.equals(ResponseState.SUCCESS)) {
 				ToastUtil.show(changePasswordResponse.body.message);
+				LogUtil.error("dddd:"+newPassword);
+				UserInfoUtil.getInstanse().setUserPassword(newPassword);
+				finish();
 			} else {
 				ToastUtil.show(changePasswordResponse.body.message);
 			}

@@ -17,6 +17,13 @@ public class TopGalleryResponse extends BaseBean{
 		public List<String> imgList;
 		
 		@XStreamAlias("gundong")
-		public String gundong;
+		public Gundong gundong;
+		
+		@XStreamAlias("gundong")
+		public static class Gundong{
+			
+			@XStreamAlias("p")
+			public String p;
+		}
 	}
 }

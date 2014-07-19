@@ -115,6 +115,8 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 		}
 
 	}
+	
+	
 
 	private void doRequestCommittWithDrawals() {
 		WithdrawalsCommitRequest withdrawalsCommitRequest = new WithdrawalsCommitRequest();
@@ -185,9 +187,6 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 			}
 		}
 	}
-
-	
-	@Override
 	public void onFailure(String method, String errorMsg) {
 		super.onFailure(method, errorMsg);
 		withidrawalsLoadingFrame.removeLoadingFrom(withidrawalsApplyLoadingFrame);

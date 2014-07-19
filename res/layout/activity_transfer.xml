@@ -41,9 +41,9 @@
                         android:background="@drawable/menu_top_bg" >
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="100dp"
                             android:layout_height="match_parent"
-                            android:gravity="center_vertical"
+                            android:gravity="left|center_vertical"
                             android:paddingLeft="20dp"
                             android:text="账户名称:" />
 
@@ -51,8 +51,8 @@
                             android:id="@+id/usernameT"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:gravity="center_vertical"
-                            android:paddingLeft="10dp"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="15dp"
                             android:text="" />
                     </LinearLayout>
 
@@ -65,19 +65,18 @@
                         android:background="@drawable/menu_center_bg" >
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="100dp"
                             android:layout_height="match_parent"
-                            android:gravity="center_vertical"
+                            android:gravity="left|center_vertical"
                             android:paddingLeft="20dp"
-                            android:text="钱包余额：" />
+                            android:text="钱包余额:" />
 
                         <TextView
                             android:id="@+id/menoyRemainT"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:gravity="center_vertical"
-                            android:paddingLeft="10dp"
-                            android:text="$100" />
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="15dp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -89,8 +88,9 @@
                         android:background="@drawable/menu_bottom_bg" >
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="100dp"
                             android:layout_height="match_parent"
+                            android:gravity="left|center_vertical"
                             android:paddingLeft="20dp"
                             android:text="积分余额:" />
 
@@ -98,8 +98,8 @@
                             android:id="@+id/integraticRemainT"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:paddingLeft="20dp"
-                            android:text="$100" />
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="15dp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -119,10 +119,10 @@
 
                         <TextView
                             android:id="@+id/transferStyleT"
-                            android:layout_width="wrap_content"
+                            android:layout_width="100dp"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="20dp"
-                            android:gravity="center"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="20dp"
                             android:text="转帐类型:" />
 
                         <Spinner
@@ -131,6 +131,7 @@
                             android:layout_height="match_parent"
                             android:background="@null"
                             android:gravity="left|center_vertical"
+                            android:paddingLeft="10dp"
                             android:singleLine="true" >
                         </Spinner>
                     </LinearLayout>
@@ -143,10 +144,10 @@
                         android:gravity="center_vertical" >
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="100dp"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="20dp"
-                            android:gravity="center"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="20dp"
                             android:text="接收者编号:" />
 
                         <EditText
@@ -155,6 +156,7 @@
                             android:layout_height="match_parent"
                             android:background="@null"
                             android:gravity="left|center_vertical"
+                            android:paddingLeft="15dp"
                             android:singleLine="true" />
                     </LinearLayout>
 
@@ -166,20 +168,20 @@
                         android:gravity="center_vertical" >
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="100dp"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="20dp"
-                            android:gravity="center"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="20dp"
                             android:text="转帐金额:" />
 
                         <EditText
                             android:id="@+id/transferMoneyE"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:background="@null"
                             android:gravity="left|center_vertical"
                             android:inputType="numberDecimal"
-                            android:paddingLeft="10dp"
+                            android:paddingLeft="15dp"
                             android:singleLine="true" />
                     </LinearLayout>
 
@@ -191,20 +193,20 @@
                         android:gravity="center_vertical" >
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="100dp"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="20dp"
-                            android:gravity="center"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="20dp"
                             android:text="支付密码:" />
 
                         <EditText
                             android:id="@+id/transferPasswordE"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:background="@null"
                             android:gravity="left|center_vertical"
                             android:inputType="textPassword"
-                            android:paddingLeft="10dp"
+                            android:paddingLeft="15dp"
                             android:singleLine="true" />
                     </LinearLayout>
                 </LinearLayout>
