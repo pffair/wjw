@@ -19,7 +19,7 @@ public class AcountChangeActivity extends BaseActivity{
 	@AndroidView(R.id.payPasswordChangeT)
 	TextView payPwd;
 	
-	
+	String style;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -60,15 +60,18 @@ public class AcountChangeActivity extends BaseActivity{
 	}
 	
 	private void goLogin(){
-		ResivePasswordActivity.invoteToResivePassword(this);
+		style="1";
+		ResivePasswordActivity.invoteToResivePassword(this,style);
 	}
 	
 	private void goCheck(){
-		ResivePasswordActivity.invoteToResivePassword( this);
+		style="2";
+		ResivePasswordActivity.invoteToResivePassword(this,style);
 	}
 	
 	private void goPay(){
-		ResivePasswordActivity.invoteToResivePassword( this);
+		style="3";
+		ResivePasswordActivity.invoteToResivePassword(this,style);
 	}
 	
 }

@@ -7,6 +7,7 @@ import com.pangff.wjw.model.ChangePasswordResponse;
 import com.pangff.wjw.model.LoginRequest;
 import com.pangff.wjw.model.LoginResponse;
 import com.pangff.wjw.model.ResponseState;
+import com.pangff.wjw.util.ParseMD5;
 import com.pangff.wjw.util.ToastUtil;
 import com.pangff.wjw.util.UserInfoUtil;
 
@@ -23,10 +24,12 @@ public class ResivePasswordActivity extends BaseActivity{
 	public static final String METHOD_PASS = "pass";
 	String oldpassword;
 	String newpassword;
+	String surenewpassword;
+	ResivePasswordActivity resivePasswordActivity;
 	String style;
 	
-	@AndroidView(R.id.originalPasswordE)
-	EditText originalPasswordE;
+	@AndroidView(R.id.oldPasswordE)
+	EditText oldPasswordE;
 	
 	@AndroidView(R.id.newPasswordE)
 	EditText newPasswordE;
@@ -44,9 +47,15 @@ public class ResivePasswordActivity extends BaseActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_resive_password);
+		initData();
 		initConfig();
 	}
 	
+	private void initData() {
+		// TODO Auto-generated method stub
+		style = this.getIntent().getStringExtra("sytle");
+	}
+
 	private void initConfig() {
 		// TODO Auto-generated method stub
 		sureResiveB.setOnClickListener(onOneOffClickListener);
@@ -70,12 +79,15 @@ public class ResivePasswordActivity extends BaseActivity{
 	private void doRequestCommitPassword(){
 		ChangePasswordRequest changePasswordRequest=new ChangePasswordRequest();
 		ChangePasswordRequest.Body body=new ChangePasswordRequest.Body();
-	//	body.LX="1";
-		body.oldpass=originalPasswordE.getText().toString();
-		body.newpass=newPasswordSureE.getText().toString();
-		String xml = new ChangePasswordRequest().getParams(METHOD_PASS,changePasswordRequest.body);
+		body.LX=style;
+		body.oldpass=ParseMD5.parseStrToMd5L16(oldPasswordE.getText().toString());//originalPasswordE.getText().toString();
+		body.newpass=ParseMD5.parseStrToMd5L16(newPasswordSureE.getText().toString());
+		surenewpassword=newPasswordSureE.getText().toString();
+		if(body.newpass.equals(surenewpassword)){
+		String xml = new ChangePasswordRequest().getParams(METHOD_PASS,body);
 		new HttpRequest<ChangePasswordResponse>().postDataXml(METHOD_PASS, xml, this,ChangePasswordResponse.class);
-	}
+		}
+		}
 	
 	@Override
 	public void onSuccess(String method, Object result) {
@@ -83,16 +95,17 @@ public class ResivePasswordActivity extends BaseActivity{
 		if(method.equals(METHOD_PASS)){
 			ChangePasswordResponse changePasswordResponse = (ChangePasswordResponse) result;
 			if(changePasswordResponse.body.returns.equals(ResponseState.SUCCESS)){
-				Log.i("!!!!!!!!!!!!!!!!!!","!!!!!!!!!!!!!!!!!!");
+				Log.i("!!!!!!!!!!!!!","!!!!!!!!!!!!!!!1");
 			}else{
 				ToastUtil.show(changePasswordResponse.body.message);
 			}
 		}
 	}
 	
-	public static void  invoteToResivePassword(BaseActivity context){
+	public static void  invoteToResivePassword(BaseActivity context,String style){
 		Intent intent = new Intent();  
         intent.setClass(context, ResivePasswordActivity.class);  
-        context.startActivity(intent); 
+        intent.putExtra("style", style);
+        context.startActivity(intent);
 	}
 }
