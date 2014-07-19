@@ -61,9 +61,9 @@ public class BaseApplication extends Application {
 					ImageView imageView = (ImageView) view;
 					imageView.setImageBitmap(loadedImage);
 					// first time show with animation
-					if (!isInCache && imageView.getVisibility()==View.VISIBLE) {
-						imageView.startAnimation(getInAlphaAnimation(2000));
-					}
+//					if (!isInCache && imageView.getVisibility()==View.VISIBLE) {
+//						imageView.startAnimation(getInAlphaAnimation(2000));
+//					}
 				}
 			}
 

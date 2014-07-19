@@ -20,51 +20,63 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-           <Button
-                android:id="@+id/loginPasswordChangeB"
+            <TextView
+                android:id="@+id/loginPasswordChangeT"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/blue_btn_bg_selector"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/menu_top_selector"
+                android:drawableRight="@drawable/more_arrow"
+                android:gravity="center"
+                android:paddingLeft="30dp"
+                android:paddingRight="10dp"
                 android:text="@string/loginPwd" />
 
-            <Button
-                android:id="@+id/checkPasswordChangeB"
+            <TextView
+                android:id="@+id/checkPasswordChangeT"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/blue_btn_bg_selector"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/menu_center_selector"
+                android:drawableRight="@drawable/more_arrow"
+                android:gravity="center"
+                android:paddingLeft="30dp"
+                android:paddingRight="10dp"
                 android:text="@string/checkPwd" />
 
-            <Button
-                android:id="@+id/payPasswordChangeB"
+            <TextView
+                android:id="@+id/payPasswordChangeT"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/blue_btn_bg_selector"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/menu_center_selector"
+                android:drawableRight="@drawable/more_arrow"
+                android:gravity="center"
+                android:paddingLeft="30dp"
+                android:paddingRight="10dp"
                 android:text="@string/payPwd" />
 
-            <Button
-                android:id="@+id/registB"
+            <TextView
+                android:id="@+id/registT"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/blue_btn_bg_selector"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/menu_bottom_selector"
+                android:drawableRight="@drawable/more_arrow"
+                android:gravity="center"
+                android:paddingLeft="30dp"
+                android:paddingRight="10dp"
                 android:text="@string/regist" />
 
             <Button

@@ -2,29 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-        android:background="@drawable/list_item_selector"
+    android:background="@drawable/list_item_selector"
     android:orientation="vertical" >
 
     <TextView
         android:id="@+id/timeT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/darker_gray"
+        android:background="@color/time_bg"
+        android:drawableLeft="@drawable/icon_time"
+        android:drawablePadding="5dp"
         android:gravity="left"
         android:padding="5dp"
-        android:text="2014-07-01" />
+        android:text="2014-07-01"
+        android:textStyle="italic" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:background="@android:color/white"
         android:orientation="horizontal"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp" >
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp" >
 
         <TextView
             android:id="@+id/labelTransferorNumberT"
             android:layout_width="100dp"
+            android:textSize="@dimen/listText" 
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/transferor_number" />
@@ -33,25 +38,29 @@
             android:id="@+id/transferorNumberT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/listText" 
             android:text="11111" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/white"
         android:orientation="horizontal"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp" >
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
 
         <TextView
             android:id="@+id/labelRecipientNumberT"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textSize="@dimen/listText" 
             android:text="@string/recipient_number" />
 
         <TextView
             android:id="@+id/recipientNumberT"
+            android:textSize="@dimen/listText" 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="111111" />
@@ -60,19 +69,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/white"
         android:orientation="horizontal"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp" >
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="10dp" >
 
         <TextView
             android:id="@+id/labelBankT"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textSize="@dimen/listText" 
             android:text="@string/transfer_label_amount" />
 
         <TextView
             android:id="@+id/bankT"
+            android:textSize="@dimen/listText" 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="1233.0元" />

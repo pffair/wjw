@@ -24,9 +24,9 @@
     <string name="changePwd">修改密码</string>
 
     <!-- 会员类 -->
-    <string name="vip_account">会员帐号</string>
-    <string name="vip_name">会员姓名</string>
-    <string name="vip_level">会员级别</string>
+    <string name="vip_account">会员帐号:</string>
+    <string name="vip_name">会员姓名:</string>
+    <string name="vip_level">会员级别:</string>
 
     <!-- 转帐类 -->
     <string name="transfer_vip">会员转帐</string>
@@ -52,6 +52,7 @@
     <string name="withdrawals_detail">提现明细</string>
     <string name="withdrawals_explain">提现说明</string>
     <string name="withdrawals_label_amount">金&#160;&#160;&#160;&#160;额：</string>
+     <string name="label_amount">金额：</string>
     <string name="withdrawals_label_bank">银&#160;&#160;&#160;&#160;行：</string>
     <string name="withdrawals_label_fee">手续费：</string>
     <string name="withdrawals_label_logout">退&#160;&#160;&#160;&#160;出</string>

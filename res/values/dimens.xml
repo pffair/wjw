@@ -2,5 +2,6 @@
 <resources>
 
     <dimen name="titleBarHeight">45dp</dimen>
-    
+    <dimen name="labelTextSize">17sp</dimen>
+    <dimen name="listText">15sp</dimen>
 </resources>

@@ -128,7 +128,7 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.pangff.wjw.AcountChangeActivity"
+            android:name="com.pangff.wjw.AccountChangeActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>

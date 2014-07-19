@@ -2,39 +2,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/list_item_selector"
     android:orientation="vertical" >
-    
-		  <TextView
+
+    <TextView
         android:id="@+id/timeT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/darker_gray"
+        android:background="@color/time_bg"
+        android:drawableLeft="@drawable/icon_time"
+        android:drawablePadding="5dp"
         android:gravity="left"
         android:padding="5dp"
-        android:text="2014-07-01" />
+        android:text="2014-07-01"
+        android:textStyle="italic" />
 
     <LinearLayout
-        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp" >
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:background="@android:color/white" >
 
         <TextView
             android:id="@+id/labelExchangeAmountT"
-            android:layout_width="60dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/withdrawals_label_amount" />
+            android:textSize="@dimen/listText"
+            android:text="@string/label_amount" />
 
         <TextView
             android:id="@+id/exchangeAmountT"
+            android:textSize="@dimen/listText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-
-    
 </LinearLayout>
