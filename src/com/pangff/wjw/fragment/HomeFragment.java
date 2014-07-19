@@ -17,7 +17,6 @@ import com.pangff.wjw.R;
 import com.pangff.wjw.adapter.AvdListAdapter;
 import com.pangff.wjw.adapter.ImagePagerAdapter;
 import com.pangff.wjw.autowire.AndroidView;
-import com.pangff.wjw.db.AdvImgDBHelper;
 import com.pangff.wjw.db.AdvImgDBManager;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.AdvRequest;
@@ -108,7 +107,6 @@ public class HomeFragment extends PagerFragment {
 	private void showAdvList(AdvResponse advResponse) {
 		avdAdapter.refresh(advResponse.body.img);
 		AdvImgDBManager.getInstance().addImgs(advResponse.body.img);
-		hideLoadingView();
 	}
 
 	private void showGalleryData(TopGalleryResponse topGallery) {
@@ -152,6 +150,7 @@ public class HomeFragment extends PagerFragment {
 			requestAdvList();
 		}
 		if(METHOD_ADVLIST.equals(mothod)){
+			hideLoadingView();
 			AdvResponse advResponse = (AdvResponse) result;
 			showAdvList(advResponse);
 		}

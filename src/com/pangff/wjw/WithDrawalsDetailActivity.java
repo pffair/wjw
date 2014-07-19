@@ -57,6 +57,12 @@ public class WithDrawalsDetailActivity extends BaseActivity{
 		}
 	}
 	
+	@Override
+	public void onFailure(String method, String errorMsg) {
+		super.onFailure(method, errorMsg);
+		listLoadingView.removeLoadingFrom(withdrawalsDetailLoadingFrame);
+	}
+	
 	public static void  invoteToWithDrawalsDetailApply(BaseActivity context){
 		Intent intent = new Intent();  
         intent.setClass(context, WithDrawalsDetailActivity.class);  

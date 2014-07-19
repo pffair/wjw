@@ -1,28 +1,16 @@
 package com.pangff.wjw.util;
 
 import java.io.File;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 
-import android.app.ActivityManager;
-import android.app.ActivityManager.RunningAppProcessInfo;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.util.DisplayMetrics;
-import android.view.View;
-import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
-import android.widget.ImageView;
 
 import com.pangff.wjw.BaseApplication;
-import com.pangff.wjw.R;
 
 /**
  * 系统相关工具
@@ -92,7 +80,21 @@ public class PhoneUtils {
 		boolean sdCardExist = Environment.getExternalStorageState().equals(
 				android.os.Environment.MEDIA_MOUNTED); // 判断sd卡是否存在
 		if (sdCardExist) {
-			sdDir = Environment.getExternalStorageDirectory();
+			File f = new File("wjw/test.txt"); 
+			OutputStreamWriter osw;
+			try {
+				osw = new OutputStreamWriter( 
+						new FileOutputStream(f));
+				osw.write("a"); 
+				sdDir = Environment.getExternalStorageDirectory();
+			} catch (Exception e) {
+				StringBuilder sbPhone = new StringBuilder();
+				sbPhone.append(Environment.getDataDirectory());
+				sbPhone.append("/data/com.pangff.wjw");
+				// sbPhone.append(product_name).append("/");
+				return sbPhone.toString();
+			} 
+					
 		} else {
 			StringBuilder sbPhone = new StringBuilder();
 			sbPhone.append(Environment.getDataDirectory());

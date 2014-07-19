@@ -25,8 +25,10 @@ public class LoadingView extends RelativeLayout {
 		if (anchor == null) {
 			ViewGroup root = (ViewGroup) ((ViewGroup) ((Activity) getContext())
 					.findViewById(android.R.id.content)).getChildAt(0);
+			root.removeView(view);
 			root.addView(view, lp);
 		} else {
+			anchor.removeView(view);
 			anchor.addView(view, lp);
 		}
 	}

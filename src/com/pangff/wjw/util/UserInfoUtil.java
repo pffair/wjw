@@ -38,7 +38,7 @@ public class UserInfoUtil {
 	}
 
 	public String getUserId() {
-		return sharedPreferences.getString(KEY_USERID, "1");
+		return sharedPreferences.getString(KEY_USERID, "");
 	}
 
 	public void setUserId(String userid) {
@@ -68,5 +68,6 @@ public class UserInfoUtil {
 		editor.remove(KEY_PASSORD);
 		editor.remove(KEY_USERID);
 		editor.remove(KEY_USERNAME);
+		editor.commit();
 	}
 }

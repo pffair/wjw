@@ -65,4 +65,10 @@ public class ExchangeDetailActivity extends BaseActivity{
         intent.setClass(context, ExchangeDetailActivity.class);  
         context.startActivity(intent); 
 	}
+	
+	@Override
+	public void onFailure(String method, String errorMsg) {
+		super.onFailure(method, errorMsg);
+		listLoadingView.removeLoadingFrom(exchangeDetailLoadingFrame);
+	}
 }
