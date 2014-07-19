@@ -49,8 +49,8 @@
                         android:id="@+id/exchangeNameT"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:paddingLeft="20dp" />
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -73,7 +73,7 @@
                         android:id="@+id/menoyRemainT"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:gravity="left|center_vertical"
                         android:paddingLeft="20dp" />
                 </LinearLayout>
 
@@ -97,7 +97,7 @@
                         android:id="@+id/integrationRemainT"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:gravity="left|center_vertical"
                         android:paddingLeft="20dp" />
                 </LinearLayout>
 
@@ -123,7 +123,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@null"
-                        android:gravity="center" />
+                        android:gravity="left|center_vertical" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -148,7 +148,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@null"
-                        android:gravity="center" />
+                        android:gravity="left|center_vertical" />
                 </LinearLayout>
 
                 <Button

@@ -22,6 +22,9 @@
     <string name="checkPwd">查看密码修改</string>
     <string name="payPwd">支付密码修改</string>
     <string name="changePwd">修改密码</string>
+    <string name="oldPwd">旧密码</string>
+    <string name="newPwd">新密码</string>
+    <string name="sureNewPwd">确认新秘密</string>
 
     <!-- 会员类 -->
     <string name="vip_account">会员帐号</string>
