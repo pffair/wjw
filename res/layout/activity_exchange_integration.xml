@@ -123,7 +123,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@null"
-                        android:gravity="left|center_vertical" />
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -148,7 +149,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@null"
-                        android:gravity="left|center_vertical" />
+                        android:gravity="left|center_vertical" 
+                        android:paddingLeft="20dp"
+                        android:inputType="textPassword"/>
                 </LinearLayout>
 
                 <Button

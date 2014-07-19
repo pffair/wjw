@@ -81,8 +81,7 @@
                             android:layout_height="match_parent"
                             android:background="@null"
                             android:gravity="left|center_vertical"
-                            android:paddingLeft="15dp"
-                            android:text="dd" />
+                            android:paddingLeft="15dp"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -139,8 +138,7 @@
                             android:layout_height="match_parent"
                             android:background="@null"
                             android:gravity="left|center_vertical"
-                            android:paddingLeft="15dp"
-                            android:text="dd" />
+                            android:paddingLeft="15dp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -165,8 +163,7 @@
                             android:background="@null"
                             android:gravity="left|center_vertical"
                             android:inputType="number"
-                            android:paddingLeft="15dp"
-                            android:text="dd" />
+                            android:paddingLeft="15dp"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -198,8 +195,7 @@
                             android:background="@null"
                             android:gravity="left|center_vertical"
                             android:inputType="number"
-                            android:paddingLeft="15dp"
-                            android:text="dd" />
+                            android:paddingLeft="15dp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -223,8 +219,7 @@
                             android:background="@null"
                             android:gravity="left|center_vertical"
                             android:inputType="textPassword"
-                            android:paddingLeft="15dp"
-                            android:text="dd" />
+                            android:paddingLeft="15dp"/>
                     </LinearLayout>
                 </LinearLayout>
 

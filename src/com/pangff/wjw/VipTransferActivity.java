@@ -2,6 +2,7 @@ package com.pangff.wjw;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -183,6 +184,13 @@ public class VipTransferActivity extends BaseActivity{
 				ToastUtil.show("获取用户信息失败");
 			}
 		}
+	}
+
+	
+	@Override
+	public void onFailure(String method, String errorMsg) {
+		super.onFailure(method, errorMsg);
+		transferLoading.removeLoadingFrom(transferLoadingFrame);
 	}
 
 	public static void  invoteToVipTransfer(BaseActivity context){

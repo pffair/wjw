@@ -121,6 +121,15 @@ public class ExchangeIntegrationActivity extends BaseActivity{
 		}
 	}
 
+	
+	
+	@Override
+	public void onFailure(String method, String errorMsg) {
+		super.onFailure(method, errorMsg);
+		exchangeLoading.removeLoadingFrom(exchangeLoadingFrame);
+	}
+
+
 	public static void  invoteToExchangeIntegration(BaseActivity context){
 		Intent intent = new Intent();  
         intent.setClass(context, ExchangeIntegrationActivity.class);  

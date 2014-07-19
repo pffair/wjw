@@ -115,6 +115,8 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 		}
 
 	}
+	
+	
 
 	private void doRequestCommittWithDrawals() {
 		WithdrawalsCommitRequest withdrawalsCommitRequest = new WithdrawalsCommitRequest();
@@ -186,6 +188,11 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 		}
 	}
 
+	public void onFailure(String method, String errorMsg) {
+		super.onFailure(method, errorMsg);
+		withidrawalsLoadingFrame.removeLoadingFrom(withidrawalsApplyLoadingFrame);
+	}
+	
 	private void setData(WithdrawalsResponse withdrawalsResponse) {
 		accountNameT.setText(withdrawalsResponse.body.zxname);
 		accountRemainT.setText(withdrawalsResponse.body.money);
