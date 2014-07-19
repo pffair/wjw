@@ -43,8 +43,8 @@ public class LoginActivity extends BaseActivity {
 		loginB.setOnClickListener(onOneOffClickListener);
 		forgetPwdT.setOnClickListener(onOneOffClickListener);
 		
-		userNameE.setText("ATM888888");
-		passwordE.setText("123456");
+		//userNameE.setText("ATM888888");
+		//passwordE.setText("123456");
 	}
 
 	@Override
