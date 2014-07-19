@@ -85,18 +85,17 @@ public class ResivePasswordActivity extends BaseActivity {
 		body.LX = type;
 		body.oldpass = ParseMD5.parseStrToMd5L16(oldPasswordE.getText()
 				.toString());// originalPasswordE.getText().toString();
-		body.newpass = ParseMD5.parseStrToMd5L16(newPasswordSureE.getText()
-				.toString());
+		body.newpass = ParseMD5.parseStrToMd5L16(newPasswordE.getText().toString());
 		surenewpassword = newPasswordSureE.getText().toString();
-		if(StringUtil.isEmpty(body.newpass)){
+		if(StringUtil.isEmpty(newPasswordE.getText().toString())){
 			ToastUtil.show("密码不能为空");
 			return;
 		}
-		if (body.newpass.equals(surenewpassword)) {
+		if (newPasswordE.getText().toString().equals(surenewpassword)) {
 			String xml = new ChangePasswordRequest().getParams(METHOD_PASS,
 					body);
 			new HttpRequest<ChangePasswordResponse>().postDataXml(METHOD_PASS,
-					xml, this, ChangePasswordResponse.class);
+					xml, this, ChangePasswordResponse.class,false);
 		}else{
 			ToastUtil.show("确认密码错误");
 		}

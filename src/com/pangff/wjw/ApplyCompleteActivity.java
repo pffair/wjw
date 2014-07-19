@@ -11,7 +11,6 @@ import com.pangff.wjw.event.ApplySuccessEvent;
 
 public class ApplyCompleteActivity extends BaseActivity{
 	
-	public static final int RESULTCODE = 1010101;
 	
 	@AndroidView(R.id.applyComplete)
 	Button applyComplete;

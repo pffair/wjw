@@ -91,7 +91,7 @@ public class ExchangeSureAvtivity extends BaseActivity{
 	
 	protected void doRequestCommitExchange() {
 		String xml = exchangeRequest.getParams(METHOD_DUIHUANOK,exchangeRequest.body);
-		new HttpRequest<ExchangeResponse>().postDataXml(METHOD_DUIHUANOK, xml, this,ExchangeResponse.class);		
+		new HttpRequest<ExchangeResponse>().postDataXml(METHOD_DUIHUANOK, xml, this,ExchangeResponse.class,false);		
 	}
 	
 	@Override

@@ -171,7 +171,7 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 		WithdrawalsRequest withdrawalsRequest = new WithdrawalsRequest();
 		String xml = withdrawalsRequest.getParams(METHOD_TIXIAN);
 		new HttpRequest<WithdrawalsResponse>().postDataXml(METHOD_TIXIAN, xml,
-				this, WithdrawalsResponse.class);
+				this, WithdrawalsResponse.class,false);
 	}
 
 	@Override
@@ -186,6 +186,13 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 		}
 	}
 
+	
+	@Override
+	public void onFailure(String method, String errorMsg) {
+		super.onFailure(method, errorMsg);
+		withidrawalsLoadingFrame.removeLoadingFrom(withidrawalsApplyLoadingFrame);
+	}
+	
 	private void setData(WithdrawalsResponse withdrawalsResponse) {
 		accountNameT.setText(withdrawalsResponse.body.zxname);
 		accountRemainT.setText(withdrawalsResponse.body.money);

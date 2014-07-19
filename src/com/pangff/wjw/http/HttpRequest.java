@@ -24,11 +24,25 @@ public class HttpRequest<T> {
 	 * @param callBack
 	 * @param cls
 	 */
-	public void postDataXml(String method,String xml, ResponseCallBack callBack,Class<T> t) {
+	public void postDataXml(String method,String xml, String key,ResponseCallBack callBack,Class<T> t,boolean hasCache) {
 		RequestParams params = new RequestParams();
 		params.put("data", xml);
 		LogUtil.error("Request:"+xml);
-		client.post(baseUrl, params, new MyAsyncHttpResponseHandler(callBack,method,t));
+		client.post(baseUrl, params, new MyAsyncHttpResponseHandler(callBack,method,key,t,hasCache));
+	}
+	
+	/**
+	 * data xml
+	 * @param url
+	 * @param xml
+	 * @param callBack
+	 * @param cls
+	 */
+	public void postDataXml(String method,String xml,ResponseCallBack callBack,Class<T> t,boolean hasCache) {
+		RequestParams params = new RequestParams();
+		params.put("data", xml);
+		LogUtil.error("Request:"+xml);
+		client.post(baseUrl, params, new MyAsyncHttpResponseHandler(callBack,method,method,t,hasCache));
 	}
 
 }

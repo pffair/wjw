@@ -47,7 +47,7 @@ public class AdvImgDBManager {
 		db.beginTransaction();
 		String sql = "insert into adv_img(id,photoUrl) values(?,?)";
 		for (int i = 0; i < imgList.size(); i++) {
-			LogUtil.error("添加图片:"+imgList.get(i).imgbig);
+//			LogUtil.error("添加图片:"+imgList.get(i).imgbig);
 			AdvImgDBManager.db.execSQL(sql, new Object[] { imgList.get(i).id,
 					imgList.get(i).imgs });
 		}
@@ -72,7 +72,7 @@ public class AdvImgDBManager {
 					Img img = new Img();
 					img.imgbig = photoUrl;
 					img.id = id;
-					LogUtil.error("获取图片:"+img.imgbig);
+//					LogUtil.error("获取图片:"+img.imgbig);
 					if(BaseApplication.self.IMAGE_CACHE.containsKey(photoUrl)){
 						imgList.add(img);
 						LogUtil.error("获取缓存图片:"+img.imgbig);

@@ -103,7 +103,7 @@ public class ExchangeIntegrationActivity extends BaseActivity{
 		exchangeLoading.addLoadingTo(exchangeLoadingFrame);
 		MyAccountRequest myAccountRequest = new MyAccountRequest();
 		String xml = myAccountRequest.getParams(METHOD_DUIHUAN);
-		new HttpRequest<MyAccountResponse>().postDataXml(METHOD_DUIHUAN, xml, this,MyAccountResponse.class);
+		new HttpRequest<MyAccountResponse>().postDataXml(METHOD_DUIHUAN, xml, this,MyAccountResponse.class,false);
 	}
 
 	public void onSuccess(String method, Object result) {

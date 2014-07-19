@@ -91,7 +91,7 @@ public class CacheFile {
 		return null;
 	}
 
-	public static void saveCache(final String key, final String value) {
+	public static synchronized void saveCache(final String key, final String value) {
 
 		try {
 			DiskLruCache cacheUtil = CacheFile.getCache();

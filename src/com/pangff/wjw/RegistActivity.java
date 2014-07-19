@@ -155,7 +155,7 @@ public class RegistActivity extends BaseActivity {
 		password = loginPasswordE.getText().toString();
 		
 		String xml = registRequest.getParams(METHOD_ZHUCE,registRequest.body);
-		new HttpRequest<RegistResponse>().postDataXml(METHOD_ZHUCE, xml, this,RegistResponse.class);
+		new HttpRequest<RegistResponse>().postDataXml(METHOD_ZHUCE, xml, this,RegistResponse.class,false);
 	}
 	
 	public void myClick(View view){

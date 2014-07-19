@@ -1,17 +1,17 @@
 package com.pangff.wjw;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.FrameLayout;
+import android.widget.ListView;
+
 import com.pangff.wjw.adapter.ExchangeDetailAdapter;
 import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.ExchangeDetailRequest;
 import com.pangff.wjw.model.ExchangeDetailResponse;
+import com.pangff.wjw.util.UserInfoUtil;
 import com.pangff.wjw.view.LoadingView;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.FrameLayout;
-import android.widget.ListView;
 
 public class ExchangeDetailActivity extends BaseActivity{
 	
@@ -43,7 +43,7 @@ public class ExchangeDetailActivity extends BaseActivity{
 		listLoadingView = new LoadingView(this);
 		listLoadingView.addLoadingTo(exchangeDetailLoadingFrame);
 		String xml = new ExchangeDetailRequest().getParams(METHOD_DUIHUANLIST);
-		new HttpRequest<ExchangeDetailResponse>().postDataXml(METHOD_DUIHUANLIST,xml, this,ExchangeDetailResponse.class);
+		new HttpRequest<ExchangeDetailResponse>().postDataXml(METHOD_DUIHUANLIST,xml, UserInfoUtil.getInstanse().getUserId(),this,ExchangeDetailResponse.class,true);
 
 	}
 

@@ -71,7 +71,7 @@ public class AdvFragment extends PagerFragment {
 		listLoadingView = new LoadingView(this.getActivity());
 		listLoadingView.addLoadingTo(container);
 		String xml = new AdvRequest().getParams(METHOD_ADVLIST);
-		new HttpRequest<AdvResponse>().postDataXml(METHOD_ADVLIST, xml, this,AdvResponse.class);
+		new HttpRequest<AdvResponse>().postDataXml(METHOD_ADVLIST, xml, this,AdvResponse.class,true);
 	}
 
 	private void showAdvList(AdvResponse advResponse) {

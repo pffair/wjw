@@ -93,7 +93,7 @@ public class VipTransferActivity extends BaseActivity{
 		transferLoading.addLoadingTo(transferLoadingFrame);
 		MyAccountRequest myAccountRequest = new MyAccountRequest();
 		String xml = myAccountRequest.getParams(METHOD_ZHUANZHANG);
-		new HttpRequest<MyAccountResponse>().postDataXml(METHOD_ZHUANZHANG, xml, this,MyAccountResponse.class);
+		new HttpRequest<MyAccountResponse>().postDataXml(METHOD_ZHUANZHANG, xml, this,MyAccountResponse.class,false);
 	}
 	
 	private void doRequestCommitTransfer(){

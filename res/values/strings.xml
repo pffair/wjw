@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">wjw</string>
+    <string name="app_name">ATM</string>
 
     <!-- 首页 -->
     <string name="fragment_account">我的帐号</string>

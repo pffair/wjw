@@ -70,7 +70,7 @@ public class VipTransferSureActivity extends BaseActivity {
 	
 	private void doRequestCommitTransfer(){
 		String xml = transferRequest.getParams(METHOD_ZHUANZHANGOK,transferRequest.body);
-		new HttpRequest<TransferResponse>().postDataXml(METHOD_ZHUANZHANGOK, xml, this,TransferResponse.class);
+		new HttpRequest<TransferResponse>().postDataXml(METHOD_ZHUANZHANGOK, xml, this,TransferResponse.class,false);
 	}
 	
 	@Override

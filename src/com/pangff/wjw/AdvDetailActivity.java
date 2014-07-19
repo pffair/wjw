@@ -75,12 +75,12 @@ public class AdvDetailActivity extends BaseActivity{
 		listLoadingView = new LoadingView(this);
 		listLoadingView.addLoadingTo(contentFrame);
 		String xml = new AdvDetailRequest().getParams(METHOD_CHAKAN,id);
-		new HttpRequest<AdvDetailResponse>().postDataXml(METHOD_CHAKAN, xml, this,AdvDetailResponse.class);
+		new HttpRequest<AdvDetailResponse>().postDataXml(METHOD_CHAKAN, xml,id, this,AdvDetailResponse.class,true);
 	}
 	
 	private void doCollectionRequest(){
 		String xml = new CollectRequest().getParams(METHOD_SHOUQU,id);
-		new HttpRequest<CollectResponse>().postDataXml(METHOD_SHOUQU, xml, this,CollectResponse.class);
+		new HttpRequest<CollectResponse>().postDataXml(METHOD_SHOUQU, xml, this,CollectResponse.class,false);
 	}
 	
 	@Override

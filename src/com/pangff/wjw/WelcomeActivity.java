@@ -34,7 +34,7 @@ public class WelcomeActivity extends BaseActivity {
 		String username = UserInfoUtil.getInstanse().getUserName();
 		String passowrd = UserInfoUtil.getInstanse().getUserPassword();
 		String xml = new LoginRequest().getParams(LoginActivity.METHOD_LOGIN,username,passowrd);
-		new HttpRequest<LoginResponse>().postDataXml(LoginActivity.METHOD_LOGIN, xml, this,LoginResponse.class);
+		new HttpRequest<LoginResponse>().postDataXml(LoginActivity.METHOD_LOGIN, xml, this,LoginResponse.class,false);
 	}
 	
 	@Override

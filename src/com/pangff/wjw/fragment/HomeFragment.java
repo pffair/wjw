@@ -96,12 +96,12 @@ public class HomeFragment extends PagerFragment {
 	
 	private void requestTopGallery(){
 		String xml = new TopGalleryRequest().getParams(METHOD_TOPGALLERY);
-		new HttpRequest<TopGalleryResponse>().postDataXml(METHOD_TOPGALLERY, xml, this,TopGalleryResponse.class);
+		new HttpRequest<TopGalleryResponse>().postDataXml(METHOD_TOPGALLERY, xml, this,TopGalleryResponse.class,true);
 	}
 	
 	private void requestAdvList(){
 		String xml = new AdvRequest().getParams(METHOD_ADVLIST);
-		new HttpRequest<AdvResponse>().postDataXml(METHOD_ADVLIST, xml, this,AdvResponse.class);
+		new HttpRequest<AdvResponse>().postDataXml(METHOD_ADVLIST, xml, this,AdvResponse.class,true);
 	}
 
 	private void showAdvList(AdvResponse advResponse) {

@@ -104,7 +104,7 @@ public class WithDrawalsApplySureActivity extends BaseActivity {
 
 	private void doRequestCommitWithDrawals(){
 		String xml = withdrawalsCommitRequest.getParams(METHOD_TIXIANOK,withdrawalsCommitRequest.body);
-		new HttpRequest<WithdrawalsCommitResponse>().postDataXml(METHOD_TIXIANOK, xml, this,WithdrawalsCommitResponse.class);
+		new HttpRequest<WithdrawalsCommitResponse>().postDataXml(METHOD_TIXIANOK, xml, this,WithdrawalsCommitResponse.class,false);
 	}
 
 

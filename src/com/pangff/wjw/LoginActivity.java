@@ -67,7 +67,7 @@ public class LoginActivity extends BaseActivity {
 		this.userName = userNameE.getText().toString();
 		this.passord = passwordE.getText().toString();
 		String xml = new LoginRequest().getParams(METHOD_LOGIN,userName,passord);
-		new HttpRequest<LoginResponse>().postDataXml(METHOD_LOGIN, xml, this,LoginResponse.class);
+		new HttpRequest<LoginResponse>().postDataXml(METHOD_LOGIN, xml, this,LoginResponse.class,false);
 	}
 	
 	public static void invotoLogin(BaseActivity context){

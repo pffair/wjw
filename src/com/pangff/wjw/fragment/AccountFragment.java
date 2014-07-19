@@ -106,7 +106,7 @@ public class AccountFragment extends PagerFragment {
 		accountLoading.addLoadingTo(accountLoadingFrame);
 		MyAccountRequest myAccountRequest = new MyAccountRequest();
 		String xml = myAccountRequest.getParams(METHOD_ZHANGHU);
-		new HttpRequest<MyAccountResponse>().postDataXml(METHOD_ZHANGHU, xml, this,MyAccountResponse.class);
+		new HttpRequest<MyAccountResponse>().postDataXml(METHOD_ZHANGHU, xml, this,MyAccountResponse.class,false);
 	}
 
 	@Override

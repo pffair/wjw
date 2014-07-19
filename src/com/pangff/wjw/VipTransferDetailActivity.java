@@ -10,6 +10,7 @@ import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.TransferDetailRequest;
 import com.pangff.wjw.model.TransferDetailResponse;
+import com.pangff.wjw.util.UserInfoUtil;
 import com.pangff.wjw.view.LoadingView;
 
 public class VipTransferDetailActivity extends BaseActivity{
@@ -42,7 +43,7 @@ public class VipTransferDetailActivity extends BaseActivity{
 		listLoadingView = new LoadingView(this);
 		listLoadingView.addLoadingTo(transferDetailLoadingFrame);
 		String xml = new TransferDetailRequest().getParams(METHOD_ZHUANZHANGLIST);
-		new HttpRequest<TransferDetailResponse>().postDataXml(METHOD_ZHUANZHANGLIST,xml, this,TransferDetailResponse.class);
+		new HttpRequest<TransferDetailResponse>().postDataXml(METHOD_ZHUANZHANGLIST,xml, UserInfoUtil.getInstanse().getUserId(), this,TransferDetailResponse.class,true);
 	}
 
 	@Override

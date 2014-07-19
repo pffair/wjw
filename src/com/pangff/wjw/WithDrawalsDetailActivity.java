@@ -10,6 +10,7 @@ import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.WithdrawalsDetailRequest;
 import com.pangff.wjw.model.WithdrawalsDetailResponse;
+import com.pangff.wjw.util.UserInfoUtil;
 import com.pangff.wjw.view.LoadingView;
 
 public class WithDrawalsDetailActivity extends BaseActivity{
@@ -42,7 +43,7 @@ public class WithDrawalsDetailActivity extends BaseActivity{
 		listLoadingView = new LoadingView(this);
 		listLoadingView.addLoadingTo(withdrawalsDetailLoadingFrame);
 		String xml = new WithdrawalsDetailRequest().getParams(METHOD_TXLIST);
-		new HttpRequest<WithdrawalsDetailResponse>().postDataXml(METHOD_TXLIST, xml, this,WithdrawalsDetailResponse.class);
+		new HttpRequest<WithdrawalsDetailResponse>().postDataXml(METHOD_TXLIST, xml, UserInfoUtil.getInstanse().getUserId(), this,WithdrawalsDetailResponse.class,true);
 	}
 
 	@Override

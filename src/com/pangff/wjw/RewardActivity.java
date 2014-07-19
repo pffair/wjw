@@ -10,6 +10,7 @@ import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.RewardDetailRequest;
 import com.pangff.wjw.model.RewardDetailResponse;
+import com.pangff.wjw.util.UserInfoUtil;
 import com.pangff.wjw.view.LoadingView;
 
 public class RewardActivity extends BaseActivity{
@@ -42,7 +43,7 @@ public class RewardActivity extends BaseActivity{
 		listLoadingView = new LoadingView(this);
 		listLoadingView.addLoadingTo(rewardLoadingFrame);
 		String xml = new RewardDetailRequest().getParams(METHOD_PRIXLIST);
-		new HttpRequest<RewardDetailResponse>().postDataXml(METHOD_PRIXLIST, xml, this,RewardDetailResponse.class);
+		new HttpRequest<RewardDetailResponse>().postDataXml(METHOD_PRIXLIST, xml, UserInfoUtil.getInstanse().getUserId(), this,RewardDetailResponse.class,true);
 	}
 	
 	@Override
