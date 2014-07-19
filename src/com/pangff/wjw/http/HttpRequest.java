@@ -3,6 +3,7 @@ package com.pangff.wjw.http;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.RequestParams;
 import com.pangff.wjw.util.LogUtil;
+import com.pangff.wjw.util.ParseMD5;
 
 public class HttpRequest<T> {
 	
@@ -28,7 +29,7 @@ public class HttpRequest<T> {
 		RequestParams params = new RequestParams();
 		params.put("data", xml);
 		LogUtil.error("Request:"+xml);
-		client.post(baseUrl, params, new MyAsyncHttpResponseHandler(callBack,method,key,t,hasCache));
+		client.post(baseUrl, params, new MyAsyncHttpResponseHandler(callBack,method,ParseMD5.parseStrToMd5L16(key+method),t,hasCache));
 	}
 	
 	/**
