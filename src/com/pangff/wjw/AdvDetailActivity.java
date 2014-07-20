@@ -1,7 +1,9 @@
 package com.pangff.wjw;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -19,6 +21,7 @@ import com.pangff.wjw.model.CollectResponse;
 import com.pangff.wjw.model.ResponseState;
 import com.pangff.wjw.util.ToastUtil;
 import com.pangff.wjw.view.LoadingView;
+import com.pangff.wjw.view.OnOneOffClickListener;
 import com.pangff.wjw.view.TitleBar;
 
 public class AdvDetailActivity extends BaseActivity{
@@ -49,6 +52,11 @@ public class AdvDetailActivity extends BaseActivity{
 	@AndroidView(R.id.contentFrame)
 	FrameLayout contentFrame;
 	
+	Handler handler = new Handler();
+	
+	public static final int TIME = 60000;
+	public static int currentTime = 0;
+	
 	@Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
@@ -58,11 +66,36 @@ public class AdvDetailActivity extends BaseActivity{
 		doDataRequest();
 	}
 	
+	
+	public Runnable runnable = new Runnable() {
+		
+		@Override
+		public void run() {
+			int backTime = (TIME-currentTime)/1000;
+			if(backTime>0){
+				collectionB.setText(String.valueOf(backTime));
+				currentTime=currentTime+1000;
+				handler.postDelayed(runnable, 1000);
+			}else{
+				collectionB.setEnabled(true);
+				collectionB.setTextColor(Color.WHITE);
+				collectionB.setText("收取");
+			}
+		}
+	};
+	
+	
 	private void initView(){
-		titleBar.rightT.setOnClickListener(new OnClickListener() {
+		collectionB.setTextColor(Color.BLACK);
+		collectionB.setEnabled(false);
+		handler.post(runnable);
+		collectionB.setOnClickListener(new OnOneOffClickListener() {
+			
 			@Override
-			public void onClick(View v) {
+			public void onOneClick(View v) {
 				doCollectionRequest();
+				collectionB.setTextColor(Color.BLACK);
+				collectionB.setEnabled(false);
 			}
 		});
 	}

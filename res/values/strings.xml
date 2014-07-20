@@ -15,7 +15,7 @@
     <string name="resive_password">确认修改</string>
     <string name="password">密码：</string>
     <string name="login">登&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;录</string>
-    <string name="regist">免费注册</string>
+    <string name="regist">快速注册</string>
 
     <!-- 密码类 -->
     <string name="loginPwd">登录密码修改</string>
