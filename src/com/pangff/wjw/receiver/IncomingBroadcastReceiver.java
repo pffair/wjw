@@ -22,6 +22,8 @@ import com.pangff.wjw.http.ResponseCallBack;
 import com.pangff.wjw.model.CallRequest;
 import com.pangff.wjw.model.CallResponse;
 import com.pangff.wjw.model.Img;
+import com.pangff.wjw.model.ResponseState;
+import com.pangff.wjw.util.LogUtil;
 import com.pangff.wjw.util.PhoneUtils;
 
 public class IncomingBroadcastReceiver extends BroadcastReceiver implements ResponseCallBack{
@@ -48,7 +50,7 @@ public class IncomingBroadcastReceiver extends BroadcastReceiver implements Resp
 				public void run() {
 					popPhoneRemove();
 				}
-			}, 10500);
+			}, 7500);
 		}
 		if (state.equals(TelephonyManager.EXTRA_STATE_OFFHOOK)) {
 			new Handler().postDelayed(new Runnable() {
@@ -82,7 +84,7 @@ public class IncomingBroadcastReceiver extends BroadcastReceiver implements Resp
 							| WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
 					PixelFormat.TRANSPARENT);
 
-			params.height = PhoneUtils.dipToPixels(135);
+			params.height = PhoneUtils.getScreenSize()[0];
 			params.gravity = Gravity.BOTTOM;
 			params.width = LayoutParams.MATCH_PARENT;
 			params.format = PixelFormat.TRANSLUCENT;
@@ -129,6 +131,13 @@ public class IncomingBroadcastReceiver extends BroadcastReceiver implements Resp
 
 	@Override
 	public void onSuccess(String method, Object result) {
-		Log.e("", "########成功");
+		if(method.equals(METHOD_TELOK)){
+			CallResponse callResponse = (CallResponse) result;
+			if(callResponse.body.returns.equals(ResponseState.SUCCESS)){
+				LogUtil.error(callResponse.body.message);
+			}else{
+				LogUtil.error(callResponse.body.message);
+			}
+		}
 	}
 }

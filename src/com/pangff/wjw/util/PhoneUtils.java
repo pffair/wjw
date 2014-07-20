@@ -9,6 +9,9 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
+import android.util.DisplayMetrics;
+import android.view.Display;
+import android.view.WindowManager;
 
 import com.pangff.wjw.BaseApplication;
 
@@ -105,4 +108,22 @@ public class PhoneUtils {
 		return sdDir.toString();
 
 	}
+	
+	
+	  /**
+	   * 获取屏幕分辨率
+	   * 
+	   * @param mContext
+	   * 
+	   * @return
+	   */
+	  public static int[] getScreenSize() {
+	    Display display =
+	        ((WindowManager) BaseApplication.self.getSystemService(Context.WINDOW_SERVICE))
+	            .getDefaultDisplay();
+	    DisplayMetrics dm = new DisplayMetrics();
+	    display.getMetrics(dm);
+	    int result[] = {dm.heightPixels, dm.widthPixels};
+	    return result;
+	  }
 }
