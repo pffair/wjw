@@ -49,7 +49,7 @@ public class MyAsyncHttpResponseHandler<T> extends AsyncHttpResponseHandler {
 					callBack.onSuccess(method,parseResponse(content));
 				}
 			} catch (Throwable e) {
-				LogUtil.error("解析错误:" + e.getMessage());
+				LogUtil.error("解析错误111:" + e.getMessage());
 				e.printStackTrace();
 			}
 		}
