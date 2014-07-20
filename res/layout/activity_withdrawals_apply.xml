@@ -186,7 +186,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center|center_vertical"
                             android:paddingLeft="35dp"
-                            android:text="提现金额" />
+                            android:text="提现金额:" />
 
                         <EditText
                             android:id="@+id/withdrawalCashE"
@@ -210,7 +210,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center|center_vertical"
                             android:paddingLeft="35dp"
-                            android:text="支付密码" />
+                            android:text="支付密码:" />
 
                         <EditText
                             android:id="@+id/payPasswordE"

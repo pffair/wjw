@@ -37,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="真实姓名" />
+                    android:text="真实姓名:" />
 
                 <EditText
                     android:id="@+id/tureNameE"
@@ -60,7 +60,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="会员姓名" />
+                    android:text="会员姓名:" />
 
                 <EditText
                     android:id="@+id/vipNameE"
@@ -83,7 +83,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="手机号码" />
+                    android:text="手机号码:" />
 
                 <EditText
                     android:id="@+id/phoneNumberE"
@@ -131,7 +131,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="推荐人编号" />
+                    android:text="推荐人编号:" />
 
                 <EditText
                     android:id="@+id/spreadNumberE"
@@ -154,7 +154,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="区域" />
+                    android:text="区域:" />
 
                 <Spinner
                     android:id="@+id/spinnerStyle"
@@ -178,7 +178,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="登录密码" />
+                    android:text="登录密码:" />
 
                 <EditText
                     android:id="@+id/loginPasswordE"
@@ -202,7 +202,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="查看密码" />
+                    android:text="查看密码:" />
 
                 <EditText
                     android:id="@+id/checkPasswordE"
@@ -226,7 +226,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="支付密码" />
+                    android:text="支付密码:" />
 
                 <EditText
                     android:id="@+id/payPasswordE"
@@ -250,7 +250,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="激活人支付密码" />
+                    android:text="激活人支付密码:" />
 
                 <EditText
                     android:id="@+id/aPayPasswordE"

@@ -75,7 +75,7 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_withdrawals_apply);
-		moneyReainT.setText(Html.fromHtml("<font color=#CD7F32 >$</font>钱包余额"));
+		moneyReainT.setText(Html.fromHtml("<font color=#CD7F32 >$</font>钱包余额:"));
 		initConfig();
 		doRequestAccount();
 	}
