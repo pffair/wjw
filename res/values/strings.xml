@@ -16,6 +16,7 @@
     <string name="password">密码：</string>
     <string name="login">登&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;录</string>
     <string name="regist">快速注册</string>
+    <string name="registResult">注册结果</string>
 
     <!-- 密码类 -->
     <string name="loginPwd">登录密码修改</string>
@@ -45,8 +46,8 @@
     <string name="exchange_detail">兑换明细</string>
     <string name="exchange_ok">确认兑换</string>
     <string name="award_dtail">奖励明细</string>
-    <string name="money_remain">钱包余额</string>
-    <string name="available_integral">可用积分</string>
+    <string name="money_remain">$钱包余额</string>
+    <string name="available_integral">$可用积分</string>
     <string name="rewards_style">类&#160;&#160;&#160;&#160;型：</string>
 
     <!-- 申请提现类 -->

@@ -1,6 +1,7 @@
 package com.pangff.wjw.fragment;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,6 +72,13 @@ public class AccountFragment extends PagerFragment {
 
 	@AndroidView(R.id.showIntegralT)
 	TextView showIntegralT;
+	
+	@AndroidView(R.id.remainT)
+	TextView remainT;
+
+	@AndroidView(R.id.integralT)
+	TextView integralT;
+	
 
 	@AndroidView(R.id.accountLoadingFrame)
 	FrameLayout accountLoadingFrame;
@@ -90,6 +98,9 @@ public class AccountFragment extends PagerFragment {
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 
+		remainT.setText(Html.fromHtml("<font color=#CD7F32 >$</font>钱包余额"));
+		integralT.setText(Html.fromHtml("<font color=#CD7F32 >$</font>积分余额"));
+		
 		myAccount.setOnClickListener(onOneOffClickListener);
 		withdrawalsApplyT.setOnClickListener(onOneOffClickListener);
 		withdrawalsDetailT.setOnClickListener(onOneOffClickListener);
