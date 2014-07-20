@@ -42,11 +42,11 @@
                 android:paddingTop="5dp" >
 
                 <ImageView
-                    android:id="@+id/hostIamgeI"
+                    android:id="@+id/hostImage"
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/header_default"
+                    android:src="@drawable/header_default"
                     android:scaleType="centerInside" />
 
                 <LinearLayout

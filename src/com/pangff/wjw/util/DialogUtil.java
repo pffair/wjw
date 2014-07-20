@@ -4,13 +4,29 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager.LayoutParams;
 
+import com.pangff.wjw.R;
 import com.pangff.wjw.view.OnOneOffClickListenerInDialog;
 
 public class DialogUtil {
 	private static final String TAG = "DialogUtil";
+	
+	 /**
+	   * 显示自底向上弹出的选择菜单框，位于屏幕的底部，内含多项菜单；最底项的菜单固定为“取消”，点击后菜单框消失；
+	   * 
+	   * @param activity Activity dialog所在的Activity
+	   * @param menuLayout 菜单框布局的资源文件
+	   * @param menuItemViewIds 相应菜单项的View的id的列表
+	   * @param onClickMenuItemListener 相应菜单项的View点击后的处理逻辑
+	   */
+	  public static Dialog showButtomPopUpDialog(Activity activity, int menuLayout,
+	      int[] menuItemViewIds, OnOneOffClickListenerInDialog onClickMenuItemListener) {
+	    return showButtomPopUpDialog(activity, menuLayout, menuItemViewIds, onClickMenuItemListener,
+	        R.style.wjw_dialog, Gravity.BOTTOM);
+	  }
 
 	public static Dialog showButtomPopUpDialog(Activity activity,
 			int menuLayout, int[] menuItemViewIds,

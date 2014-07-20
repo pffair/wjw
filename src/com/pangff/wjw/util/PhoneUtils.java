@@ -83,21 +83,20 @@ public class PhoneUtils {
 		boolean sdCardExist = Environment.getExternalStorageState().equals(
 				android.os.Environment.MEDIA_MOUNTED); // 判断sd卡是否存在
 		if (sdCardExist) {
-			File f = new File("wjw/test.txt"); 
-			OutputStreamWriter osw;
+			File f = new File("wjw");
 			try {
-				osw = new OutputStreamWriter( 
-						new FileOutputStream(f));
-				osw.write("a"); 
+				if(!f.exists()){
+					f.mkdirs();
+				}
 				sdDir = Environment.getExternalStorageDirectory();
 			} catch (Exception e) {
+				e.printStackTrace();
 				StringBuilder sbPhone = new StringBuilder();
 				sbPhone.append(Environment.getDataDirectory());
 				sbPhone.append("/data/com.pangff.wjw");
-				// sbPhone.append(product_name).append("/");
 				return sbPhone.toString();
-			} 
-					
+			}
+
 		} else {
 			StringBuilder sbPhone = new StringBuilder();
 			sbPhone.append(Environment.getDataDirectory());
@@ -108,22 +107,34 @@ public class PhoneUtils {
 		return sdDir.toString();
 
 	}
-	
-	
-	  /**
-	   * 获取屏幕分辨率
-	   * 
-	   * @param mContext
-	   * 
-	   * @return
-	   */
-	  public static int[] getScreenSize() {
-	    Display display =
-	        ((WindowManager) BaseApplication.self.getSystemService(Context.WINDOW_SERVICE))
-	            .getDefaultDisplay();
-	    DisplayMetrics dm = new DisplayMetrics();
-	    display.getMetrics(dm);
-	    int result[] = {dm.heightPixels, dm.widthPixels};
-	    return result;
-	  }
+
+	/**
+	 * 获取屏幕分辨率
+	 * 
+	 * @param mContext
+	 * 
+	 * @return
+	 */
+	public static int[] getScreenSize() {
+		Display display = ((WindowManager) BaseApplication.self
+				.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+		DisplayMetrics dm = new DisplayMetrics();
+		display.getMetrics(dm);
+		int result[] = { dm.heightPixels, dm.widthPixels };
+		return result;
+	}
+
+	/**
+	 * 获取屏幕分辨率
+	 * 
+	 * @param ctx
+	 * @return [0]height [1]width
+	 */
+	public static int[] getScreenSizeArray(Context ctx) {
+		Display display = ((WindowManager) ctx
+				.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+		DisplayMetrics dm = new DisplayMetrics();
+		display.getMetrics(dm);
+		return new int[] { dm.heightPixels, dm.widthPixels };
+	}
 }
