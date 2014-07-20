@@ -65,11 +65,11 @@
                         android:background="@drawable/menu_center_bg" >
 
                         <TextView
+                            android:id="@+id/wmoneyRemainT"
                             android:layout_width="100dp"
                             android:layout_height="match_parent"
                             android:gravity="left|center_vertical"
-                            android:paddingLeft="20dp"
-                            android:text="钱包余额:" />
+                            android:paddingLeft="11dp"/>
 
                         <TextView
                             android:id="@+id/menoyRemainT"
@@ -88,11 +88,11 @@
                         android:background="@drawable/menu_bottom_bg" >
 
                         <TextView
+                            android:id="@+id/wIntegralRemainT"
                             android:layout_width="100dp"
                             android:layout_height="match_parent"
                             android:gravity="left|center_vertical"
-                            android:paddingLeft="20dp"
-                            android:text="积分余额:" />
+                            android:paddingLeft="11dp" />
 
                         <TextView
                             android:id="@+id/integraticRemainT"

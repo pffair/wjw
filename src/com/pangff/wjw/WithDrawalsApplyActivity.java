@@ -2,6 +2,7 @@ package com.pangff.wjw;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -53,6 +54,10 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 	@AndroidView(R.id.titleBar)
 	TitleBar titleBar;
 	
+	@AndroidView(R.id.moneyReainT)
+	TextView moneyReainT;
+	
+	
 	@AndroidView(R.id.withidrawalsApplyLoadingFrame)
 	FrameLayout withidrawalsApplyLoadingFrame;
 	
@@ -70,6 +75,7 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_withdrawals_apply);
+		moneyReainT.setText(Html.fromHtml("<font color=#CD7F32 >$</font>钱包余额"));
 		initConfig();
 		doRequestAccount();
 	}

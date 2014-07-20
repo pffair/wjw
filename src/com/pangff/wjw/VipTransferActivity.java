@@ -2,6 +2,7 @@ package com.pangff.wjw;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -70,12 +71,21 @@ public class VipTransferActivity extends BaseActivity{
 	@AndroidView(R.id.transferLoadingFrame)
 	FrameLayout transferLoadingFrame;
 	
+	@AndroidView(R.id.wmoneyRemainT)
+	TextView wmoneyRemainT;
+	
+	@AndroidView(R.id.wIntegralRemainT)
+	TextView wIntegralRemainT;
+	
+	
 	LoadingView transferLoading;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_transfer);
+		wmoneyRemainT.setText(Html.fromHtml("<font color=#CD7F32 >$</font>钱包余额:"));
+		wIntegralRemainT.setText(Html.fromHtml("<font color=#CD7F32 >$</font>积分余额:"));
 		initConfig();
 		doRequestAccount();
 	}

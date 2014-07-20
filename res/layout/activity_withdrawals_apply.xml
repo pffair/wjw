@@ -69,11 +69,11 @@
                         android:background="@drawable/menu_bottom_bg" >
 
                         <TextView
+                            android:id="@+id/moneyReainT"
                             android:layout_width="115dp"
                             android:layout_height="match_parent"
                             android:gravity="center|center_vertical"
-                            android:paddingLeft="35dp"
-                            android:text="@string/money_remain" />
+                            android:paddingLeft="22dp" />
 
                         <TextView
                             android:id="@+id/accountRemainT"
