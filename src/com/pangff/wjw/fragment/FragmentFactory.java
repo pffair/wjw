@@ -12,8 +12,8 @@ public class FragmentFactory {
 	
 	public static final int FRAGMENT_HOME = 0;
 	public static final int FRAGMENT_ADV = 1;
-	public static final int FRAGMENT_MORE = 2;
-	public static final int FRAGMENT_ACCOUNT = 3;
+	public static final int FRAGMENT_MORE = 3;
+	public static final int FRAGMENT_ACCOUNT = 2;
 
 	/**
 	 * 实例化fragment
