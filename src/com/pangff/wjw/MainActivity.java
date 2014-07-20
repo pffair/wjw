@@ -1,5 +1,6 @@
 package com.pangff.wjw;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 
 import com.pangff.wjw.adapter.PagerFragmentAdapter;
 import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.fragment.AccountFragment;
 import com.pangff.wjw.util.ToastUtil;
 import com.pangff.wjw.vindicator.UnderlinePageIndicator;
 

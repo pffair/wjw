@@ -14,6 +14,7 @@ public class UserInfoUtil {
 	private static final String KEY_USERNAME = "key_username";
 	private static final String KEY_PASSORD = "key_passord";
 	private static final String KEY_USERID = "key_userid";
+	private static final String KEY_PIC = "key_pic";
 
 	private UserInfoUtil(Context context) {
 		sharedPreferences = context.getSharedPreferences(USER_INFO,
@@ -44,6 +45,16 @@ public class UserInfoUtil {
 	public void setUserId(String userid) {
 		Editor editor = sharedPreferences.edit();
 		editor.putString(KEY_USERID, userid);
+		editor.commit();
+	}
+	
+	public String getUserHeader() {
+		return sharedPreferences.getString(KEY_PIC, "");
+	}
+
+	public void setUserHeader(String url) {
+		Editor editor = sharedPreferences.edit();
+		editor.putString(KEY_PIC, url);
 		editor.commit();
 	}
 

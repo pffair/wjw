@@ -24,7 +24,7 @@ public class RegistSuccessActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_register_success);
 		initData();
-		registSuccessT.setText("您的帐号为:[" + registAccount + "]");
+		registSuccessT.setText("注册帐号为:[" + registAccount + "]");
 		registSureB.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				BaseApplication.self.controlBus.post(new ApplySuccessEvent());

@@ -101,6 +101,7 @@ public class AdvDetailActivity extends BaseActivity{
 	}
 	
 	private void initData(){
+		currentTime = 0;
 		id = this.getIntent().getStringExtra("id");
 	}
 	

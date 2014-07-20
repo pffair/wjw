@@ -9,7 +9,7 @@ import android.util.Log;
 public class LogUtil {
 
 	private static final String TAG = "wjw";
-	public static boolean isShow = false;
+	public static boolean isShow = true;
 	public static void error(String msg) {
 		if(isShow){
 			Log.e(TAG, msg);
