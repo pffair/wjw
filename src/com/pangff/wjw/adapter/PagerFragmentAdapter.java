@@ -16,8 +16,9 @@ public class PagerFragmentAdapter extends FragmentPagerAdapter implements BasePa
   protected static final String[] CONTENT = new String[] {
       BaseApplication.self.getString(R.string.fragment_home),
       BaseApplication.self.getString(R.string.fragment_adv),
-      BaseApplication.self.getString(R.string.fragment_more),
-      BaseApplication.self.getString(R.string.fragment_account)};
+      BaseApplication.self.getString(R.string.fragment_account),
+      BaseApplication.self.getString(R.string.fragment_more)
+      };
 
   private int mCount = CONTENT.length;
 
