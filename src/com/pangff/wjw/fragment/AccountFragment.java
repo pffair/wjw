@@ -340,6 +340,7 @@ public class AccountFragment extends PagerFragment {
 	private void setHeader(){
 		String url = UserInfoUtil.getInstanse().getUserHeader();
 		if(!StringUtil.isEmpty(url)){
+			hostImage.setBackgroundDrawable(null);
 			hostImage.setImageBitmap(BitmapFactory.decodeFile(url));
 		}
 	}
