@@ -69,11 +69,11 @@
                         android:background="@drawable/menu_bottom_bg" >
 
                         <TextView
+                            android:id="@+id/moneyReainT"
                             android:layout_width="115dp"
                             android:layout_height="match_parent"
                             android:gravity="center|center_vertical"
-                            android:paddingLeft="35dp"
-                            android:text="@string/money_remain" />
+                            android:paddingLeft="22dp" />
 
                         <TextView
                             android:id="@+id/accountRemainT"
@@ -186,7 +186,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center|center_vertical"
                             android:paddingLeft="35dp"
-                            android:text="提现金额" />
+                            android:text="提现金额:" />
 
                         <EditText
                             android:id="@+id/withdrawalCashE"
@@ -210,7 +210,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center|center_vertical"
                             android:paddingLeft="35dp"
-                            android:text="支付密码" />
+                            android:text="支付密码:" />
 
                         <EditText
                             android:id="@+id/payPasswordE"

@@ -4,6 +4,7 @@ package com.pangff.wjw;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,12 +52,20 @@ public class ExchangeIntegrationActivity extends BaseActivity{
 	@AndroidView(R.id.exchangeLoadingFrame)
 	FrameLayout exchangeLoadingFrame;
 	
+	@AndroidView(R.id.eMoneyRemainT)
+	TextView eMoneyRemainT;
+	
+	@AndroidView(R.id.eInteralReaminT)
+	TextView eInteralReaminT;
+	
 	LoadingView exchangeLoading;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_exchange_integration);
+		eMoneyRemainT.setText(Html.fromHtml("<font color=#CD7F32 >$</font>钱包余额:"));
+		eInteralReaminT.setText(Html.fromHtml("<font color=#CD7F32 >$</font>积分余额:"));
 		exchangeB.setOnClickListener(onOneOffClickListener);
 		doRequestAccount();
 		exchangeNameT.setText(UserInfoUtil.getInstanse().getUserName());
