@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
 import android.provider.MediaStore;
 import android.text.Html;
 import android.util.Log;
@@ -87,6 +88,13 @@ public class AccountFragment extends PagerFragment {
 
 	@AndroidView(R.id.showIntegralT)
 	TextView showIntegralT;
+	
+	@AndroidView(R.id.remainT)
+	TextView remainT;
+
+	@AndroidView(R.id.integralT)
+	TextView integralT;
+	
 
 	@AndroidView(R.id.accountLoadingFrame)
 	FrameLayout accountLoadingFrame;
@@ -114,6 +122,9 @@ public class AccountFragment extends PagerFragment {
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 
+		remainT.setText(Html.fromHtml("<font color=#CD7F32 >$</font>钱包余额"));
+		integralT.setText(Html.fromHtml("<font color=#CD7F32 >$</font>积分余额"));
+		
 		myAccount.setOnClickListener(onOneOffClickListener);
 		withdrawalsApplyT.setOnClickListener(onOneOffClickListener);
 		withdrawalsDetailT.setOnClickListener(onOneOffClickListener);
