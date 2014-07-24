@@ -7,7 +7,6 @@ import android.view.View;
 import com.pangff.wjw.BaseApplication;
 import com.pangff.wjw.autowire.AndroidAutowire;
 import com.pangff.wjw.event.IEvent;
-import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.http.ResponseCallBack;
 import com.pangff.wjw.view.OnOneOffClickListener;
 
@@ -18,7 +17,7 @@ import com.pangff.wjw.view.OnOneOffClickListener;
  */
 public class BaseFragment extends Fragment implements ResponseCallBack {
 
-	private boolean isInit; // 是否可以开始加载数据
+	protected boolean isInit; // 是否可以开始加载数据
 	protected OnOneOffClickListener onOneOffClickListener;
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -55,7 +54,7 @@ public class BaseFragment extends Fragment implements ResponseCallBack {
 	 */
 	private void showData() {
 		if (isInit) {
-			isInit = false;// 加载数据完成
+			//isInit = false;// 加载数据完成
 			// 加载各种数据
 			initData();
 		}

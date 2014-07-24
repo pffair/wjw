@@ -138,8 +138,6 @@ public class AccountFragment extends PagerFragment {
 	}
 
 	private void doRequestAccount() {
-		accountLoading = new LoadingView(this.getActivity());
-		accountLoading.addLoadingTo(accountLoadingFrame);
 		MyAccountRequest myAccountRequest = new MyAccountRequest();
 		String xml = myAccountRequest.getParams(METHOD_ZHANGHU);
 		new HttpRequest<MyAccountResponse>().postDataXml(METHOD_ZHANGHU, xml,
@@ -171,8 +169,10 @@ public class AccountFragment extends PagerFragment {
 	@Override
 	protected void initData() {
 		super.initData();
+		doRequestAccount();
 		if (StringUtil.isEmpty(showIdT.getText().toString())) {
-			doRequestAccount();
+			accountLoading = new LoadingView(this.getActivity());
+			accountLoading.addLoadingTo(accountLoadingFrame);
 		}
 	}
 
@@ -339,7 +339,7 @@ public class AccountFragment extends PagerFragment {
 	
 	private void setHeader(){
 		String url = UserInfoUtil.getInstanse().getUserHeader();
-		if(!StringUtil.isEmpty(url)){
+		if(!StringUtil.isEmpty(url) && new File(url).exists()){
 			hostImage.setBackgroundDrawable(null);
 			hostImage.setImageBitmap(BitmapFactory.decodeFile(url));
 		}

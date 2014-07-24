@@ -45,6 +45,7 @@ public class AdvImgDBManager {
 	 */
 	public synchronized void addImgs(List<Img> imgList) {
 		db.beginTransaction();
+		delAllImgs();
 		String sql = "insert into adv_img(id,photoUrl) values(?,?)";
 		for (int i = 0; i < imgList.size(); i++) {
 //			LogUtil.error("添加图片:"+imgList.get(i).imgbig);
@@ -52,6 +53,7 @@ public class AdvImgDBManager {
 					imgList.get(i).imgs });
 		}
 		db.setTransactionSuccessful();
+		db.endTransaction();
 	}
 
 	/**

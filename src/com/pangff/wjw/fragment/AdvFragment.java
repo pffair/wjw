@@ -65,6 +65,7 @@ public class AdvFragment extends PagerFragment {
 
 	protected void initData() {
 		requestAdvList();
+		isInit = false;
 	}
 	
 	private void requestAdvList(){

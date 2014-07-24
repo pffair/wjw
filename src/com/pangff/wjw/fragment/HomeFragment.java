@@ -92,6 +92,7 @@ public class HomeFragment extends PagerFragment {
 		listLoadingView.addLoadingTo(homeRootView);
 		runText.setVisibility(View.GONE);
 		requestTopGallery();
+		isInit = false;
 	}
 	
 	private void requestTopGallery(){
