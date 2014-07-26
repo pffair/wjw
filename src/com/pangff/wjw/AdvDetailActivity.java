@@ -55,7 +55,7 @@ public class AdvDetailActivity extends BaseActivity{
 	Handler handler = new Handler();
 	
 	public static final int TIME = 60000;
-	public static int currentTime = 0;
+	public  int currentTime = 0;
 	
 	@Override
 	protected void onCreate(Bundle arg0) {
@@ -86,6 +86,7 @@ public class AdvDetailActivity extends BaseActivity{
 	
 	
 	private void initView(){
+		currentTime = 0;
 		collectionB.setTextColor(Color.BLACK);
 		collectionB.setEnabled(false);
 		handler.post(runnable);

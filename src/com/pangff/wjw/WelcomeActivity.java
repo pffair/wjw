@@ -1,7 +1,6 @@
 package com.pangff.wjw;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.LoginRequest;

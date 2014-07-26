@@ -10,6 +10,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
 
@@ -85,10 +86,18 @@ public class PhoneUtils {
 		if (sdCardExist) {
 			File f = new File("wjw");
 			try {
+				boolean ismaked = false;
 				if(!f.exists()){
-					f.mkdirs();
+					 ismaked = f.mkdirs();
 				}
-				sdDir = Environment.getExternalStorageDirectory();
+				if(ismaked){
+					sdDir = Environment.getExternalStorageDirectory();
+				}else{
+					StringBuilder sbPhone = new StringBuilder();
+					sbPhone.append(Environment.getDataDirectory());
+					sbPhone.append("/data/com.pangff.wjw");
+					return sbPhone.toString();
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 				StringBuilder sbPhone = new StringBuilder();
