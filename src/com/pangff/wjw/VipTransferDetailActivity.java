@@ -7,6 +7,7 @@ import android.widget.ListView;
 
 import com.pangff.wjw.adapter.TransferDetailAdapter;
 import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.event.IEvent;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.TransferDetailRequest;
 import com.pangff.wjw.model.TransferDetailResponse;
@@ -70,4 +71,5 @@ public class VipTransferDetailActivity extends BaseActivity{
 		super.onFailure(method, errorMsg);
 		listLoadingView.removeLoadingFrom(transferDetailLoadingFrame);
 	}
+	
 }

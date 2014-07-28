@@ -1,6 +1,7 @@
 package com.pangff.wjw;
 
 import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.event.IEvent;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.ChangePasswordRequest;
 import com.pangff.wjw.model.ChangePasswordResponse;
@@ -128,4 +129,5 @@ public class ResivePasswordActivity extends BaseActivity {
 		intent.putExtra("type", type);
 		context.startActivity(intent);
 	}
+	
 }

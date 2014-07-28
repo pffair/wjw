@@ -7,6 +7,7 @@ import android.widget.ListView;
 
 import com.pangff.wjw.adapter.ExchangeDetailAdapter;
 import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.event.IEvent;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.ExchangeDetailRequest;
 import com.pangff.wjw.model.ExchangeDetailResponse;
@@ -71,4 +72,5 @@ public class ExchangeDetailActivity extends BaseActivity{
 		super.onFailure(method, errorMsg);
 		listLoadingView.removeLoadingFrom(exchangeDetailLoadingFrame);
 	}
+	
 }

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.event.IEvent;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.ResponseState;
 import com.pangff.wjw.model.TransferRequest;

@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.event.IEvent;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.LoginRequest;
 import com.pangff.wjw.model.LoginResponse;
@@ -75,7 +76,6 @@ public class LoginActivity extends BaseActivity {
 		context.startActivity(intent);
 		context.finish();
 	}
-	
 	
 	
 	@Override

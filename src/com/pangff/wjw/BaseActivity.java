@@ -34,7 +34,7 @@ public class BaseActivity extends FragmentActivity implements ResponseCallBack{
 		
 	}
 	
-	protected void onEvent(IEvent event){
+	public void onEvent(IEvent event){
 		
 	}
 

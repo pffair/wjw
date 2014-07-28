@@ -2,6 +2,7 @@ package com.pangff.wjw;
 
 import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.event.ApplySuccessEvent;
+import com.pangff.wjw.event.IEvent;
 
 import android.content.Intent;
 import android.os.Bundle;

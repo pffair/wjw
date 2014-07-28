@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.pangff.wjw.autowire.AndroidView;
 import com.pangff.wjw.event.ApplySuccessEvent;
+import com.pangff.wjw.event.IEvent;
 
 public class ApplyCompleteActivity extends BaseActivity{
 	
@@ -33,4 +34,5 @@ public class ApplyCompleteActivity extends BaseActivity{
         intent.setClass(context, ApplyCompleteActivity.class);  
         context.startActivity(intent); 
 	}
+	
 }

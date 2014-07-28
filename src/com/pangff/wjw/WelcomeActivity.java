@@ -2,6 +2,7 @@ package com.pangff.wjw;
 
 import android.os.Bundle;
 
+import com.pangff.wjw.event.IEvent;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.LoginRequest;
 import com.pangff.wjw.model.LoginResponse;
@@ -57,4 +58,5 @@ public class WelcomeActivity extends BaseActivity {
 		ToastUtil.show("自动登录失败");
 		LoginActivity.invotoLogin(WelcomeActivity.this);
 	}
+	
 }

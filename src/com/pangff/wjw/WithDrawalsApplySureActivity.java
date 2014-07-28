@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.event.IEvent;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.ResponseState;
 import com.pangff.wjw.model.TransferResponse;
@@ -138,4 +139,5 @@ public class WithDrawalsApplySureActivity extends BaseActivity {
         intent.putExtra("sxf", withdrawalsCommitRequest.body.sxf);
         context.startActivity(intent); 
 	}
+	
 }

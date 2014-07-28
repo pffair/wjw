@@ -7,6 +7,7 @@ import android.widget.ListView;
 
 import com.pangff.wjw.adapter.RewardDetailAdapter;
 import com.pangff.wjw.autowire.AndroidView;
+import com.pangff.wjw.event.IEvent;
 import com.pangff.wjw.http.HttpRequest;
 import com.pangff.wjw.model.RewardDetailRequest;
 import com.pangff.wjw.model.RewardDetailResponse;
@@ -69,4 +70,5 @@ public class RewardActivity extends BaseActivity{
         intent.setClass(context, RewardActivity.class);  
         context.startActivity(intent); 
 	}
+	
 }

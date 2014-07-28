@@ -211,7 +211,7 @@ public class WithDrawalsApplyActivity extends BaseActivity {
 	}
 	
 	@Override
-	protected void onEvent(IEvent event) {
+	public void onEvent(IEvent event) {
 		super.onEvent(event);
 		if(event instanceof ApplySuccessEvent){
 			finish();
