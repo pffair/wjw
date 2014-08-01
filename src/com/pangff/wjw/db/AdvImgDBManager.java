@@ -50,7 +50,7 @@ public class AdvImgDBManager {
 		for (int i = 0; i < imgList.size(); i++) {
 //			LogUtil.error("添加图片:"+imgList.get(i).imgbig);
 			AdvImgDBManager.db.execSQL(sql, new Object[] { imgList.get(i).id,
-					imgList.get(i).imgs });
+					imgList.get(i).imgbig });
 		}
 		db.setTransactionSuccessful();
 		db.endTransaction();
