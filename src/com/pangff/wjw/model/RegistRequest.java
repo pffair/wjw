@@ -38,6 +38,9 @@ public class RegistRequest extends BaseBean{
 		@XStreamAlias("paypass")
 		public String paypass;
 		
+		@XStreamAlias("jiedian")
+		public String jiedian;
+		
 		@XStreamAlias("password")
 		public String password;
 	}

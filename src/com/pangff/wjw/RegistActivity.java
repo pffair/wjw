@@ -75,8 +75,13 @@ public class RegistActivity extends BaseActivity {
 	@AndroidView(R.id.aPersonNumberE)
 	EditText aPersonNumberE;
 	
+	@AndroidView(R.id.receiverNumberE)
+	EditText receiverNumberE;
+	
 	@AndroidView(R.id.registerB)
 	Button registerB;
+	
+	
 	
 	String userName;
 	String password;
@@ -191,6 +196,11 @@ public class RegistActivity extends BaseActivity {
 			ToastUtil.show("推荐人编号不能为空");
 			return false;
 		}
+		if(StringUtil.isEmpty(body.jiedian)){
+			ToastUtil.show("接点人编号不能为空");
+			return false;
+		}
+		
 		if(StringUtil.isEmpty(loginPasswordE.getText().toString())){
 			ToastUtil.show("登陆密码不能为空");
 			return false;
@@ -221,11 +231,13 @@ public class RegistActivity extends BaseActivity {
 			registRequest.body.memname = vipNameE.getText().toString();
 			registRequest.body.qu = quS.substring(0, 1);
 			registRequest.body.tuijian = spreadNumberE.getText().toString();
-			
+			registRequest.body.jiedian = receiverNumberE.getText().toString();
 			registRequest.body.dlpass = ParseMD5.parseStrToMd5L16(loginPasswordE.getText().toString());
 			registRequest.body.pass2 = ParseMD5.parseStrToMd5L16(checkPasswordE.getText().toString());
 			registRequest.body.paypass = ParseMD5.parseStrToMd5L16(payPasswordE.getText().toString());
 			registRequest.body.password = ParseMD5.parseStrToMd5L16(aPayPasswordE.getText().toString());
+			
+			
 			
 			userName = vipNameE.getText().toString();
 			password = loginPasswordE.getText().toString();
