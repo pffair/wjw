@@ -97,7 +97,7 @@
                         android:layout_height="match_parent"
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
-                        android:text="查看密码修改" />
+                        android:text="二级密码修改" />
 
                     <TextView
                         android:id="@+id/catchPasswordChangeT"
